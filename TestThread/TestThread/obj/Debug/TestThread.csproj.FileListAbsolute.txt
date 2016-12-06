@@ -1,5 +1,0 @@
-C:\Users\sp10\YandexDisk\TestThread\TestThread\bin\Debug\TestThread.exe.config
-C:\Users\sp10\YandexDisk\TestThread\TestThread\bin\Debug\TestThread.exe
-C:\Users\sp10\YandexDisk\TestThread\TestThread\bin\Debug\TestThread.pdb
-C:\Users\sp10\YandexDisk\TestThread\TestThread\obj\Debug\TestThread.exe
-C:\Users\sp10\YandexDisk\TestThread\TestThread\obj\Debug\TestThread.pdb

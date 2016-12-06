@@ -1,6 +1,0 @@
-E:\Test\TestThread\TestThread\bin\Release\TestThread.exe.config
-E:\Test\TestThread\TestThread\bin\Release\TestThread.exe
-E:\Test\TestThread\TestThread\bin\Release\TestThread.pdb
-E:\Test\TestThread\TestThread\obj\Release\TestThread.csprojResolveAssemblyReference.cache
-E:\Test\TestThread\TestThread\obj\Release\TestThread.exe
-E:\Test\TestThread\TestThread\obj\Release\TestThread.pdb
