@@ -1,0 +1,5 @@
+C:\Users\sp10\YandexDisk\TestNumber\TestNumber\bin\Debug\TestNumber.exe.config
+C:\Users\sp10\YandexDisk\TestNumber\TestNumber\bin\Debug\TestNumber.exe
+C:\Users\sp10\YandexDisk\TestNumber\TestNumber\bin\Debug\TestNumber.pdb
+C:\Users\sp10\YandexDisk\TestNumber\TestNumber\obj\Debug\TestNumber.exe
+C:\Users\sp10\YandexDisk\TestNumber\TestNumber\obj\Debug\TestNumber.pdb
