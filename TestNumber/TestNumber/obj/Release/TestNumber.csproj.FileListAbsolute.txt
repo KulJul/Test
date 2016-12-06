@@ -1,0 +1,5 @@
+E:\Test\TestNumber\TestNumber\bin\Release\TestNumber.exe.config
+E:\Test\TestNumber\TestNumber\bin\Release\TestNumber.exe
+E:\Test\TestNumber\TestNumber\bin\Release\TestNumber.pdb
+E:\Test\TestNumber\TestNumber\obj\Release\TestNumber.exe
+E:\Test\TestNumber\TestNumber\obj\Release\TestNumber.pdb
