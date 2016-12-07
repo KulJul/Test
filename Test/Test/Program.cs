@@ -1,29 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace MulticastApp
 {
     class Program
     {
-        static IPAddress address; 
-        const int Port = 8001;
+        static IPAddress address;
+        static Random rand = new Random();
+        static int Port = rand.Next(7500, 8500);
         static string localAdress;
+        static Dictionary<int, string> dicIpNeighbors = new Dictionary<int, string>();
 
         static void Main(string[] args)
         {
             try
             {
                 localAdress = GetLocAdress();
-                Match mch = Regex.Match(localAdress, @"(?<firstPart>(\d+)\.(\d+)\.)(\d+)\.(\d+)");
-
-                if (!mch.Success)
-                    Console.WriteLine("Ошибочный адрес");
-
-                address = IPAddress.Parse(mch.Groups["firstPart"].Value + "255.255");
+                address = IPAddress.Parse("235.5.5.11");
                 new Thread(SendMsg).Start();
                 new Thread(ReceiveMsg).Start();                
             }
@@ -49,14 +49,16 @@ namespace MulticastApp
             return adressIp;
         }
 
+
+
         private static void SendMsg()
         {
             var sender = new UdpClient(); 
-            try
+             try
             {
                 while (true)
                 {
-                    var msgIpAdress = String.Format("{0}", localAdress);  
+                    var msgIpAdress = String.Format("{0}/{1}", localAdress, localAdress.GetHashCode());  
                     var dataMsg = Encoding.Unicode.GetBytes(msgIpAdress);
                     sender.Send(dataMsg, dataMsg.Length, new IPEndPoint(address, Port));
                 }
@@ -67,6 +69,7 @@ namespace MulticastApp
                 sender.Close();
             }
         }
+
 
 
         private static void ReceiveMsg()
@@ -80,11 +83,15 @@ namespace MulticastApp
                 {
                     var recerveIp = receiver.Receive(ref remoteIp); 
 
-                    if (remoteIp.Address.ToString().Equals(localAdress))
-                        continue;
+                   // if (remoteIp.Address.ToString().Equals(localAdress))
+                      //  continue;
 
                     var msg = Encoding.Unicode.GetString(recerveIp);
-                    Console.WriteLine(msg);
+
+                    dicIpNeighbors.Add(1, msg);
+
+                    foreach (var c in dicIpNeighbors)
+                        Console.WriteLine(c);
                 }
             }
             catch (Exception e)
