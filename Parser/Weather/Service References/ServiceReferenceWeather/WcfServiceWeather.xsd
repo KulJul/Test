@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfServiceWeather" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfServiceWeather" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="CompositeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoolValue" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StringValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompositeType" nillable="true" type="tns:CompositeType" />
+  <xs:complexType name="ArrayOfService1.TownStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Service1.TownStruct" nillable="true" type="tns:Service1.TownStruct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfService1.TownStruct" nillable="true" type="tns:ArrayOfService1.TownStruct" />
+  <xs:complexType name="Service1.TownStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dateStruct" nillable="true" type="tns:ArrayOfService1.DateStruct" />
+      <xs:element minOccurs="0" name="towns" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Service1.TownStruct" nillable="true" type="tns:Service1.TownStruct" />
+  <xs:complexType name="ArrayOfService1.DateStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Service1.DateStruct" nillable="true" type="tns:Service1.DateStruct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfService1.DateStruct" nillable="true" type="tns:ArrayOfService1.DateStruct" />
+  <xs:complexType name="Service1.DateStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="date" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="timeStruct" nillable="true" type="tns:ArrayOfService1.TimeStruct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Service1.DateStruct" nillable="true" type="tns:Service1.DateStruct" />
+  <xs:complexType name="ArrayOfService1.TimeStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Service1.TimeStruct" nillable="true" type="tns:Service1.TimeStruct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfService1.TimeStruct" nillable="true" type="tns:ArrayOfService1.TimeStruct" />
+  <xs:complexType name="Service1.TimeStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Time" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="weather" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Service1.TimeStruct" nillable="true" type="tns:Service1.TimeStruct" />
+</xs:schema>
