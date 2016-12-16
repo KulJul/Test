@@ -10,96 +10,30 @@ using System.Collections.Generic;
 
 namespace MulticastApp
 {
+    void IncrementStr(string &str)
+    {
+        str=" "+str;
+        for(int i=str.length()-1; i>=0; i--)
+        {
+            int n=(str[i]==' ')?0:str[i]-48;
+            n++;
+            if(n<10)
+            {
+                str[i]=n+48;
+                break;
+            }
+            else str[i]=n%10+48;
+        }a
+    }
+
     class Program
     {
-        static IPAddress address;
-        static Random rand = new Random();
-        static int Port = rand.Next(7500, 8500);
-        static string localAdress;
-        static Dictionary<int, string> dicIpNeighbors = new Dictionary<int, string>();
 
-        static void Main(string[] args)
-        {
-            try
-            {
-                localAdress = GetLocAdress();
-                address = IPAddress.Parse("235.5.5.11");
-                new Thread(SendMsg).Start();
-                new Thread(ReceiveMsg).Start();                
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("{0} Исключение", e);
-            }
-        }
-
-
-        private static string GetLocAdress()
-        {
-            var adressIp = "";
-            var host = Dns.GetHostEntry(Dns.GetHostName());
-            foreach (IPAddress ip in host.AddressList)
-            {
-                if (ip.AddressFamily == AddressFamily.InterNetwork)
-                {
-                    adressIp = ip.ToString();
-                    break;
-                }
-            }
-            return adressIp;
-        }
-
-
-
-        private static void SendMsg()
-        {
-            var sender = new UdpClient(); 
-             try
-            {
-                while (true)
-                {
-                    var msgIpAdress = String.Format("{0}/{1}", localAdress, localAdress.GetHashCode());  
-                    var dataMsg = Encoding.Unicode.GetBytes(msgIpAdress);
-                    sender.Send(dataMsg, dataMsg.Length, new IPEndPoint(address, Port));
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("{0} Исключение", e);
-                sender.Close();
-            }
-        }
-
-
-
-        private static void ReceiveMsg()
-        {
-            var receiver = new UdpClient(Port); 
-            receiver.JoinMulticastGroup(address, 20);
-            IPEndPoint remoteIp = null;
-            try
-            {
-                while (true)
-                {
-                    var recerveIp = receiver.Receive(ref remoteIp); 
-
-                   // if (remoteIp.Address.ToString().Equals(localAdress))
-                      //  continue;
-
-                    var msg = Encoding.Unicode.GetString(recerveIp);
-
-                    dicIpNeighbors.Add(1, msg);
-
-                    foreach (var c in dicIpNeighbors)
-                        Console.WriteLine(c);
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("{0} Исключение", e);
-                receiver.Close();
-            }
-        }
+        setlocale(LC_ALL,"Rus");
+        cout<<"Число:"; 
+        var s = Console.ReadLine();
+        IncrementStr(s);
 
     }
+
 }

@@ -1,0 +1,29 @@
+﻿Построение начато 07.11.2016 11:08:22.
+     1>Проект "D:\посл семестр\хд\1\Проект1\Проект1\Проект1.vcxproj" в узле 2 (целевые объекты Build).
+     1>InitializeBuildStatus:
+         Обращение к "Debug\Проект1.unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ID:\opencv\build\include /ZI /nologo /W3 /WX- /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt C:\Users\sp10\Desktop\lr\opencv\opencv\opencv\main.cpp
+         main.cpp
+     1>c:\users\sp10\desktop\lr\opencv\opencv\opencv\main.cpp(85): warning C4305: =: усечение из "double" к "float"
+     1>c:\users\sp10\desktop\lr\opencv\opencv\opencv\main.cpp(86): warning C4305: =: усечение из "double" к "float"
+     1>c:\users\sp10\desktop\lr\opencv\opencv\opencv\main.cpp(87): warning C4305: =: усечение из "double" к "float"
+     1>c:\users\sp10\desktop\lr\opencv\opencv\opencv\main.cpp(89): warning C4305: =: усечение из "double" к "float"
+     1>c:\users\sp10\desktop\lr\opencv\opencv\opencv\main.cpp(91): warning C4305: =: усечение из "double" к "float"
+     1>c:\users\sp10\desktop\lr\opencv\opencv\opencv\main.cpp(93): warning C4305: =: усечение из "double" к "float"
+     1>c:\users\sp10\desktop\lr\opencv\opencv\opencv\main.cpp(94): warning C4305: =: усечение из "double" к "float"
+     1>c:\users\sp10\desktop\lr\opencv\opencv\opencv\main.cpp(95): warning C4305: =: усечение из "double" к "float"
+     1>c:\users\sp10\desktop\lr\opencv\opencv\opencv\main.cpp(100): error C3861: cvFilter2D: идентификатор не найден
+     1>c:\users\sp10\desktop\lr\opencv\opencv\opencv\main.cpp(122): error C3861: cvSmooth: идентификатор не найден
+     1>c:\users\sp10\desktop\lr\opencv\opencv\opencv\main.cpp(128): error C3861: cvCopyMakeBorder: идентификатор не найден
+     1>c:\users\sp10\desktop\lr\opencv\opencv\opencv\main.cpp(140): error C2664: _IplImage::_IplImage(const _IplImage &): невозможно преобразовать параметр 1 из "cv::MatExpr" в "const _IplImage &"
+                 Причина: невозможно преобразовать "cv::MatExpr" в "const _IplImage"
+                 Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+     1>c:\users\sp10\desktop\lr\opencv\opencv\opencv\main.cpp(148): error C2664: _IplImage::_IplImage(const _IplImage &): невозможно преобразовать параметр 1 из "cv::MatExpr" в "const _IplImage &"
+                 Причина: невозможно преобразовать "cv::MatExpr" в "const _IplImage"
+                 Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+     1>Построение проекта "D:\посл семестр\хд\1\Проект1\Проект1\Проект1.vcxproj" завершено (целевые объекты Build) с ошибкой.
+
+Сбой построения.
+
+Затраченное время: 00:00:10.49
