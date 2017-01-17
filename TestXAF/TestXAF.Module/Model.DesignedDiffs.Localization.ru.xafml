@@ -1,0 +1,569 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel>
+    <Class Name="DevExpress.ExpressApp.SystemModule.DashboardName" ObjectCaptionFormat="{0:Название}" />
+    <Class Name="DevExpress.Persistent.BaseImpl.ModelDifferenceAspect">
+      <OwnMembers>
+        <Member Name="Name" Caption="Название" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.Validation.IRuleBaseProperties" ObjectCaptionFormat="{0:Название}" />
+    <Class Name="DevExpress.Persistent.Validation.RuleBaseProperties" ObjectCaptionFormat="{0:Название}" />
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Area" Caption="Площадка" ObjectCaptionFormat="{0:Название}">
+      <OwnMembers>
+        <Member Name="Cargoes" Caption="Грузы" />
+        <Member Name="Create" Caption="Создать" />
+        <Member Name="Delete1" Caption="Удалить" />
+        <Member Name="Name" Caption="Название" />
+        <Member Name="Number" Caption="Номер" />
+        <Member Name="Number_Store" Caption="Номер_Склада" />
+        <Member Name="Pickets" Caption="Пикеты" />
+      </OwnMembers>
+    </Class>
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Cargo" ObjectCaptionFormat="{0:Название}" Caption="Груз">
+      <OwnMembers>
+        <Member Name="Create" Caption="Создать" />
+        <Member Name="Delete1" Caption="Удалить" />
+        <Member Name="Name" Caption="Название" />
+        <Member Name="Number" Caption="Номер" />
+        <Member Name="NumberArea" Caption="Номер Площадки" />
+        <Member Name="Weight" Caption="Вес" />
+      </OwnMembers>
+    </Class>
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.IArea" Caption="Площадка" ObjectCaptionFormat="{0:Название}">
+      <OwnMembers>
+        <Member Name="Create" Caption="Создать" />
+        <Member Name="Delete" Caption="Удалить" />
+        <Member Name="ICargo" Caption="Коллекция Груза" />
+        <Member Name="IPicket" Caption="Коллекция пикетов" />
+        <Member Name="Name" Caption="Название" />
+        <Member Name="Number" Caption="Номер" />
+        <Member Name="Number_Store" Caption="Номер_Склада" />
+      </OwnMembers>
+    </Class>
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.ICargo" ObjectCaptionFormat="{0:Название}" Caption="Груз">
+      <OwnMembers>
+        <Member Name="Create" Caption="Создать" />
+        <Member Name="Delete" Caption="Удалить" />
+        <Member Name="Name" Caption="Название" />
+        <Member Name="Number" Caption="Номер" />
+        <Member Name="NumberArea" Caption="Номер Площадки" />
+        <Member Name="Weight" Caption="Вес" />
+      </OwnMembers>
+    </Class>
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.IPicket" ObjectCaptionFormat="{0:Название}" Caption="Пикет">
+      <OwnMembers>
+        <Member Name="Name" Caption="Название" />
+        <Member Name="Number" Caption="Номер" />
+        <Member Name="NumberArea" Caption="Номер Площадки" />
+      </OwnMembers>
+    </Class>
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.IStore" ObjectCaptionFormat="{0:Название}" Caption="Склад">
+      <OwnMembers>
+        <Member Name="IArea" Caption="Коллекция площадок" />
+        <Member Name="Name" Caption="Название" />
+        <Member Name="Number" Caption="Номер" />
+      </OwnMembers>
+    </Class>
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Picket" ObjectCaptionFormat="{0:Название}" Caption="Пикет">
+      <OwnMembers>
+        <Member Name="Name" Caption="Название" />
+        <Member Name="Number" Caption="Номер" />
+        <Member Name="NumberArea" Caption="Номер Площадки" />
+      </OwnMembers>
+    </Class>
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Store" ObjectCaptionFormat="{0:Название}" Caption="Склад">
+      <OwnMembers>
+        <Member Name="Areas" Caption="Площадки" />
+        <Member Name="Name" Caption="Название" />
+        <Member Name="Number" Caption="Номер" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <NavigationItems>
+    <Items>
+      <Item Id="Reports">
+        <Items>
+          <Item Id="Dashboards" Caption="Отчеты" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Views>
+    <DetailView Id="AboutInfo_DetailView" ObjectCaptionFormat="{0:Название продукта}" />
+    <DetailView Id="ActionContainerDashboardOrganizationItem_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="ActionContainerDescriptor_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Area_Cargoes_ListView">
+      <Columns>
+        <ColumnInfo Id="Delete1" Caption="Удалить" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Area_DetailView">
+      <Items>
+        <PropertyEditor Id="Cargoes" Caption="Грузы" />
+        <PropertyEditor Id="Pickets" Caption="Пикеты" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор">
+            <LayoutGroup Id="Area" Caption="Площадка" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Cargo_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор">
+            <LayoutGroup Id="Cargo" Caption="Груз" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="ContextValidationResult_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="CriteriaProvider_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="DashboardCreationInfo_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="DashboardData_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная" />
+      </Layout>
+    </DetailView>
+    <DetailView Id="DashboardName_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор">
+            <LayoutGroup Id="DashboardName" Caption="Отчет" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="DashboardOrganizationItem_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная" />
+      </Layout>
+    </DetailView>
+    <DetailView Id="DashboardOrganizer_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная" />
+      </Layout>
+    </DetailView>
+    <DetailView Id="DashboardViewer_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная" />
+      </Layout>
+    </DetailView>
+    <DetailView Id="DashboardViewItemDescriptor_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="DiagnosticInfoObject_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная" />
+      </Layout>
+    </DetailView>
+    <DetailView Id="DisplayableValidationResultItem_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="IArea_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор">
+            <LayoutGroup Id="IArea" Caption="Коллекция площадок" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="ICargo_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор">
+            <LayoutGroup Id="ICargo" Caption="Коллекция Груза" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="IPicket_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор">
+            <LayoutGroup Id="IPicket" Caption="Коллекция пикетов" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="IRuleBaseProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="IRuleCollectionPropertyProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="IRuleCombinationOfPropertiesIsUniqueProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="IRuleCriteriaProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="IRuleFromBoolPropertyProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="IRuleIsReferencedProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="IRuleObjectExistsProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="IRulePropertyValueProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="IRuleRangeProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="IRuleRegularExpressionProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="IRuleRequiredFieldProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="IRuleSearchObjectProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="IRuleStringComparisonProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="IRuleSupportsCollectionAggregatesProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="IRuleUniqueValueProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="IRuleValueComparisonProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="IStore_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор">
+            <LayoutGroup Id="IStore" Caption="Коллекция склада" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="ModelDifference_Aspects_ListView">
+      <Columns>
+        <ColumnInfo Id="DisplayName" Caption="Название" />
+      </Columns>
+    </ListView>
+    <DetailView Id="ModelDifference_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="ModelDifferenceAspect_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="ModelDifferenceCopyParameters_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="NewReportWizardParameters_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Picket_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор">
+            <LayoutGroup Id="Picket" Caption="Пикет" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="ReportDataV2_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="RuleBaseProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="RuleCombinationOfPropertiesIsUniqueProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="RuleCriteriaProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="RuleFromBoolPropertyProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="RuleIsReferencedProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="RuleObjectExistsProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="RulePropertyValueProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="RuleRangeProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="RuleRegularExpressionProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="RuleRequiredFieldProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="RuleSearchObjectProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="RuleSetValidationResult_ByTarget_Error_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная" />
+      </Layout>
+    </DetailView>
+    <DetailView Id="RuleSetValidationResult_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная" />
+      </Layout>
+    </DetailView>
+    <DetailView Id="RuleSetValidationResultItem_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="RuleSetValidationResultItemAggregate_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="RuleStringComparisonProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="RuleUniqueValueProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="RuleValueComparisonProperties_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="StaticImageDashboardOrganizationItem_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="StaticTextDashboardOrganizationItem_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная" />
+      </Layout>
+    </DetailView>
+    <DetailView Id="Store_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор">
+            <LayoutGroup Id="Store" Caption="Склад" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="ValidationResults_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="ValidationResults_Error_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная" />
+      </Layout>
+    </DetailView>
+    <DetailView Id="ValidationResults_Passed_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная" />
+      </Layout>
+    </DetailView>
+    <DetailView Id="ViewDashboardOrganizationItem_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Главная">
+          <LayoutGroup Id="SimpleEditors" Caption="Редактор" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>
