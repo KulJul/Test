@@ -7,9 +7,8 @@ using DevExpress.Persistent.Base;
 
 namespace TestXAF.Module.BusinessObjects.TestWork
 {
-
     [DefaultClassOptions, ImageName("Bo_Area")]
-    public partial class Area
+    public partial class Area : TestXAF.Module.BusinessObjects.TestModelCode.IArea
     {
         public Area(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }

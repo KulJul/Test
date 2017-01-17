@@ -8,7 +8,7 @@ using DevExpress.Persistent.Base;
 namespace TestXAF.Module.BusinessObjects.TestWork
 {
     [DefaultClassOptions, ImageName("Bo_Picket")]
-    public partial class Picket
+    public partial class Picket : TestXAF.Module.BusinessObjects.TestModelCode.IPicket
     {
         public Picket(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }

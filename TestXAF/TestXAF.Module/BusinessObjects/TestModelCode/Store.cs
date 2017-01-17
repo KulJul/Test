@@ -9,7 +9,7 @@ using DevExpress.Persistent.Validation;
 namespace TestXAF.Module.BusinessObjects.TestWork
 {
     [DefaultClassOptions, ImageName("Bo_Store")]
-    public partial class Store
+    public partial class Store : TestXAF.Module.BusinessObjects.TestModelCode.IStore
     {
         public Store(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }

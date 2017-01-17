@@ -11,7 +11,6 @@ using DevExpress.Xpo;
 using DevExpress.Data.Filtering;
 using System.Collections.Generic;
 using System.ComponentModel;
-using DevExpress.Persistent.Validation;
 namespace TestXAF.Module.BusinessObjects.TestWork
 {
 
@@ -26,7 +25,6 @@ namespace TestXAF.Module.BusinessObjects.TestWork
         }
         string fName;
         [Size(10)]
-        [RuleRegularExpression(@"^[0-9]$")]
         public string Name
         {
             get { return fName; }

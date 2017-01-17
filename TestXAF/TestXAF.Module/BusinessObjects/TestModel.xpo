@@ -66,7 +66,7 @@
       <xpObject Id="90c0fda1-6db3-4487-8e28-1fb5b85048cb" name="Picket" baseClass="XPLiteObject" userFileName="Picket" designerFileName="Picket.Designer" className="Picket" virtualBaseClass="XPLiteObject" persistent="Picket" virtualName="Picket">
         <fields>
           <generalXpObjectHasFields Id="7f56104f-53ff-40c6-ae6d-1c08ae1cbfa8">
-            <field Id="ae2f4684-630c-4162-aa37-331af9858803" name="Number" key="true" persistent="Number" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="4" />
+            <field Id="ae2f4684-630c-4162-aa37-331af9858803" name="Number" columnType="Int32" key="true" persistent="Number" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="db56936e-7daf-457e-af3b-d0b64f296855">
             <field Id="23b259f7-3d91-4776-8c04-586446fa9024" name="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="10" />

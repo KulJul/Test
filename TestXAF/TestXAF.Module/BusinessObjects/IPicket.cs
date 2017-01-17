@@ -1,0 +1,16 @@
+﻿using System;
+using DevExpress.ExpressApp.DC;
+using DevExpress.Persistent.Base;
+using DevExpress.Persistent.Validation;
+namespace TestXAF.Module.BusinessObjects.TestModelCode
+{
+
+    public interface IPicket
+    {
+        [RuleRequiredField, RuleUniqueValue]
+        [RuleRegularExpression(@"^[0-9]$")]
+        string Name { get; set; }
+        int Number { get; set; }
+        TestXAF.Module.BusinessObjects.TestWork.Area NumberArea { get; set; }
+    }
+}

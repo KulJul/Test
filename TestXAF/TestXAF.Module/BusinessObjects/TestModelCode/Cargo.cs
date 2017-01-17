@@ -8,7 +8,7 @@ using DevExpress.Persistent.Base;
 namespace TestXAF.Module.BusinessObjects.TestWork
 {
     [DefaultClassOptions, ImageName("Bo_Cargo")]
-    public partial class Cargo
+    public partial class Cargo : TestXAF.Module.BusinessObjects.TestModelCode.ICargo
     {
         public Cargo(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }
