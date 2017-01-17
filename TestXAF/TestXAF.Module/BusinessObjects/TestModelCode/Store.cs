@@ -4,6 +4,7 @@ using DevExpress.Data.Filtering;
 using System.Collections.Generic;
 using System.ComponentModel;
 using DevExpress.Persistent.Base;
+using DevExpress.Persistent.Validation;
 
 namespace TestXAF.Module.BusinessObjects.TestWork
 {
