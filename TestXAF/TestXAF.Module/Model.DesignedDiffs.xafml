@@ -1,5 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="TestXAF">
+  <ActionDesign>
+    <Actions>
+      <Action Id="ClearFieldsAction" ToolTip="Clear fields" Shortcut="Control+C" ConfirmationMessage="Error" SelectionDependencyType="RequireSingleObject" />
+    </Actions>
+  </ActionDesign>
   <Options>
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
