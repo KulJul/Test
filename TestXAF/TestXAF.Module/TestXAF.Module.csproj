@@ -146,6 +146,7 @@
     <EmbeddedResource Include="Controllers\ClearFieldsController.resx">
       <DependentUpon>ClearFieldsController.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Images\Store.png" />
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
     <EmbeddedResource Include="Module.resx">
       <SubType>Designer</SubType>
@@ -182,6 +183,7 @@
     <None Include="FunctionalTests\config.xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Images\Store _32x32.png" />
     <Content Include="Welcome.html" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

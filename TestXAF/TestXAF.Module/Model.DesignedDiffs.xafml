@@ -2,9 +2,20 @@
 <Application Title="TestXAF">
   <ActionDesign>
     <Actions>
-      <Action Id="ClearFieldsAction" ToolTip="Clear fields" Shortcut="Control+C" ConfirmationMessage="Error" SelectionDependencyType="RequireSingleObject" />
+      <Action Id="ClearFieldsAction" ToolTip="Clear fields" Shortcut="Control+C" ConfirmationMessage="Are you sure?" SelectionDependencyType="RequireSingleObject" />
     </Actions>
+    <ActionToContainerMapping>
+      <ActionContainer Id="Tools">
+        <ActionLink ActionId="Refresh" IsNewNode="True" />
+      </ActionContainer>
+      <ActionContainer Id="View">
+        <ActionLink ActionId="Refresh" Removed="True" />
+      </ActionContainer>
+    </ActionToContainerMapping>
   </ActionDesign>
+  <BOModel>
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Store" ObjectCaptionFormat="{0}: FullName из {0: Store}" ImageName="Store" />
+  </BOModel>
   <Options>
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
