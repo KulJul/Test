@@ -173,6 +173,10 @@
     <None Include="FunctionalTests\config.xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Images\Area.png" />
+    <EmbeddedResource Include="Images\Cargo.png" />
+    <EmbeddedResource Include="Images\Picket.png" />
+    <EmbeddedResource Include="Images\Store.jpg" />
     <Content Include="Welcome.html" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

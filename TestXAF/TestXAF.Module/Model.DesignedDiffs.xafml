@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="TestXAF">
+  <BOModel>
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Area" ImageName="Area" />
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Cargo" ImageName="Cargo" />
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Picket" ImageName="Picket" />
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Store" ImageName="Store" />
+  </BOModel>
   <Options>
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
