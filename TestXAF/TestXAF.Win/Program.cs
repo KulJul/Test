@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Configuration;
 using System.Windows.Forms;
-
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Security;
 using DevExpress.ExpressApp.Win;
+using DevExpress.Persistent.AuditTrail;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 
@@ -26,7 +26,8 @@ namespace TestXAF.Win {
             TestXAFWindowsFormsApplication winApplication = new TestXAFWindowsFormsApplication();
             // Refer to the https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112680.aspx help article for more details on how to provide a custom splash form.
             //winApplication.SplashScreen = new DevExpress.ExpressApp.Win.Utils.DXSplashScreen("YourSplashImage.png");
-			SecurityAdapterHelper.Enable();
+            AuditTrailService.Instance.ObjectAuditingMode = ObjectAuditingMode.Full;
+            SecurityAdapterHelper.Enable();
             if(ConfigurationManager.ConnectionStrings["ConnectionString"] != null) {
                 winApplication.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             }
@@ -45,6 +46,13 @@ namespace TestXAF.Win {
             catch(Exception e) {
                 winApplication.HandleException(e);
             }
+        }
+
+        static void Instance_SaveAuditTrailData(object sender, SaveAuditTrailDataEventArgs e)
+        {
+            //Save the data passed as the e.AuditTrailDataItems parameter 
+            //Disable the default storing procedure if it is necessary 
+            e.Handled = true;
         }
     }
 }
