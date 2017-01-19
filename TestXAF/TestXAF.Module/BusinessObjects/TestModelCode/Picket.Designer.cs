@@ -17,14 +17,14 @@ namespace TestXAF.Module.BusinessObjects.TestWork
     public partial class Picket : XPLiteObject
     {
         int fNumber;
-        [Key]
+        [Key(true)]
         public int Number
         {
             get { return fNumber; }
             set { SetPropertyValue<int>("Number", ref fNumber, value); }
         }
         string fName;
-        [Size(10)]
+        [Size(20)]
         public string Name
         {
             get { return fName; }

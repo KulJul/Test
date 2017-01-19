@@ -67,6 +67,7 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
+    <Reference Include="DevExpress.Persistent.BaseImpl.EF.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v16.2.Core">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -115,10 +116,10 @@
       <DependentUpon>Cargo.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\TestModelCode\ConnectionHelper.cs" />
-    <Compile Include="BusinessObjects\IPicket.cs" />
     <Compile Include="BusinessObjects\IArea.cs" />
     <Compile Include="BusinessObjects\ICargo.cs" />
     <Compile Include="BusinessObjects\IStore.cs" />
+    <Compile Include="BusinessObjects\IPicket.cs" />
     <Compile Include="BusinessObjects\TestModelCode\Picket.cs" />
     <Compile Include="BusinessObjects\TestModelCode\Picket.Designer.cs">
       <DependentUpon>Picket.cs</DependentUpon>
@@ -126,6 +127,18 @@
     <Compile Include="BusinessObjects\TestModelCode\Store.cs" />
     <Compile Include="BusinessObjects\TestModelCode\Store.Designer.cs">
       <DependentUpon>Store.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ClearFields.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\ClearFields.Designer.cs">
+      <DependentUpon>ClearFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\FindFieldData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\FindFieldData.Designer.cs">
+      <DependentUpon>FindFieldData.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="Module.cs">
@@ -137,6 +150,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controllers\ClearFields.resx">
+      <DependentUpon>ClearFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\FindFieldData.resx">
+      <DependentUpon>FindFieldData.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
     <EmbeddedResource Include="Module.resx">
       <SubType>Designer</SubType>
@@ -177,6 +196,10 @@
     <EmbeddedResource Include="Images\Cargo.png" />
     <EmbeddedResource Include="Images\Picket.png" />
     <EmbeddedResource Include="Images\Store.jpg" />
+    <None Include="UnusableNodes.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Welcome.html" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

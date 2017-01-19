@@ -17,14 +17,14 @@ namespace TestXAF.Module.BusinessObjects.TestWork
     public partial class Area : XPLiteObject
     {
         int fNumber;
-        [Key]
+        [Key(true)]
         public int Number
         {
             get { return fNumber; }
             set { SetPropertyValue<int>("Number", ref fNumber, value); }
         }
         string fName;
-        [Size(10)]
+        [Size(20)]
         public string Name
         {
             get { return fName; }
@@ -37,18 +37,17 @@ namespace TestXAF.Module.BusinessObjects.TestWork
             get { return fNumber_Store; }
             set { SetPropertyValue<Store>("Number_Store", ref fNumber_Store, value); }
         }
-        DateTime fCreate;
-        public DateTime Create
+        DateTime fCreate_Area;
+        public DateTime Create_Area
         {
-            get { return fCreate; }
-            set { SetPropertyValue<DateTime>("Create", ref fCreate, value); }
+            get { return fCreate_Area; }
+            set { SetPropertyValue<DateTime>("Create_Area", ref fCreate_Area, value); }
         }
-        DateTime fDelete1;
-        [Persistent(@"Delete")]
-        public DateTime Delete1
+        DateTime fDelete_Area;
+        public DateTime Delete_Area
         {
-            get { return fDelete1; }
-            set { SetPropertyValue<DateTime>("Delete1", ref fDelete1, value); }
+            get { return fDelete_Area; }
+            set { SetPropertyValue<DateTime>("Delete_Area", ref fDelete_Area, value); }
         }
         [Association(@"CargoReferencesArea")]
         public XPCollection<Cargo> Cargoes { get { return GetCollection<Cargo>("Cargoes"); } }

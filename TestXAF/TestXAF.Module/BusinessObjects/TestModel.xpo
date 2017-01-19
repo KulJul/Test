@@ -1,23 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="20f62601-70ed-4159-846f-bcdb0c25de16" dbName="TestWork" connectionInfo="77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxEZXZFeHByZXNzWHBvR2VuZXJhdG9yU2V0dGluZ3MgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeG1sbnM6eHNkPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgcHJvdmlkZXJLZXk9Ik1TU3FsU2VydmVyIj4NCiAgPHBhcmFtZXRlcj4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0ic2VydmVyIiB2YWx1ZT0iU1AxMFAyXFNQMTAiIC8+DQogICAgPENvbm5lY3Rpb25QYWdlU2V0dGluZ3NJdGVtIG5hbWU9ImRhdGFiYXNlIiB2YWx1ZT0iVGVzdFdvcmsiIC8+DQogICAgPENvbm5lY3Rpb25QYWdlU2V0dGluZ3NJdGVtIG5hbWU9InVzZUludGVncmF0ZWRTZWN1cml0eSIgdmFsdWU9IlRydWUiIC8+DQogICAgPENvbm5lY3Rpb25QYWdlU2V0dGluZ3NJdGVtIG5hbWU9InVzZXJpZCIgdmFsdWU9IiIgLz4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0icGFzc3dvcmQiIHZhbHVlPSIiIC8+DQogICAgPENvbm5lY3Rpb25QYWdlU2V0dGluZ3NJdGVtIG5hbWU9InJlYWQgb25seSIgdmFsdWU9IjEiIC8+DQogICAgPENvbm5lY3Rpb25QYWdlU2V0dGluZ3NJdGVtIG5hbWU9ImdlbmVyYXRlQ29ubmVjdGlvbkhlbHBlciIgdmFsdWU9InRydWUiIC8+DQogIDwvcGFyYW1ldGVyPg0KPC9EZXZFeHByZXNzWHBvR2VuZXJhdG9yU2V0dGluZ3M+" namespace="TestXAF.Module.BusinessObjects.TestWork" connectionString="XpoProvider=MSSqlServer;data source=SP10P2\SP10;integrated security=SSPI;initial catalog=TestWork" dataBaseShemaInfo="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" generateConnectionHelper="true" generateStoredProcedures="false" fieldNameCase="Unchanged" generateDefaultConstructors="false" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
+<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="20f62601-70ed-4159-846f-bcdb0c25de16" dbName="TestWork" connectionInfo="77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxEZXZFeHByZXNzWHBvR2VuZXJhdG9yU2V0dGluZ3MgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeG1sbnM6eHNkPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgcHJvdmlkZXJLZXk9Ik1TU3FsU2VydmVyIj4NCiAgPHBhcmFtZXRlcj4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0ic2VydmVyIiB2YWx1ZT0iU1AxMFAyXFNQMTAiIC8+DQogICAgPENvbm5lY3Rpb25QYWdlU2V0dGluZ3NJdGVtIG5hbWU9ImRhdGFiYXNlIiB2YWx1ZT0iVGVzdFdvcmsiIC8+DQogICAgPENvbm5lY3Rpb25QYWdlU2V0dGluZ3NJdGVtIG5hbWU9InVzZUludGVncmF0ZWRTZWN1cml0eSIgdmFsdWU9IlRydWUiIC8+DQogICAgPENvbm5lY3Rpb25QYWdlU2V0dGluZ3NJdGVtIG5hbWU9InVzZXJpZCIgdmFsdWU9IiIgLz4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0icGFzc3dvcmQiIHZhbHVlPSIiIC8+DQogICAgPENvbm5lY3Rpb25QYWdlU2V0dGluZ3NJdGVtIG5hbWU9InJlYWQgb25seSIgdmFsdWU9IjEiIC8+DQogICAgPENvbm5lY3Rpb25QYWdlU2V0dGluZ3NJdGVtIG5hbWU9ImdlbmVyYXRlQ29ubmVjdGlvbkhlbHBlciIgdmFsdWU9InRydWUiIC8+DQogIDwvcGFyYW1ldGVyPg0KPC9EZXZFeHByZXNzWHBvR2VuZXJhdG9yU2V0dGluZ3M+" namespace="TestXAF.Module.BusinessObjects.TestWork" connectionString="XpoProvider=MSSqlServer;data source=SP10P2\SP10;integrated security=SSPI;initial catalog=TestWork" dataBaseShemaInfo="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" generateConnectionHelper="true" generateStoredProcedures="false" fieldNameCase="Unchanged" generateDefaultConstructors="false" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
   <classes>
     <dataBaseObjectModelHasClasses Id="7956187b-6784-4cf7-8dba-039db98c200f">
       <xpObject Id="5b6ade2e-aa2f-4186-9d22-1e3529082da9" name="Area" baseClass="XPLiteObject" userFileName="Area" designerFileName="Area.Designer" className="Area" virtualBaseClass="XPLiteObject" persistent="Area" virtualName="Area">
         <fields>
           <generalXpObjectHasFields Id="155771cb-478f-4b8f-ad52-2f0b1eba0b65">
-            <field Id="e8b78879-f781-4ea0-a4c2-e5e62e6df3aa" name="Number" columnType="Int32" key="true" persistent="Number" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+            <field Id="e8b78879-f781-4ea0-a4c2-e5e62e6df3aa" name="Number" columnType="Int32" key="true" isIdentity="true" persistent="Number" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="35ee21a0-420e-48ff-a5f2-e874fd08c8f7">
-            <field Id="11747666-0b59-4849-bb14-9ba74900d49c" name="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="10" />
+            <field Id="11747666-0b59-4849-bb14-9ba74900d49c" name="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="20" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="41539363-3b8d-4d57-ab4c-0dcddf22e65b">
             <field Id="09c32e4c-54e3-4286-b739-7e000ea10668" name="Number_Store" columnType="Int32" persistent="Number_Store" virtualColumnType="Store" logicalType="Store" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
-          <generalXpObjectHasFields Id="dae39057-669c-4aa7-bbe4-c29f6dd5c1d3">
-            <field Id="fe3eeba0-fc99-463c-a8fa-72633351f974" name="Create" columnType="DateTime" persistent="Create" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
+          <generalXpObjectHasFields Id="c09c6d16-5405-4f94-8861-28adc7ea78eb">
+            <field Id="55950a92-799f-4a3c-ae02-e29bdd4ef662" name="Create_Area" columnType="DateTime" persistent="Create_Area" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
-          <generalXpObjectHasFields Id="41bc328c-0e98-426b-97d5-aaedf94a90ae">
-            <field Id="11ca7d2e-e2a8-42ca-9376-c7a6c355d847" name="Delete1" columnType="DateTime" persistent="Delete" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
+          <generalXpObjectHasFields Id="583a6cf7-a5df-4022-8de2-e5477e33e06a">
+            <field Id="1b3990cc-c13e-4042-954c-3a0ad4aee721" name="Delete_Area" columnType="DateTime" persistent="Delete_Area" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -42,10 +42,10 @@
       <xpObject Id="da7b1794-ea7d-4741-947a-2fdd9b9405ef" name="Cargo" baseClass="XPLiteObject" userFileName="Cargo" designerFileName="Cargo.Designer" className="Cargo" virtualBaseClass="XPLiteObject" persistent="Cargo" virtualName="Cargo">
         <fields>
           <generalXpObjectHasFields Id="0acf17c2-45f1-452b-a740-4a41c20c449c">
-            <field Id="c1511d17-0b1f-47e4-8492-586ce4447ee6" name="Number" columnType="Int32" key="true" persistent="Number" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+            <field Id="c1511d17-0b1f-47e4-8492-586ce4447ee6" name="Number" columnType="Int32" key="true" isIdentity="true" persistent="Number" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="6e082af5-c6f9-4810-9f29-f4742e3e9792">
-            <field Id="9725120a-f01c-4597-9bc2-2e387eef07c8" name="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="10" />
+            <field Id="9725120a-f01c-4597-9bc2-2e387eef07c8" name="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="20" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="73579b77-e52e-478b-9aa9-a30267209c04">
             <field Id="0b9bda8c-b028-41f2-a340-8bc34cdaf080" name="Weight" columnType="Double" persistent="Weight" virtualColumnType="Double" delayedUpdateModifiedOnly="false" />
@@ -53,11 +53,11 @@
           <generalXpObjectHasFields Id="4b4aca50-4d47-4f4d-9997-5520ec4c34ec">
             <field Id="8110471e-6f28-42cd-99a0-afea803d69b3" name="NumberArea" columnType="Int32" persistent="NumberArea" virtualColumnType="Area" logicalType="Area" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
-          <generalXpObjectHasFields Id="000197e9-8c45-47c2-a423-01dd2fa44e69">
-            <field Id="0b20e2da-9ea1-4fc0-b52e-6a278d3b20d2" name="Create" columnType="DateTime" persistent="Create" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
+          <generalXpObjectHasFields Id="ee6518b5-3548-4a40-b325-587699a0729e">
+            <field Id="f3f8b774-7ae5-444a-8923-a91fd562030d" name="Create_Cargo" columnType="DateTime" persistent="Create_Cargo" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
-          <generalXpObjectHasFields Id="359e4080-4962-442f-affa-6016437f732f">
-            <field Id="1a3700d3-8a2e-4a0d-adb4-952a034c2715" name="Delete1" columnType="DateTime" persistent="Delete" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
+          <generalXpObjectHasFields Id="8d069e6b-cb16-4357-a257-a9a29fe54387">
+            <field Id="56b6c1a6-1310-4033-9ddb-2365c8672a89" name="Delete_Cargo" columnType="DateTime" persistent="Delete_Cargo" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
         </fields>
       </xpObject>
@@ -66,10 +66,10 @@
       <xpObject Id="90c0fda1-6db3-4487-8e28-1fb5b85048cb" name="Picket" baseClass="XPLiteObject" userFileName="Picket" designerFileName="Picket.Designer" className="Picket" virtualBaseClass="XPLiteObject" persistent="Picket" virtualName="Picket">
         <fields>
           <generalXpObjectHasFields Id="7f56104f-53ff-40c6-ae6d-1c08ae1cbfa8">
-            <field Id="ae2f4684-630c-4162-aa37-331af9858803" name="Number" columnType="Int32" key="true" persistent="Number" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+            <field Id="ae2f4684-630c-4162-aa37-331af9858803" name="Number" columnType="Int32" key="true" isIdentity="true" persistent="Number" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="db56936e-7daf-457e-af3b-d0b64f296855">
-            <field Id="23b259f7-3d91-4776-8c04-586446fa9024" name="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="10" />
+            <field Id="23b259f7-3d91-4776-8c04-586446fa9024" name="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="20" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="e33d1c3b-5feb-44c6-8224-a5af243a6a60">
             <field Id="530f65b4-6699-421d-9efe-4951e9b64dab" name="NumberArea" columnType="Int32" persistent="NumberArea" virtualColumnType="Area" logicalType="Area" delayedUpdateModifiedOnly="false" />
@@ -81,10 +81,10 @@
       <xpObject Id="0f1a5a57-6284-45f7-b7ec-8e406f3c4b7f" name="Store" baseClass="XPLiteObject" userFileName="Store" designerFileName="Store.Designer" className="Store" virtualBaseClass="XPLiteObject" persistent="Store" virtualName="Store">
         <fields>
           <generalXpObjectHasFields Id="9880305a-42c3-41bd-9b4e-28c3149cde4d">
-            <field Id="e0e8b41b-0740-4af7-b543-b0530b198829" name="Number" columnType="Int32" key="true" persistent="Number" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+            <field Id="e0e8b41b-0740-4af7-b543-b0530b198829" name="Number" columnType="Int32" key="true" isIdentity="true" persistent="Number" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="92c8be1a-7378-40a5-9cf7-69d1534dc4ea">
-            <field Id="ec7b06c9-40f4-410e-aed3-5f715b501b6e" name="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="10" />
+            <field Id="ec7b06c9-40f4-410e-aed3-5f715b501b6e" name="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="20" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -97,6 +97,110 @@
             <collectionField Id="1d7640f3-1892-4895-bfad-caf1f2f98e86" name="Areas" />
           </xpObjectHasCollectionFields>
         </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="6fdf299b-04b2-4038-a6fc-62231b56655d">
+      <xpObject Id="22020e1d-02e3-45f5-9084-90cbfb481a03" name="AuditDataItemPersistent" baseClass="XPCustomObject" userFileName="AuditDataItemPersistent" designerFileName="AuditDataItemPersistent.Designer" className="AuditDataItemPersistent" virtualBaseClass="XPCustomObject" persistent="AuditDataItemPersistent" virtualName="AuditDataItemPersistent">
+        <fields>
+          <generalXpObjectHasFields Id="98fb7dd5-6217-4fed-b939-4ba4ed51b99c">
+            <field Id="55c382fa-6949-4f33-9653-8870cb1c1530" name="Oid" columnType="Guid" key="true" isIdentity="true" persistent="Oid" virtualColumnType="Guid" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="394fb7b1-5ab4-4f70-ab07-03f4e8fb6671">
+            <field Id="956c7d76-b710-4727-9fee-8a7b5f8d83cb" name="UserName" persistent="UserName" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="7c4bb12a-aac3-4d65-8df4-a1fe4a0a3021">
+            <field Id="7ae8f9f9-82b5-4e82-a902-6497aab5bc74" name="ModifiedOn" columnType="DateTime" persistent="ModifiedOn" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="f787f924-75c7-4480-b92e-6b5b64ab03c1">
+            <field Id="271387e4-bc42-41ae-b00a-2fa4261cdb8b" name="OperationType" persistent="OperationType" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="a6a35294-c0f3-4828-b858-07b53b105ccf">
+            <field Id="c3dec061-2d15-44a3-b171-ae0a8af0aa44" name="Description" persistent="Description" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="2048" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="384c2a17-21b1-4177-8faf-b366279d0204">
+            <field Id="e5e58043-5e8c-4aa4-ba1d-d695500f7a85" name="AuditedObject" columnType="Guid" persistent="AuditedObject" virtualColumnType="Guid" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="bb32d4c1-4b12-40db-8f49-fe4ea73aa86d">
+            <field Id="977ff9d2-50ef-4ba4-9dd3-da78d88e6f5f" name="OldObject" columnType="Guid" persistent="OldObject" virtualColumnType="Guid" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="9e70206e-846c-41bd-9f25-3d165a91d496">
+            <field Id="2be609a1-2de2-4a4a-b894-ef14fb1cc83c" name="NewObject" columnType="Guid" persistent="NewObject" virtualColumnType="Guid" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="f38e1287-974c-4063-bd56-172623ff22e2">
+            <field Id="c6cd28b8-4e22-42b7-b59a-41deb3de6c93" name="OldValue" persistent="OldValue" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="1024" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="b9e08bd5-17f7-454d-8a62-f5e0170ef3e7">
+            <field Id="15f31c7f-a017-4bc3-8641-ad337f09be24" name="NewValue" persistent="NewValue" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="1024" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="6d46a930-233d-451e-ad8a-55d59ac4e212">
+            <field Id="4ae899a2-2d49-4918-847f-e4632c90d924" name="PropertyName" persistent="PropertyName" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <indexes>
+          <xpObjectHasIndexes Id="1626d5b4-aec5-4db8-868d-2d607be1d790">
+            <index Id="1ba0b74b-3fd9-42b1-83c2-39a34d03db6a" name="iAuditedObject_AuditDataItemPersistent">
+              <fieldsInIndex>
+                <indexReferencesFields Id="3ae754a0-88dc-4554-ad09-776a469d07fe">
+                  <fieldMoniker Id="e5e58043-5e8c-4aa4-ba1d-d695500f7a85" />
+                </indexReferencesFields>
+              </fieldsInIndex>
+            </index>
+          </xpObjectHasIndexes>
+          <xpObjectHasIndexes Id="8dea2fa3-d4a8-4ef6-b99c-38638c3a9703">
+            <index Id="a73231a4-cad7-4a4b-8b3a-8c3fb284674b" name="iModifiedOn_AuditDataItemPersistent">
+              <fieldsInIndex>
+                <indexReferencesFields Id="4a9ab9df-73c7-419d-b34e-7a41b631bce2">
+                  <fieldMoniker Id="7ae8f9f9-82b5-4e82-a902-6497aab5bc74" />
+                </indexReferencesFields>
+              </fieldsInIndex>
+            </index>
+          </xpObjectHasIndexes>
+          <xpObjectHasIndexes Id="ffb1f96f-0868-47d7-9032-44dced117e4f">
+            <index Id="da7774c0-8bb6-4376-98bd-6d20c00023e1" name="iNewObject_AuditDataItemPersistent">
+              <fieldsInIndex>
+                <indexReferencesFields Id="53abeecd-03db-4a00-8db8-994b89a9cbca">
+                  <fieldMoniker Id="2be609a1-2de2-4a4a-b894-ef14fb1cc83c" />
+                </indexReferencesFields>
+              </fieldsInIndex>
+            </index>
+          </xpObjectHasIndexes>
+          <xpObjectHasIndexes Id="299b4d3b-6e15-4238-b7fa-0ae5911fbcb4">
+            <index Id="e63059d5-adfb-4b01-8172-191e06018334" name="iOldObject_AuditDataItemPersistent">
+              <fieldsInIndex>
+                <indexReferencesFields Id="d5da84bd-691b-438a-8265-11c704c58ac2">
+                  <fieldMoniker Id="977ff9d2-50ef-4ba4-9dd3-da78d88e6f5f" />
+                </indexReferencesFields>
+              </fieldsInIndex>
+            </index>
+          </xpObjectHasIndexes>
+          <xpObjectHasIndexes Id="b5a77236-35e0-4559-a888-8ad6dbc9edd0">
+            <index Id="dfbedb1c-4b03-434b-ada2-fefdd611682f" name="iOperationType_AuditDataItemPersistent">
+              <fieldsInIndex>
+                <indexReferencesFields Id="5eeeb1cf-f343-4eb5-8137-f503cbc81bfe">
+                  <fieldMoniker Id="271387e4-bc42-41ae-b00a-2fa4261cdb8b" />
+                </indexReferencesFields>
+              </fieldsInIndex>
+            </index>
+          </xpObjectHasIndexes>
+          <xpObjectHasIndexes Id="5d96ca59-e59a-42a9-a50e-6294f4edac00">
+            <index Id="2bc011e8-98f9-419e-8efb-0db104acd9dc" name="iUserName_AuditDataItemPersistent">
+              <fieldsInIndex>
+                <indexReferencesFields Id="8ed199ec-c983-4af3-b07d-c7b3b7c9cedf">
+                  <fieldMoniker Id="956c7d76-b710-4727-9fee-8a7b5f8d83cb" />
+                </indexReferencesFields>
+              </fieldsInIndex>
+            </index>
+          </xpObjectHasIndexes>
+        </indexes>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="15ab074c-bf43-481b-b199-40dc94777c9a">
+      <xpObject Id="f388b792-56d5-4acc-b4c6-b3d9bd085fe4" name="History" baseClass="XPCustomObject" userFileName="History" designerFileName="History.Designer" className="History" virtualBaseClass="XPCustomObject" persistent="History" virtualName="History">
+        <fields>
+          <generalXpObjectHasFields Id="d12dccaf-10a3-4091-a0b3-ab3ebc01da92">
+            <field Id="04174726-f668-4b15-b310-8a7ae0b9f5b3" name="Oid" columnType="Guid" key="true" isIdentity="true" persistent="Oid" virtualColumnType="Guid" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
       </xpObject>
     </dataBaseObjectModelHasClasses>
   </classes>

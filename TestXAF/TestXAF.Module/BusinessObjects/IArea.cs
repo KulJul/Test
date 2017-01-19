@@ -7,11 +7,8 @@ namespace TestXAF.Module.BusinessObjects.TestModelCode
     interface IArea
     {
         DevExpress.Xpo.XPCollection<TestXAF.Module.BusinessObjects.TestWork.Cargo> Cargoes { get; }
-        DateTime Create { get; set; }
-        [FieldSize(25)]
-        [ImmediatePostData]
-        [Appearance("MarkUnsafePasswordInRed", "Len(Password) > 0", FontColor = "Red")]
-        DateTime Delete1 { get; set; }
+        DateTime Create_Area { get; set; }
+        DateTime Delete_Area { get; set; }
         string Name { get; set; }
         int Number { get; set; }
         TestXAF.Module.BusinessObjects.TestWork.Store Number_Store { get; set; }

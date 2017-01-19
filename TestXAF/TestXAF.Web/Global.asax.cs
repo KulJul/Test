@@ -9,6 +9,7 @@ using DevExpress.Persistent.BaseImpl;
 using DevExpress.ExpressApp.Security;
 using DevExpress.ExpressApp.Web;
 using DevExpress.Web;
+using DevExpress.Persistent.AuditTrail;
 
 namespace TestXAF.Web {
     public class Global : System.Web.HttpApplication {
@@ -26,6 +27,8 @@ namespace TestXAF.Web {
         protected void Session_Start(Object sender, EventArgs e) {
 		    Tracing.Initialize();
             WebApplication.SetInstance(Session, new TestXAFAspNetApplication());
+
+            AuditTrailService.Instance.ObjectAuditingMode = ObjectAuditingMode.Lightweight;
 			DevExpress.ExpressApp.Web.Templates.DefaultVerticalTemplateContentNew.ClearSizeLimit();
             WebApplication.Instance.SwitchToNewStyle();
             if(ConfigurationManager.ConnectionStrings["ConnectionString"] != null) {

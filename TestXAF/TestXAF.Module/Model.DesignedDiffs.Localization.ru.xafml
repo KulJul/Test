@@ -1,2 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application />
+<Application>
+  <ActionDesign>
+    <Actions>
+      <Action Id="ClearFieldsAction" ToolTip="Обнуление полей" ShortCaption="Обнуление" ConfirmationMessage="Вы хотите обнулить поля?" />
+    </Actions>
+  </ActionDesign>
+</Application>
