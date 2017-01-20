@@ -11,6 +11,7 @@ using DevExpress.Xpo;
 using DevExpress.Data.Filtering;
 using System.Collections.Generic;
 using System.ComponentModel;
+using DevExpress.Persistent.Validation;
 namespace TestXAF.Module.BusinessObjects.TestWork
 {
 
@@ -18,6 +19,7 @@ namespace TestXAF.Module.BusinessObjects.TestWork
     {
         int fNumber;
         [Key(true)]
+        [Browsable(false)]
         public int Number
         {
             get { return fNumber; }
@@ -25,6 +27,7 @@ namespace TestXAF.Module.BusinessObjects.TestWork
         }
         string fName;
         [Size(20)]
+        [RuleRegularExpression(@"^\d+$", CustomMessageTemplate = "Введите число")]
         public string Name
         {
             get { return fName; }

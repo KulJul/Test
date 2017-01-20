@@ -116,10 +116,6 @@
       <DependentUpon>Cargo.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\TestModelCode\ConnectionHelper.cs" />
-    <Compile Include="BusinessObjects\IArea.cs" />
-    <Compile Include="BusinessObjects\ICargo.cs" />
-    <Compile Include="BusinessObjects\IStore.cs" />
-    <Compile Include="BusinessObjects\IPicket.cs" />
     <Compile Include="BusinessObjects\TestModelCode\Picket.cs" />
     <Compile Include="BusinessObjects\TestModelCode\Picket.Designer.cs">
       <DependentUpon>Picket.cs</DependentUpon>
@@ -133,6 +129,12 @@
     </Compile>
     <Compile Include="Controllers\ClearFields.Designer.cs">
       <DependentUpon>ClearFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\CreatePicket.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\CreatePicket.Designer.cs">
+      <DependentUpon>CreatePicket.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\FindFieldData.cs">
       <SubType>Component</SubType>
@@ -152,6 +154,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Controllers\ClearFields.resx">
       <DependentUpon>ClearFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\CreatePicket.resx">
+      <DependentUpon>CreatePicket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controllers\FindFieldData.resx">
       <DependentUpon>FindFieldData.cs</DependentUpon>

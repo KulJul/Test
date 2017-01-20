@@ -5,4 +5,33 @@
       <Action Id="ClearFieldsAction" ToolTip="Обнуление полей" ShortCaption="Обнуление" ConfirmationMessage="Вы хотите обнулить поля?" />
     </Actions>
   </ActionDesign>
+  <BOModel>
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Area">
+      <OwnMembers>
+        <Member Name="Create_Area" DisplayFormat="{0: ddd, dd MMMM yyyy hh:mm:ss tt}" />
+        <Member Name="Delete_Area" DisplayFormat="{0: ddd, dd MMMM yyyy hh:mm:ss tt}" />
+      </OwnMembers>
+    </Class>
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Cargo" ObjectCaptionFormat="{0:Name} from the {0:NumberArea}">
+      <OwnMembers>
+        <Member Name="Create_Cargo" DisplayFormat="{0: ddd, dd MMMM yyyy hh:mm:ss tt}" />
+        <Member Name="Delete_Cargo" DisplayFormat="{0: ddd, dd MMMM yyyy hh:mm:ss tt}" />
+      </OwnMembers>
+    </Class>
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Picket" ObjectCaptionFormat="{0:Name} from the {0:NumberArea}" />
+  </BOModel>
+  <Views>
+    <DetailView Id="Area_DetailView">
+      <Items>
+        <PropertyEditor Id="Create_Area" DisplayFormat="{0:g}" />
+        <PropertyEditor Id="Delete_Area" DisplayFormat="{0:g}" />
+      </Items>
+    </DetailView>
+    <ListView Id="Area_ListView">
+      <Columns>
+        <ColumnInfo Id="Create_Area" DisplayFormat="{0:g}" />
+        <ColumnInfo Id="Delete_Area" DisplayFormat="{0:g}" />
+      </Columns>
+    </ListView>
+  </Views>
 </Application>

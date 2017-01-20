@@ -18,6 +18,7 @@ namespace TestXAF.Module.BusinessObjects.TestWork
     {
         int fNumber;
         [Key(true)]
+        [Browsable(false)]
         public int Number
         {
             get { return fNumber; }

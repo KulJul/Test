@@ -9,7 +9,7 @@ using DevExpress.Persistent.Validation;
 namespace TestXAF.Module.BusinessObjects.TestWork
 {
     [DefaultClassOptions, ImageName("Bo_Picket")]
-    public partial class Picket : TestXAF.Module.BusinessObjects.TestModelCode.IPicket
+    public partial class Picket 
     {
         public Picket(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }

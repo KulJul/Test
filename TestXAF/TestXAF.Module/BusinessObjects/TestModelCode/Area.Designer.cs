@@ -11,6 +11,7 @@ using DevExpress.Xpo;
 using DevExpress.Data.Filtering;
 using System.Collections.Generic;
 using System.ComponentModel;
+using DevExpress.ExpressApp.Model;
 namespace TestXAF.Module.BusinessObjects.TestWork
 {
 
@@ -18,6 +19,7 @@ namespace TestXAF.Module.BusinessObjects.TestWork
     {
         int fNumber;
         [Key(true)]
+        [Browsable(false)]
         public int Number
         {
             get { return fNumber; }
@@ -38,12 +40,20 @@ namespace TestXAF.Module.BusinessObjects.TestWork
             set { SetPropertyValue<Store>("Number_Store", ref fNumber_Store, value); }
         }
         DateTime fCreate_Area;
+
+        [ModelDefault("DisplayFormat", "{0: ddd, dd MMMM yyyy hh:mm:ss tt}")]
+        [ModelDefault("EditMask", "ddd, dd MMMM yyyy hh:mm:ss tt")]
+        [ModelDefault("PropertyEditorType", "WinSolution.Module.Win.MyDatePropertyEditor")]
         public DateTime Create_Area
         {
             get { return fCreate_Area; }
             set { SetPropertyValue<DateTime>("Create_Area", ref fCreate_Area, value); }
         }
         DateTime fDelete_Area;
+
+        [ModelDefault("DisplayFormat", "{0: ddd, dd MMMM yyyy hh:mm:ss tt}")]
+        [ModelDefault("EditMask", "ddd, dd MMMM yyyy hh:mm:ss tt")]
+        [ModelDefault("PropertyEditorType", "WinSolution.Module.Win.MyDatePropertyEditor")]
         public DateTime Delete_Area
         {
             get { return fDelete_Area; }

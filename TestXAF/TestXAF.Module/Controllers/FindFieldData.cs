@@ -53,20 +53,13 @@ namespace TestXAF.Module.Controllers
                 e.ShowViewParameters.CreatedView = detailView;
             }
         }
-        /*
-        private void FindFieldData(object sender, EventArgs e)
-        {/*
-            if (View.GetType() == typeof(DetailView))
-            {
-                ClearFieldsAction.Enabled.SetItemValue("EditMode", ((DetailView)View).ViewEditMode == ViewEditMode.Edit);
-                ((DetailView)View).ViewEditModeChanged += new EventHandler<EventArgs>(ClearFieldsController_ViewModeChanged);
-            }*/
-        //}
 
-        /*
-        void ClearFieldsController_ViewModeChanged(object sender, EventArgs e)
+        private void FindFieldData_Activated(object sender, EventArgs e)
         {
-            //ClearFieldsAction.Enabled.SetItemValue("EditMode", ((DetailView)View).ViewEditMode == ViewEditMode.Edit);
-        }*/
+            FindFieldDataAction.Active.SetItemValue("EditMode", View.Caption == "Cargo" || View.Caption == "Area");
+            //FindFieldDataAction.Enabled.SetItemValue("EditMode", View.Caption == "Cargo" || View.Caption == "Area");
+
+        }
+
     }
 }
