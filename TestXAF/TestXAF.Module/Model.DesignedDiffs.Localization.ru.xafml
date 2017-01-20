@@ -3,7 +3,7 @@
   <ActionDesign>
     <Actions>
       <Action Id="ClearFieldsAction" ToolTip="Обнуление полей" ShortCaption="Обнуление" ConfirmationMessage="Вы хотите обнулить поля?" />
-      <Action Id="CreatePicketAction" ConfirmationMessage="Вы ходите создать пикеты автоматически?" />
+      <Action Id="CreatePicketAction" ConfirmationMessage="Вы ходите создать пикеты автоматически?" Caption="Создать пикет" ShortCaption="Создать пикет" ToolTip="Создать пикет" />
     </Actions>
   </ActionDesign>
   <BOModel>

@@ -11,8 +11,11 @@ using DevExpress.ExpressApp.Model.NodeGenerators;
 using DevExpress.ExpressApp.SystemModule;
 using DevExpress.ExpressApp.Templates;
 using DevExpress.ExpressApp.Utils;
+using DevExpress.ExpressApp.Xpo;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.Validation;
+using DevExpress.Xpo;
+using TestXAF.Module.BusinessObjects.TestWork;
 
 namespace TestXAF.Module.Controllers
 {
@@ -40,43 +43,71 @@ namespace TestXAF.Module.Controllers
             base.OnDeactivated();
         }
 
+        // Контроллер для автоматического добавления пикетов 
         private void CreatePicketAction_Execute(object sender, SimpleActionExecuteEventArgs e)
         {
-            var currentObjectKey = View.ObjectSpace.GetKeyValue(View.CurrentObject);
-            var key = Convert.ToInt32(currentObjectKey);
-            var name = View.GetCurrentObjectCaption();
-
-            var nameSplit = name.Split('-');
-            if (nameSplit.Length >= 1)
+            try
             {
-                try
+                var session = ((XPObjectSpace)this.ObjectSpace).Session;
+
+                var currentObjectKey = View.ObjectSpace.GetKeyValue(View.CurrentObject);
+                var keyArea = currentObjectKey.ToString();
+                var name = View.GetCurrentObjectCaption();
+
+                var formatStrPicket = FormatParametr(name, keyArea, session);
+
+                if (formatStrPicket.Length > 0)
                 {
-                    var nameElements = "";
+                    var dtNames = "INSERT INTO Picket (Name, NumberArea) VALUES  " + formatStrPicket;
 
-                    if (nameSplit.Length == 1)
-                    {
-                        nameElements += string.Format(" ({0}, {1}),", nameSplit[0], key);
-                    }
-                    else
-                    {
-                        for (var count = Convert.ToInt32(nameSplit[0]); count <= Convert.ToInt32(nameSplit[1]); count++)
-                        {
-                            nameElements += string.Format(" ({0}, {1}),", count, key);
-                        }
-                    }
+                    var resultDt = session.ExecuteNonQuery(dtNames);
 
-                    nameElements = nameElements.Trim(',');
-
-                    var dtNames = "INSERT INTO Picket (Name, NumberArea) VALUES  " + nameElements;
-
-                    //var resultDt = Session.ExecuteNonQuery(dtNames);
+                    if (resultDt < 1)
+                        throw new Exception();
                 }
-                catch (Exception ex)
-                {
 
-                }
+            }
+            catch (Exception ex)
+            {
+
             }
         }
+
+
+        private string FormatParametr(string name, string keyArea, Session session)
+        {
+
+            var nameElements = "";
+            var nameSplit = name.Split('-');
+
+            if (nameSplit.Length >= 1)
+            {
+                var namePicketFirst = nameSplit[0];
+
+
+                if (nameSplit.Length == 1)
+                {
+                    var pickets = new XPCollection<Picket>(session, CriteriaOperator.Parse("Name == " + namePicketFirst));
+
+                    nameElements += (pickets.Count == 0) ? string.Format(" ({0}, {1}),", namePicketFirst, keyArea) : "";
+                }
+                else
+                {
+                    for (var countPicket = Convert.ToInt32(namePicketFirst); countPicket <= Convert.ToInt32(nameSplit[1]); countPicket++)
+                    {
+                        var pickets = new XPCollection<Picket>(session, CriteriaOperator.Parse("Name == " + countPicket));
+
+                        nameElements += (pickets.Count == 0) ? string.Format(" ({0}, {1}),", countPicket, keyArea) : "";
+                    }
+                }
+
+                nameElements = (nameElements.Length > 0) ? nameElements.Trim(',') : "";
+            }
+
+            return (nameElements.Length > 0) ? nameElements : "";
+        }
+
+
 
         private void CreatePicket_Activated(object sender, EventArgs e)
         {
