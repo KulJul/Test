@@ -12,6 +12,7 @@ using DevExpress.Data.Filtering;
 using System.Collections.Generic;
 using System.ComponentModel;
 using DevExpress.ExpressApp.Model;
+using DevExpress.ExpressApp.DC;
 namespace TestXAF.Module.BusinessObjects.TestWork
 {
 

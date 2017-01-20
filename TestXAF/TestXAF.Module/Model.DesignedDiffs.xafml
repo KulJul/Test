@@ -6,7 +6,7 @@
     </Actions>
   </ActionDesign>
   <BOModel>
-    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Area" DefaultListViewMasterDetailMode="ListViewOnly" DefaultListViewAllowEdit="True" ImageName="Area" />
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Area" DefaultListViewMasterDetailMode="ListViewOnly" DefaultListViewAllowEdit="True" ImageName="Area" DefaultDetailViewImage="Area" DefaultListViewImage="Area" />
     <Class Name="TestXAF.Module.BusinessObjects.TestWork.Cargo" ImageName="Cargo" />
     <Class Name="TestXAF.Module.BusinessObjects.TestWork.Picket" ImageName="Picket" />
     <Class Name="TestXAF.Module.BusinessObjects.TestWork.Store" ImageName="Store" />

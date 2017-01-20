@@ -8,6 +8,7 @@ using DevExpress.Persistent.Validation;
 using DevExpress.ExpressApp.ConditionalAppearance;
 using System.Drawing;
 using DevExpress.Persistent.BaseImpl;
+using DevExpress.ExpressApp.DC;
 
 namespace TestXAF.Module.BusinessObjects.TestWork
 {

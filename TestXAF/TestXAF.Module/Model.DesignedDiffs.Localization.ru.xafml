@@ -3,22 +3,25 @@
   <ActionDesign>
     <Actions>
       <Action Id="ClearFieldsAction" ToolTip="Обнуление полей" ShortCaption="Обнуление" ConfirmationMessage="Вы хотите обнулить поля?" />
+      <Action Id="CreatePicketAction" ConfirmationMessage="Вы ходите создать пикеты автоматически?" />
     </Actions>
   </ActionDesign>
   <BOModel>
-    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Area">
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Area" Caption="Площадка">
       <OwnMembers>
         <Member Name="Create_Area" DisplayFormat="{0: ddd, dd MMMM yyyy hh:mm:ss tt}" />
         <Member Name="Delete_Area" DisplayFormat="{0: ddd, dd MMMM yyyy hh:mm:ss tt}" />
+        <Member Name="Pickets" Caption="Пикет" />
       </OwnMembers>
     </Class>
-    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Cargo" ObjectCaptionFormat="{0:Name} from the {0:NumberArea}">
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Cargo" ObjectCaptionFormat="{0:Name} from the {0:NumberArea}" Caption="Товар">
       <OwnMembers>
         <Member Name="Create_Cargo" DisplayFormat="{0: ddd, dd MMMM yyyy hh:mm:ss tt}" />
         <Member Name="Delete_Cargo" DisplayFormat="{0: ddd, dd MMMM yyyy hh:mm:ss tt}" />
       </OwnMembers>
     </Class>
-    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Picket" ObjectCaptionFormat="{0:Name} from the {0:NumberArea}" />
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Picket" ObjectCaptionFormat="{0:Name} from the {0:NumberArea}" Caption="Пикет" />
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Store" Caption="Склад" />
   </BOModel>
   <Views>
     <DetailView Id="Area_DetailView">
@@ -26,6 +29,13 @@
         <PropertyEditor Id="Create_Area" DisplayFormat="{0:g}" />
         <PropertyEditor Id="Delete_Area" DisplayFormat="{0:g}" />
       </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Area" Caption="Площадка" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
     </DetailView>
     <ListView Id="Area_ListView">
       <Columns>
@@ -33,5 +43,23 @@
         <ColumnInfo Id="Delete_Area" DisplayFormat="{0:g}" />
       </Columns>
     </ListView>
+    <DetailView Id="Cargo_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Cargo" Caption="Товар" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Picket_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Picket" Caption="Пикет" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
   </Views>
 </Application>
