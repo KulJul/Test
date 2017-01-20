@@ -3,7 +3,7 @@
   <ActionDesign>
     <Actions>
       <Action Id="ClearFieldsAction" Shortcut="Control+C" PaintStyle="Default" SelectionDependencyType="RequireSingleObject" ImageName="Action_Clear" />
-      <Action Id="CreatePicketAction" Shortcut="Control+C+V" />
+      <Action Id="CreatePicketAction" Shortcut="Control+C+V" ImageName="CreatePicketAction" PaintStyle="Default" ImageMode="UseActionImage" />
     </Actions>
   </ActionDesign>
   <BOModel>
