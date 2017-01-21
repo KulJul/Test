@@ -111,8 +111,12 @@ namespace TestXAF.Module.Controllers
 
         private void CreatePicket_Activated(object sender, EventArgs e)
         {
-            if (View.GetType() == typeof(DetailView))
+            if (View.GetType() == typeof(DetailView) && View.ObjectTypeInfo.Type == typeof(Cargo) &&
+                                                        View.ObjectTypeInfo.Type == typeof(Area) &&
+                                                        View.ObjectTypeInfo.Type == typeof(Picket) &&
+                                                        View.ObjectTypeInfo.Type == typeof(Store))
             {
+
                 var currentObjectKey = View.ObjectSpace.GetKeyValue(View.CurrentObject);
 
                 CreatePicketAction.Active.SetItemValue("EditMode", Convert.ToInt32(currentObjectKey) != 0);
