@@ -13,6 +13,7 @@ using DevExpress.ExpressApp.Templates;
 using DevExpress.ExpressApp.Utils;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.Validation;
+using TestXAF.Module.BusinessObjects.TestWork;
 
 namespace TestXAF.Module.Controllers
 {
@@ -56,8 +57,8 @@ namespace TestXAF.Module.Controllers
 
         private void FindFieldData_Activated(object sender, EventArgs e)
         {
-            FindFieldDataAction.Active.SetItemValue("EditMode", View.Caption == "Cargo" || View.Caption == "Area");
-            //FindFieldDataAction.Enabled.SetItemValue("EditMode", View.Caption == "Cargo" || View.Caption == "Area");
+            FindFieldDataAction.Active.SetItemValue("EditMode", View.ObjectTypeInfo.Type == typeof(Cargo) ||
+                                                                View.ObjectTypeInfo.Type == typeof(Area));
 
         }
 
