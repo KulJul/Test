@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="TestXafSolution">
+  <BOModel>
+    <Class Name="TestXafSolution.Module.BusinessObjects.TestWork.Area">
+      <OwnMembers>
+        <Member Name="Create_Area" DisplayFormat="{0: ddd, dd MMMM yyyy hh:mm:ss tt}" />
+        <Member Name="Delete_Area" DisplayFormat="{0: ddd, dd MMMM yyyy hh:mm:ss tt}" />
+      </OwnMembers>
+    </Class>
+    <Class Name="TestXafSolution.Module.BusinessObjects.TestWork.Cargo">
+      <OwnMembers>
+        <Member Name="Create_Cargo" DisplayFormat="{0: ddd, dd MMMM yyyy hh:mm:ss tt}" />
+        <Member Name="Delete_Cargo" DisplayFormat="{0: ddd, dd MMMM yyyy hh:mm:ss tt}" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="16.2.3.0" IsNewNode="True" />
+  </SchemaModules>
+</Application>
