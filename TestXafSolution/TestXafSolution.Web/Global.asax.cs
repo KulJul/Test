@@ -24,8 +24,11 @@ namespace TestXafSolution.Web {
             DevExpress.ExpressApp.Web.TestScripts.TestScriptsManager.EasyTestEnabled = true;
 #endif
         }
-        protected void Session_Start(Object sender, EventArgs e) {
-		    Tracing.Initialize();
+        protected void Session_Start(Object sender, EventArgs e)
+        {
+            Tracing.LogName = "CustomLogFileWeb";
+            Tracing.Initialize();
+
             WebApplication.SetInstance(Session, new TestXafSolutionAspNetApplication());
 			DevExpress.ExpressApp.Web.Templates.DefaultVerticalTemplateContentNew.ClearSizeLimit();
             WebApplication.Instance.SwitchToNewStyle();

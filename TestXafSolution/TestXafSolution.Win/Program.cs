@@ -22,8 +22,13 @@ namespace TestXafSolution.Win {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             EditModelPermission.AlwaysGranted = System.Diagnostics.Debugger.IsAttached;
-			Tracing.LocalUserAppDataPath = Application.LocalUserAppDataPath;
+            
+
+            Tracing.LogName = "CustomLogFileWin";
+            Tracing.LocalUserAppDataPath = Application.LocalUserAppDataPath;
 			Tracing.Initialize();
+
+
             TestXafSolutionWindowsFormsApplication winApplication = new TestXafSolutionWindowsFormsApplication();
             // Refer to the https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112680.aspx help article for more details on how to provide a custom splash form.
             //winApplication.SplashScreen = new DevExpress.ExpressApp.Win.Utils.DXSplashScreen("YourSplashImage.png");
