@@ -111,7 +111,24 @@
     <Compile Include="BusinessObjects\TestWorkCode\Store.Designer.cs">
       <DependentUpon>Store.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\ClearFields.cs" />
+    <Compile Include="Controllers\ClearFields.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\ClearFields.Designer.cs">
+      <DependentUpon>ClearFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\CreatePicket.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\CreatePicket.Designer.cs">
+      <DependentUpon>CreatePicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\FindFieldData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\FindFieldData.Designer.cs">
+      <DependentUpon>FindFieldData.cs</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="Module.cs">
       <SubType>Component</SubType>
@@ -122,6 +139,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controllers\ClearFields.resx">
+      <DependentUpon>ClearFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\CreatePicket.resx">
+      <DependentUpon>CreatePicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\FindFieldData.resx">
+      <DependentUpon>FindFieldData.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
     <EmbeddedResource Include="Module.resx">
       <SubType>Designer</SubType>

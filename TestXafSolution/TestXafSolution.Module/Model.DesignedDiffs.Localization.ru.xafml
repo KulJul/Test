@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application>
+  <ActionDesign>
+    <Actions>
+      <Action Id="ClearFieldsAction" ConfirmationMessage="Хотите обнулить поля?" ToolTip="Обнулить поля" ShortCaption="Обнулить поля" Caption="Обнулить поля" />
+      <Action Id="CreatePicketAction" ShortCaption="Генерация пикетов" ToolTip="Генерация пикетов" Caption="Генерация пикетов" ConfirmationMessage="Хотите создать пикеты?" />
+      <Action Id="FindFieldDataAction" ShortCaption="Поиск даты" ToolTip="Поиск даты" Caption="Поиск даты" />
+    </Actions>
+  </ActionDesign>
   <BOModel>
     <Class Name="DevExpress.Persistent.BaseImpl.ModelDifferenceAspect">
       <OwnMembers>
