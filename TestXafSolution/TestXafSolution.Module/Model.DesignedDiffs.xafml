@@ -1,18 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="TestXafSolution">
   <BOModel>
-    <Class Name="TestXafSolution.Module.BusinessObjects.TestWork.Area">
+    <Class Name="TestXafSolution.Module.BusinessObjects.TestWork.Area" ImageName="Area">
       <OwnMembers>
         <Member Name="Create_Area" DisplayFormat="{0: ddd, dd MMMM yyyy hh:mm:ss tt}" />
         <Member Name="Delete_Area" DisplayFormat="{0: ddd, dd MMMM yyyy hh:mm:ss tt}" />
       </OwnMembers>
     </Class>
-    <Class Name="TestXafSolution.Module.BusinessObjects.TestWork.Cargo">
+    <Class Name="TestXafSolution.Module.BusinessObjects.TestWork.Cargo" ImageName="Cargo">
       <OwnMembers>
         <Member Name="Create_Cargo" DisplayFormat="{0: ddd, dd MMMM yyyy hh:mm:ss tt}" />
         <Member Name="Delete_Cargo" DisplayFormat="{0: ddd, dd MMMM yyyy hh:mm:ss tt}" />
       </OwnMembers>
     </Class>
+    <Class Name="TestXafSolution.Module.BusinessObjects.TestWork.Picket" ImageName="Picket" />
+    <Class Name="TestXafSolution.Module.BusinessObjects.TestWork.Store" ImageName="Store" />
   </BOModel>
   <Options>
     <LayoutManagerOptions RequiredFieldMark="*" />

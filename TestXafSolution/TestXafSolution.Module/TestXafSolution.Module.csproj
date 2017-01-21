@@ -111,6 +111,7 @@
     <Compile Include="BusinessObjects\TestWorkCode\Store.Designer.cs">
       <DependentUpon>Store.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\ClearFields.cs" />
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="Module.cs">
       <SubType>Component</SubType>
@@ -147,6 +148,10 @@
   <ItemGroup>
     <None Include="FunctionalTests\sample.ets" />
     <None Include="Images\ReadMe.txt" />
+    <EmbeddedResource Include="Model.DesignedDiffs.Localization.ru.xafml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -159,8 +164,6 @@
     <EmbeddedResource Include="Images\Picket.png" />
     <EmbeddedResource Include="Images\Store _32x32.png" />
     <EmbeddedResource Include="Images\Store.jpg" />
-    <EmbeddedResource Include="Images\Store.png" />
-    <EmbeddedResource Include="Images\Store_32x32.png" />
     <Content Include="Welcome.html" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
