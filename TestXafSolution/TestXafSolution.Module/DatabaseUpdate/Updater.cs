@@ -73,8 +73,8 @@ namespace TestXafSolution.Module.DatabaseUpdate {
                 adminRoleIvanov = ObjectSpace.CreateObject<PermissionPolicyRole>();
                 adminRoleIvanov.Name = "RoleIvanov";
             }
-
-            sampleUserIvanov.Roles.Add(adminRoleIvanov);
+            
+            sampleUserIvanov.Roles.Add(defaultRole);
 
             ObjectSpace.CommitChanges();
 

@@ -5,7 +5,7 @@
       <xpObject Id="372a7705-cd9f-4a31-a7e1-dc55d869a879" name="Area" baseClass="XPLiteObject" userFileName="Area" designerFileName="Area.Designer" className="Area" virtualBaseClass="XPLiteObject" persistent="Area" virtualName="Area">
         <fields>
           <generalXpObjectHasFields Id="559481be-efc7-4f87-a77e-1549e7a35ff9">
-            <field Id="682575bb-3099-4abc-8c26-a0966d493215" name="Number" columnType="Int32" key="true" isIdentity="true" persistent="Number" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+            <field Id="682575bb-3099-4abc-8c26-a0966d493215" name="Number" columnType="Int32" key="true" isIdentity="true" persistent="Number" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" customAttributes="Browsable(false)" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="3bfa4134-11af-4acc-bb81-97948159c099">
             <field Id="1f9ec060-ef9d-43d3-b8db-c605425cfb6d" name="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="20" />
@@ -14,10 +14,10 @@
             <field Id="5a1ea270-5e76-42cc-b729-b5ea67efdab1" name="Number_Store" columnType="Int32" persistent="Number_Store" virtualColumnType="Store" logicalType="Store" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="0263882d-d556-4e07-9149-73dff39fa742">
-            <field Id="7d073d26-1920-4f2c-aabd-e70f74ddde9b" name="Create_Area" columnType="DateTime" persistent="Create_Area" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
+            <field Id="7d073d26-1920-4f2c-aabd-e70f74ddde9b" name="Create_Area" columnType="DateTime" persistent="Create_Area" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.ExpressApp.Model.ModelDefault(&quot;DisplayFormat&quot;, &quot;{0: ddd, dd MMMM yyyy hh:mm:ss tt}&quot;), DevExpress.ExpressApp.Model.ModelDefault(&quot;EditMask&quot;, &quot;ddd, dd MMMM yyyy hh:mm:ss tt&quot;), DevExpress.ExpressApp.Model.ModelDefault(&quot;PropertyEditorType&quot;, &quot;WinSolution.Module.Win.MyDatePropertyEditor&quot;)" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="d751f7a7-721f-49bc-9e3e-9e870653e382">
-            <field Id="be8fa9e4-8bfc-430d-8850-7e3d2623df40" name="Delete_Area" columnType="DateTime" persistent="Delete_Area" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
+            <field Id="be8fa9e4-8bfc-430d-8850-7e3d2623df40" name="Delete_Area" columnType="DateTime" persistent="Delete_Area" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.ExpressApp.Model.ModelDefault(&quot;DisplayFormat&quot;, &quot;{0: ddd, dd MMMM yyyy hh:mm:ss tt}&quot;), DevExpress.ExpressApp.Model.ModelDefault(&quot;EditMask&quot;, &quot;ddd, dd MMMM yyyy hh:mm:ss tt&quot;), DevExpress.ExpressApp.Model.ModelDefault(&quot;PropertyEditorType&quot;, &quot;WinSolution.Module.Win.MyDatePropertyEditor&quot;)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -42,7 +42,7 @@
       <xpObject Id="2867d6cc-aaf6-431c-bcbc-b577cd37761a" name="Cargo" baseClass="XPLiteObject" userFileName="Cargo" designerFileName="Cargo.Designer" className="Cargo" virtualBaseClass="XPLiteObject" persistent="Cargo" virtualName="Cargo">
         <fields>
           <generalXpObjectHasFields Id="85c5b5ae-b159-4f99-aa65-53c33bda31f1">
-            <field Id="8b53a963-b7d1-4a9c-bc86-264202201d39" name="Number" columnType="Int32" key="true" isIdentity="true" persistent="Number" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+            <field Id="8b53a963-b7d1-4a9c-bc86-264202201d39" name="Number" columnType="Int32" key="true" isIdentity="true" persistent="Number" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" customAttributes="Browsable(false)" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="b53c9ba3-e856-4d75-8008-b42402c5d3ec">
             <field Id="48917b77-4373-445b-9e65-5f9e72418507" name="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="20" />
@@ -54,10 +54,10 @@
             <field Id="0f686153-1152-4925-a1ec-e55757a0ef6d" name="NumberArea" columnType="Int32" persistent="NumberArea" virtualColumnType="Area" logicalType="Area" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="7fbe35fa-1594-4313-8622-283f8264bcf1">
-            <field Id="925741a1-a14e-404d-9a6f-61113b50c8e0" name="Create_Cargo" columnType="DateTime" persistent="Create_Cargo" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
+            <field Id="925741a1-a14e-404d-9a6f-61113b50c8e0" name="Create_Cargo" columnType="DateTime" persistent="Create_Cargo" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.ExpressApp.Model.ModelDefault(&quot;DisplayFormat&quot;, &quot;{0: ddd, dd MMMM yyyy hh:mm:ss tt}&quot;), DevExpress.ExpressApp.Model.ModelDefault(&quot;EditMask&quot;, &quot;ddd, dd MMMM yyyy hh:mm:ss tt&quot;), DevExpress.ExpressApp.Model.ModelDefault(&quot;PropertyEditorType&quot;, &quot;WinSolution.Module.Win.MyDatePropertyEditor&quot;)" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="37d21e59-42a4-4102-aac6-2711b15e4f22">
-            <field Id="7e9fcb1c-f08f-4b94-99ca-b1cef9e18d78" name="Delete_Cargo" columnType="DateTime" persistent="Delete_Cargo" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
+            <field Id="7e9fcb1c-f08f-4b94-99ca-b1cef9e18d78" name="Delete_Cargo" columnType="DateTime" persistent="Delete_Cargo" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.ExpressApp.Model.ModelDefault(&quot;DisplayFormat&quot;, &quot;{0: ddd, dd MMMM yyyy hh:mm:ss tt}&quot;), DevExpress.ExpressApp.Model.ModelDefault(&quot;EditMask&quot;, &quot;ddd, dd MMMM yyyy hh:mm:ss tt&quot;), DevExpress.ExpressApp.Model.ModelDefault(&quot;PropertyEditorType&quot;, &quot;WinSolution.Module.Win.MyDatePropertyEditor&quot;)" />
           </generalXpObjectHasFields>
         </fields>
       </xpObject>
@@ -66,7 +66,7 @@
       <xpObject Id="64272442-014f-4aa7-a0bf-15f22262d4fe" name="Picket" baseClass="XPLiteObject" userFileName="Picket" designerFileName="Picket.Designer" className="Picket" virtualBaseClass="XPLiteObject" persistent="Picket" virtualName="Picket">
         <fields>
           <generalXpObjectHasFields Id="81a8d572-7b3e-46a9-9658-806a70655245">
-            <field Id="1f255109-a41f-41be-abb1-eeeea162aac8" name="Number" columnType="Int32" key="true" isIdentity="true" persistent="Number" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+            <field Id="1f255109-a41f-41be-abb1-eeeea162aac8" name="Number" columnType="Int32" key="true" isIdentity="true" persistent="Number" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" customAttributes="Browsable(false)" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="e791579a-7916-4380-86ec-93a21ad60d4e">
             <field Id="21f19383-9a14-414a-a2f0-b4021126f35b" name="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="20" />
@@ -81,7 +81,7 @@
       <xpObject Id="4b909908-1066-4c56-8e97-cc59c6eef685" name="Store" baseClass="XPLiteObject" userFileName="Store" designerFileName="Store.Designer" className="Store" virtualBaseClass="XPLiteObject" persistent="Store" virtualName="Store">
         <fields>
           <generalXpObjectHasFields Id="824128ee-72f9-46c5-b644-91492e1bc3e6">
-            <field Id="73d5a9ac-0ad7-42d6-ac67-0ec71f249056" name="Number" columnType="Int32" key="true" isIdentity="true" persistent="Number" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+            <field Id="73d5a9ac-0ad7-42d6-ac67-0ec71f249056" name="Number" columnType="Int32" key="true" isIdentity="true" persistent="Number" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" customAttributes="Browsable(false)" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="60537063-98b5-4072-a116-d8bd7ebaf7a2">
             <field Id="12672e97-3a4d-4eb8-a965-884ac605629c" name="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="20" />

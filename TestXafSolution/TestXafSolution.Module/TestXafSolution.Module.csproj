@@ -123,6 +123,12 @@
     <Compile Include="Controllers\CreatePicket.Designer.cs">
       <DependentUpon>CreatePicket.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\FilterController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\FilterController.Designer.cs">
+      <DependentUpon>FilterController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\FindFieldData.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -188,7 +194,6 @@
     <EmbeddedResource Include="Images\Cargo.png" />
     <EmbeddedResource Include="Images\CreatePicketAction.png" />
     <EmbeddedResource Include="Images\Picket.png" />
-    <EmbeddedResource Include="Images\Store _32x32.png" />
     <EmbeddedResource Include="Images\Store.jpg" />
     <Content Include="Welcome.html" />
   </ItemGroup>

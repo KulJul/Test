@@ -11,8 +11,6 @@ using DevExpress.Xpo;
 using DevExpress.Data.Filtering;
 using System.Collections.Generic;
 using System.ComponentModel;
-using DevExpress.ExpressApp.Model;
-
 namespace TestXafSolution.Module.BusinessObjects.TestWork
 {
 
@@ -46,19 +44,15 @@ namespace TestXafSolution.Module.BusinessObjects.TestWork
             get { return fNumberArea; }
             set { SetPropertyValue<Area>("NumberArea", ref fNumberArea, value); }
         }
-        [ModelDefault("DisplayFormat", "{0: ddd, dd MMMM yyyy hh:mm:ss tt}")]
-        [ModelDefault("EditMask", "ddd, dd MMMM yyyy hh:mm:ss tt")]
-        [ModelDefault("PropertyEditorType", "WinSolution.Module.Win.MyDatePropertyEditor")]
         DateTime fCreate_Cargo;
+        [DevExpress.ExpressApp.Model.ModelDefault("DisplayFormat", "{0: ddd, dd MMMM yyyy hh:mm:ss tt}"), DevExpress.ExpressApp.Model.ModelDefault("EditMask", "ddd, dd MMMM yyyy hh:mm:ss tt"), DevExpress.ExpressApp.Model.ModelDefault("PropertyEditorType", "WinSolution.Module.Win.MyDatePropertyEditor")]
         public DateTime Create_Cargo
         {
             get { return fCreate_Cargo; }
             set { SetPropertyValue<DateTime>("Create_Cargo", ref fCreate_Cargo, value); }
         }
-        [ModelDefault("DisplayFormat", "{0: ddd, dd MMMM yyyy hh:mm:ss tt}")]
-        [ModelDefault("EditMask", "ddd, dd MMMM yyyy hh:mm:ss tt")]
-        [ModelDefault("PropertyEditorType", "WinSolution.Module.Win.MyDatePropertyEditor")]
         DateTime fDelete_Cargo;
+        [DevExpress.ExpressApp.Model.ModelDefault("DisplayFormat", "{0: ddd, dd MMMM yyyy hh:mm:ss tt}"), DevExpress.ExpressApp.Model.ModelDefault("EditMask", "ddd, dd MMMM yyyy hh:mm:ss tt"), DevExpress.ExpressApp.Model.ModelDefault("PropertyEditorType", "WinSolution.Module.Win.MyDatePropertyEditor")]
         public DateTime Delete_Cargo
         {
             get { return fDelete_Cargo; }

@@ -6,6 +6,7 @@ using System.ComponentModel;
 using DevExpress.Persistent.Base;
 using DevExpress.ExpressApp.ConditionalAppearance;
 using DevExpress.Persistent.Validation;
+using DevExpress.ExpressApp.Model;
 
 namespace TestXafSolution.Module.BusinessObjects.TestWork
 {
