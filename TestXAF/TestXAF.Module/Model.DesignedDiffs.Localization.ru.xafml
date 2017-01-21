@@ -1,2 +1,94 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application />
+<Application>
+  <ActionDesign>
+    <Actions>
+      <Action Id="ClearFieldsAction" ToolTip="Обнуление полей" ShortCaption="Обнуление" ConfirmationMessage="Вы хотите обнулить поля?" />
+      <Action Id="CreatePicketAction" ConfirmationMessage="Вы ходите создать пикеты автоматически?" Caption="Создать пикет" ShortCaption="Создать пикет" ToolTip="Создать пикет" />
+    </Actions>
+  </ActionDesign>
+  <BOModel>
+    <Class Name="DevExpress.Persistent.BaseImpl.ModelDifferenceAspect">
+      <OwnMembers>
+        <Member Name="Name" Caption="Название" />
+      </OwnMembers>
+    </Class>
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Area" Caption="Площадка">
+      <OwnMembers>
+        <Member Name="Create_Area" DisplayFormat="{0: ddd, dd MMMM yyyy hh:mm:ss tt}" Caption="Дата создания площадки" />
+        <Member Name="Delete_Area" DisplayFormat="{0: ddd, dd MMMM yyyy hh:mm:ss tt}" Caption="Дата удаления площадки" />
+        <Member Name="Name" Caption="Название" />
+        <Member Name="Number" Caption="Номер" />
+        <Member Name="Number_Store" Caption="Номер склада" />
+        <Member Name="Pickets" Caption="Пикет" />
+      </OwnMembers>
+    </Class>
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Cargo" ObjectCaptionFormat="{0:Name} from the {0:NumberArea}" Caption="Товар">
+      <OwnMembers>
+        <Member Name="Create_Cargo" DisplayFormat="{0: ddd, dd MMMM yyyy hh:mm:ss tt}" Caption="Дата поставки груза" />
+        <Member Name="Delete_Cargo" DisplayFormat="{0: ddd, dd MMMM yyyy hh:mm:ss tt}" Caption="Дата отправки груза" />
+        <Member Name="Name" Caption="Название" />
+        <Member Name="Number" Caption="Номер" />
+        <Member Name="NumberArea" Caption="Название площадки" />
+        <Member Name="Weight" Caption="Вес" />
+      </OwnMembers>
+    </Class>
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Picket" ObjectCaptionFormat="{0:Name} from the {0:NumberArea}" Caption="Пикет">
+      <OwnMembers>
+        <Member Name="Name" Caption="Название" />
+        <Member Name="Number" Caption="Номер" />
+        <Member Name="NumberArea" Caption="Название площадки" />
+      </OwnMembers>
+    </Class>
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Store" Caption="Склад">
+      <OwnMembers>
+        <Member Name="Name" Caption="Название" />
+        <Member Name="Number" Caption="Номер" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Views>
+    <DetailView Id="Area_DetailView">
+      <Items>
+        <PropertyEditor Id="Create_Area" DisplayFormat="{0:g}" Caption="Дата создания площадки" />
+        <PropertyEditor Id="Delete_Area" DisplayFormat="{0:g}" Caption="Дата удаления площадки" />
+        <PropertyEditor Id="Number_Store" Caption="Номер склада" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Area" Caption="Площадка" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Area_ListView">
+      <Columns>
+        <ColumnInfo Id="Create_Area" DisplayFormat="{0:g}" />
+        <ColumnInfo Id="Delete_Area" DisplayFormat="{0:g}" Caption="Дата удаления площадки" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Cargo_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Cargo" Caption="Товар" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="ModelDifference_Aspects_ListView">
+      <Columns>
+        <ColumnInfo Id="DisplayName" Caption="Название" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Picket_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Picket" Caption="Пикет" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

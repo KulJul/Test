@@ -2,6 +2,7 @@
 <Application Title="TestXAF">
   <ActionDesign>
     <Actions>
+<<<<<<< .merge_file_a07388
       <Action Id="ClearFieldsAction" ToolTip="Clear fields" Shortcut="Control+C" ConfirmationMessage="Are you sure?" SelectionDependencyType="RequireSingleObject" />
     </Actions>
     <ActionToContainerMapping>
@@ -15,6 +16,17 @@
   </ActionDesign>
   <BOModel>
     <Class Name="TestXAF.Module.BusinessObjects.TestWork.Store" ObjectCaptionFormat="{0}: FullName из {0: Store}" ImageName="Store" />
+=======
+      <Action Id="ClearFieldsAction" Shortcut="Control+C" PaintStyle="Default" SelectionDependencyType="RequireSingleObject" ImageName="Action_Clear" />
+      <Action Id="CreatePicketAction" Shortcut="Control+C+V" ImageName="CreatePicketAction" PaintStyle="Default" ImageMode="UseActionImage" />
+    </Actions>
+  </ActionDesign>
+  <BOModel>
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Area" DefaultListViewMasterDetailMode="ListViewOnly" DefaultListViewAllowEdit="True" ImageName="Area" DefaultDetailViewImage="Area" DefaultListViewImage="Area" />
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Cargo" ImageName="Cargo" />
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Picket" ImageName="Picket" />
+    <Class Name="TestXAF.Module.BusinessObjects.TestWork.Store" ImageName="Store" />
+>>>>>>> .merge_file_a10660
   </BOModel>
   <Options>
     <LayoutManagerOptions RequiredFieldMark="*" />

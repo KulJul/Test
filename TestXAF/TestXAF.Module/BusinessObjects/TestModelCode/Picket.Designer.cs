@@ -11,20 +11,23 @@ using DevExpress.Xpo;
 using DevExpress.Data.Filtering;
 using System.Collections.Generic;
 using System.ComponentModel;
+using DevExpress.Persistent.Validation;
 namespace TestXAF.Module.BusinessObjects.TestWork
 {
 
     public partial class Picket : XPLiteObject
     {
         int fNumber;
-        [Key]
+        [Key(true)]
+        [Browsable(false)]
         public int Number
         {
             get { return fNumber; }
             set { SetPropertyValue<int>("Number", ref fNumber, value); }
         }
         string fName;
-        [Size(10)]
+        [Size(20)]
+        [RuleRegularExpression(@"^\d+$", CustomMessageTemplate = "Введите число")]
         public string Name
         {
             get { return fName; }

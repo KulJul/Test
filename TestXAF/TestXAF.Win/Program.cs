@@ -7,28 +7,33 @@ using DevExpress.ExpressApp.Win;
 using DevExpress.Persistent.AuditTrail;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
+using TestXAF.Module.BusinessObjects.TestWork;
 
 namespace TestXAF.Win {
-    static class Program {
+    static class Program
+    {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main() {
+        static void Main()
+        {
 #if EASYTEST
             DevExpress.ExpressApp.Win.EasyTest.EasyTestRemotingRegistration.Register();
 #endif
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             EditModelPermission.AlwaysGranted = System.Diagnostics.Debugger.IsAttached;
-			Tracing.LocalUserAppDataPath = Application.LocalUserAppDataPath;
-			Tracing.Initialize();
+            Tracing.LocalUserAppDataPath = Application.LocalUserAppDataPath;
+            Tracing.Initialize();
             TestXAFWindowsFormsApplication winApplication = new TestXAFWindowsFormsApplication();
             // Refer to the https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112680.aspx help article for more details on how to provide a custom splash form.
             //winApplication.SplashScreen = new DevExpress.ExpressApp.Win.Utils.DXSplashScreen("YourSplashImage.png");
-            AuditTrailService.Instance.ObjectAuditingMode = ObjectAuditingMode.Full;
-            SecurityAdapterHelper.Enable();
-            if(ConfigurationManager.ConnectionStrings["ConnectionString"] != null) {
+
+            AuditTrailService.Instance.ObjectAuditingMode = ObjectAuditingMode.Lightweight;
+
+            if (ConfigurationManager.ConnectionStrings["ConnectionString"] != null)
+            {
                 winApplication.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             }
 #if EASYTEST
@@ -36,23 +41,23 @@ namespace TestXAF.Win {
                 winApplication.ConnectionString = ConfigurationManager.ConnectionStrings["EasyTestConnectionString"].ConnectionString;
             }
 #endif
-            if(System.Diagnostics.Debugger.IsAttached && winApplication.CheckCompatibilityType == CheckCompatibilityType.DatabaseSchema) {
+            if (System.Diagnostics.Debugger.IsAttached && winApplication.CheckCompatibilityType == CheckCompatibilityType.DatabaseSchema)
+            {
                 winApplication.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways;
             }
-            try {
+            try
+            {
                 winApplication.Setup();
                 winApplication.Start();
             }
-            catch(Exception e) {
+            catch (Exception e)
+            {
                 winApplication.HandleException(e);
             }
         }
 
-        static void Instance_SaveAuditTrailData(object sender, SaveAuditTrailDataEventArgs e)
-        {
-            //Save the data passed as the e.AuditTrailDataItems parameter 
-            //Disable the default storing procedure if it is necessary 
-            e.Handled = true;
-        }
+
     }
+
+
 }

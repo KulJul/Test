@@ -11,20 +11,23 @@ using DevExpress.Xpo;
 using DevExpress.Data.Filtering;
 using System.Collections.Generic;
 using System.ComponentModel;
+using DevExpress.ExpressApp.Model;
+using DevExpress.ExpressApp.DC;
 namespace TestXAF.Module.BusinessObjects.TestWork
 {
 
     public partial class Cargo : XPLiteObject
     {
         int fNumber;
-        [Key]
+        [Key(true)]
+        [Browsable(false)]
         public int Number
         {
             get { return fNumber; }
             set { SetPropertyValue<int>("Number", ref fNumber, value); }
         }
         string fName;
-        [Size(10)]
+        [Size(20)]
         public string Name
         {
             get { return fName; }
@@ -43,18 +46,25 @@ namespace TestXAF.Module.BusinessObjects.TestWork
             get { return fNumberArea; }
             set { SetPropertyValue<Area>("NumberArea", ref fNumberArea, value); }
         }
-        DateTime fCreate;
-        public DateTime Create
+
+        DateTime fCreate_Cargo;
+        [ModelDefault("DisplayFormat", "{0: ddd, dd MMMM yyyy hh:mm:ss tt}")]
+        [ModelDefault("EditMask", "ddd, dd MMMM yyyy hh:mm:ss tt")]
+        [ModelDefault("PropertyEditorType", "WinSolution.Module.Win.MyDatePropertyEditor")]
+        public DateTime Create_Cargo
         {
-            get { return fCreate; }
-            set { SetPropertyValue<DateTime>("Create", ref fCreate, value); }
+            get { return fCreate_Cargo; }
+            set { SetPropertyValue<DateTime>("Create_Cargo", ref fCreate_Cargo, value); }
         }
-        DateTime fDelete1;
-        [Persistent(@"Delete")]
-        public DateTime Delete1
+
+        DateTime fDelete_Cargo;
+        [ModelDefault("DisplayFormat", "{0: ddd, dd MMMM yyyy hh:mm:ss tt}")]
+        [ModelDefault("EditMask", "ddd, dd MMMM yyyy hh:mm:ss tt")]
+        [ModelDefault("PropertyEditorType", "WinSolution.Module.Win.MyDatePropertyEditor")]
+        public DateTime Delete_Cargo
         {
-            get { return fDelete1; }
-            set { SetPropertyValue<DateTime>("Delete1", ref fDelete1, value); }
+            get { return fDelete_Cargo; }
+            set { SetPropertyValue<DateTime>("Delete_Cargo", ref fDelete_Cargo, value); }
         }
     }
 
