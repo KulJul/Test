@@ -43,19 +43,26 @@ namespace TestXafSolution.Module.Controllers
 
         private void ClearFieldsAction_Execute(object sender, SimpleActionExecuteEventArgs e)
         {
-            foreach (PropertyEditor item in ((DetailView)View).GetItems<PropertyEditor>())
+			try
+			{
+				foreach (PropertyEditor item in ((DetailView)View).GetItems<PropertyEditor>())
+				{
+					if (item.AllowEdit)
+					{
+						try
+						{
+							item.PropertyValue = null;
+						}
+						catch (IntermediateMemberIsNullException)
+						{
+							item.Refresh();
+						}
+					}
+				}
+			}
+            catch (Exception ex)
             {
-                if (item.AllowEdit)
-                {
-                    try
-                    {
-                        item.PropertyValue = null;
-                    }
-                    catch (IntermediateMemberIsNullException)
-                    {
-                        item.Refresh();
-                    }
-                }
+				Tracing.Tracer.LogText(ex.ToString() +  "Action : Clear Fields");
             }
         }
 

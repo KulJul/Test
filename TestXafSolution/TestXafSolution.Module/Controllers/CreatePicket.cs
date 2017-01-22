@@ -57,18 +57,18 @@ namespace TestXafSolution.Module.Controllers
 
                 if (formatStrPicket.Length > 0)
                 {
-                    var dtNames = "INSERT INTO Picket (Name, NumberArea) VALUES  " + formatStrPicket;
+                    var sqlrInsertStr = "INSERT INTO Picket (Name, NumberArea) VALUES  " + formatStrPicket;
 
-                    var resultDt = session.ExecuteNonQuery(dtNames);
+                    var resultDt = session.ExecuteNonQuery(sqlrInsertStr);
 
                     if (resultDt < 1)
-                        throw new Exception();
+                        throw new Exception("Error : " + sqlrInsertStr);
                 }
 
             }
             catch (Exception ex)
             {
-
+				Tracing.Tracer.LogText(ex.ToString() +  "Action : Create Picket Action");
             }
         }
 
@@ -76,7 +76,6 @@ namespace TestXafSolution.Module.Controllers
 
         private string FormatParametr(string name, string keyArea, Session session)
         {
-
             var nameElements = "";
             var nameSplit = name.Split('-');
 
@@ -109,15 +108,22 @@ namespace TestXafSolution.Module.Controllers
 
         private void CreatePicket_Activated(object sender, EventArgs e)
         {
-            if (View.GetType() == typeof(DetailView) && View.ObjectTypeInfo.Type == typeof(Cargo) &&
-                                            View.ObjectTypeInfo.Type == typeof(Area) &&
-                                            View.ObjectTypeInfo.Type == typeof(Picket) &&
-                                            View.ObjectTypeInfo.Type == typeof(Store))
+            try
             {
+				if (View.GetType() == typeof(DetailView) && View.ObjectTypeInfo.Type == typeof(Cargo) &&
+												View.ObjectTypeInfo.Type == typeof(Area) &&
+												View.ObjectTypeInfo.Type == typeof(Picket) &&
+												View.ObjectTypeInfo.Type == typeof(Store))
+				{
 
-                var currentObjectKey = View.ObjectSpace.GetKeyValue(View.CurrentObject);
+					var currentObjectKey = View.ObjectSpace.GetKeyValue(View.CurrentObject);
 
-                CreatePicketAction.Active.SetItemValue("EditMode", Convert.ToInt32(currentObjectKey) != 0);
+					CreatePicketAction.Active.SetItemValue("EditMode", Convert.ToInt32(currentObjectKey) != 0);
+				}
+			}
+            catch (Exception ex)
+            {
+				Tracing.Tracer.LogText(ex.ToString() +  "Action : Create Picket Action");
             }
         }
     }

@@ -43,15 +43,22 @@ namespace TestXafSolution.Module.Controllers
 
         private void FindFieldDataAction_Execute(object sender, ParametrizedActionExecuteEventArgs e)
         {
-            IObjectSpace objectSpace = Application.CreateObjectSpace();
-            string paramValue = e.ParameterCurrentValue as string;
-            object obj = objectSpace.FindObject(((ListView)View).ObjectTypeInfo.Type,
-                CriteriaOperator.Parse(string.Format("Contains([Delete_Area], '{0}')", paramValue)));
-            if (obj != null)
+            try
             {
-                DetailView detailView = Application.CreateDetailView(objectSpace, obj);
-                detailView.ViewEditMode = DevExpress.ExpressApp.Editors.ViewEditMode.Edit;
-                e.ShowViewParameters.CreatedView = detailView;
+				IObjectSpace objectSpace = Application.CreateObjectSpace();
+				string paramValue = e.ParameterCurrentValue as string;
+				object obj = objectSpace.FindObject(((ListView)View).ObjectTypeInfo.Type,
+					CriteriaOperator.Parse(string.Format("Contains([Delete_Area], '{0}')", paramValue)));
+				if (obj != null)
+				{
+					DetailView detailView = Application.CreateDetailView(objectSpace, obj);
+					detailView.ViewEditMode = DevExpress.ExpressApp.Editors.ViewEditMode.Edit;
+					e.ShowViewParameters.CreatedView = detailView;
+				}
+			}
+            catch (Exception ex)
+            {
+				Tracing.Tracer.LogText(ex.ToString() +  "Action : Find Field Data");
             }
         }
 
