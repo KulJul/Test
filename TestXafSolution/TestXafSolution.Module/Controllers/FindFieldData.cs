@@ -48,7 +48,7 @@ namespace TestXafSolution.Module.Controllers
 				IObjectSpace objectSpace = Application.CreateObjectSpace();
 				string paramValue = e.ParameterCurrentValue as string;
 				object obj = objectSpace.FindObject(((ListView)View).ObjectTypeInfo.Type,
-					CriteriaOperator.Parse(string.Format("Contains([Delete_Area], '{0}')", paramValue)));
+					CriteriaOperator.Parse(string.Format("Contains([Name], '{0}')", paramValue)));
 				if (obj != null)
 				{
 					DetailView detailView = Application.CreateDetailView(objectSpace, obj);
@@ -64,8 +64,14 @@ namespace TestXafSolution.Module.Controllers
 
         private void FindFieldData_Activated(object sender, EventArgs e)
         {
-            FindFieldDataAction.Active.SetItemValue("EditMode", View.ObjectTypeInfo.Type == typeof(Cargo) ||
-                                                                View.ObjectTypeInfo.Type == typeof(Area));
+            if (View.GetType() == typeof(ListView))
+            {
+                if (View.ObjectTypeInfo.Type == typeof(Cargo) || View.ObjectTypeInfo.Type == typeof(Area) ||
+                    View.ObjectTypeInfo.Type == typeof(Picket) || View.ObjectTypeInfo.Type == typeof(Store))
+                {
+                    FindFieldDataAction.Enabled.SetItemValue("EditMode", true);
+                }
+            }
         }
     }
 }

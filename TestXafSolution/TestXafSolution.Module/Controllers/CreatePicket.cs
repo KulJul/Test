@@ -110,10 +110,7 @@ namespace TestXafSolution.Module.Controllers
         {
             try
             {
-				if (View.GetType() == typeof(DetailView) && View.ObjectTypeInfo.Type == typeof(Cargo) &&
-												View.ObjectTypeInfo.Type == typeof(Area) &&
-												View.ObjectTypeInfo.Type == typeof(Picket) &&
-												View.ObjectTypeInfo.Type == typeof(Store))
+				if (View.GetType() == typeof(DetailView) && View.ObjectTypeInfo.Type == typeof(Picket))
 				{
 
 					var currentObjectKey = View.ObjectSpace.GetKeyValue(View.CurrentObject);

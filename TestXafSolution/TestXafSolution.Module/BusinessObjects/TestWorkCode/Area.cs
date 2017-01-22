@@ -9,7 +9,6 @@ using DevExpress.Persistent.Base;
 
 namespace TestXafSolution.Module.BusinessObjects.TestWork
 {
-
     [DefaultClassOptions, ImageName("Bo_Area")]
     [Appearance("Delete", TargetItems = "*", Criteria = "Delete_Area > null", BackColor = "MistyRose")]
     [RuleCriteria("Delete_Area >= Create_Area")]
@@ -45,6 +44,7 @@ namespace TestXafSolution.Module.BusinessObjects.TestWork
 
                     if (resultDt < 1)
                         throw new Exception(" Error : " + sqlDelete);
+                    
                 }
 
                 base.OnSaving();

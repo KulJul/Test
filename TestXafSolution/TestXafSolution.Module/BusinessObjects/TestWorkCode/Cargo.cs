@@ -24,10 +24,7 @@ namespace TestXafSolution.Module.BusinessObjects.TestWork
             try
             {
                 var AreaFilter = new XPCollection<Area>(this.Session, CriteriaOperator.Parse("Number == " + this.NumberArea.Number));
-
-                if (AreaFilter.Count > 1)
-                    throw new Exception(" Error : " + "Multiply number area");
-               
+                               
                 foreach (var areaElement in AreaFilter)
                 {
                     if (this.Create_Cargo < areaElement.Create_Area)
