@@ -26,6 +26,7 @@ namespace TestXafSolution.Web {
         }
         protected void Session_Start(Object sender, EventArgs e)
         {
+            //Создания и иниализация файла для логирования с именем CustomLogFileWeb
             Tracing.LogName = "CustomLogFileWeb";
             Tracing.Initialize();
 
@@ -37,8 +38,8 @@ namespace TestXafSolution.Web {
             }
 
 
-            //Логирование
-            AuditTrailService.Instance.ObjectAuditingMode = ObjectAuditingMode.Lightweight;
+            //Логирование (Самое полное)
+            AuditTrailService.Instance.ObjectAuditingMode = ObjectAuditingMode.Full;
 
 
 #if EASYTEST

@@ -25,6 +25,7 @@ namespace TestXafSolution.Module.Controllers
         }
         protected override void OnActivated()
         {
+            //Тк в данной версии XAF (в win приложении) данный элемент работает с ошибками, его нужно отключить
             base.OnActivated();
             this.Active.SetItemValue("Error", false);
         }

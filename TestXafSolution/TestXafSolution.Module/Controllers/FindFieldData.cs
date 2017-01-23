@@ -69,7 +69,6 @@ namespace TestXafSolution.Module.Controllers
                               View.ObjectTypeInfo.Type == typeof(Picket) || View.ObjectTypeInfo.Type == typeof(Store));
 
             this.Active.SetItemValue("EditMode", enableFlag);
-            //FindFieldDataAction.Enabled.SetItemValue("EditMode", enableFlag);
         }
     }
 }

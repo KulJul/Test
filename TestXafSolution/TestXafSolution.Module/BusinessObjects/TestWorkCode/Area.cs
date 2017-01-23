@@ -29,7 +29,6 @@ namespace TestXafSolution.Module.BusinessObjects.TestWork
             if (CargoFilter.Count() != 0)
                 throw new UserFriendlyException(new Exception(" Error : " + "Cargoes is exist on Area"));
 
-
             base.OnDeleting();
         }
 
@@ -40,12 +39,22 @@ namespace TestXafSolution.Module.BusinessObjects.TestWork
             if (this.Pickets.Count() == 0)
                 throw new UserFriendlyException(new Exception(" Error : " + "Pickets is empty"));
 
-            //if (this.Pickets.Count() == 0 && this.)
-            //CheckArea();
-            /*
-            CheckCargo();
+            
+            // Если площадка удаляется, то происходит проверка на существование груза на площадке
 
-            DeletePicket();*/
+            var CargoFilter = new XPCollection<Cargo>(this.Session, CriteriaOperator.Parse("NumberArea == " + this.Number));
+            var PicketFilter = new XPCollection<Picket>(this.Session, CriteriaOperator.Parse("NumberArea == " + this.Number));
+
+            if (this.Delete_Area.CompareTo(default(DateTime)) != 0)
+            {
+                if (CargoFilter.Count() != 0)
+                    throw new UserFriendlyException(new Exception(" Error : " + "Cargoes is exist on Area"));
+            }
+
+            // Проверка площадки на уникальность
+            CheckAreaUniq();
+            
+
 
             base.OnSaving();
         }
@@ -53,18 +62,17 @@ namespace TestXafSolution.Module.BusinessObjects.TestWork
 
 
         // Проверка площадки на уникальность
-        private void CheckArea()
+        private void CheckAreaUniq()
         {
-            #region Формируем коллекцию введеных площадок
+            // Формируем коллекцию введеных площадок
 
             var areasCollectionInput = new List<int>();
 
             GetCollectionFormatArea(this.Name, areasCollectionInput);
+            
 
-            #endregion
 
-
-            #region Формируем коллекцию сохраненных площадок 
+            // Формируем коллекцию сохраненных площадок 
 
             var areasCollection = new List<int>();
 
@@ -72,20 +80,19 @@ namespace TestXafSolution.Module.BusinessObjects.TestWork
             
             foreach (var areaXPCollection in areasXPCollection)
                 GetCollectionFormatArea(areaXPCollection.Name, areasCollection);
-
-            #endregion
+            
 
             var intersect = areasCollection.Intersect(areasCollectionInput);
 
             if (intersect.Count() != 0)
-                throw new Exception(" Error : already exsist item in Area ");
+                throw new UserFriendlyException(new Exception(" Error : already exsist item in Area "));
         }
 
         //Разбиение названия площадки на пикеты 
         private void GetCollectionFormatArea(string Name, List<int> areasCollection)
         {
             var namesArea = Name.Split('-');
-
+            
             if (namesArea.Length == 1)
             {
                 areasCollection.Add(Convert.ToInt32(namesArea[0]));
@@ -96,52 +103,13 @@ namespace TestXafSolution.Module.BusinessObjects.TestWork
                 var secondInputArea = Convert.ToInt32(namesArea[1]);
 
                 if (Convert.ToInt32(secondInputArea) < Convert.ToInt32(firstInputArea))
-                    throw new Exception(" Error : Name Area Second Value < Name Area First Value ");
+                    throw new UserFriendlyException(new Exception(" Error : Name Area Second Value < Name Area First Value "));
 
                 for (var countPicket = Convert.ToInt32(firstInputArea); countPicket <= Convert.ToInt32(secondInputArea); countPicket++)
                     areasCollection.Add(countPicket);
-            }
-            
+            }            
         }
-
-
-        // Проверка товаров зависимых от площадки
-        private void CheckCargo()
-        {
-            if (this.Delete_Area != null)
-            {
-                var CargoFilter = new XPCollection<Cargo>(this.Session, CriteriaOperator.Parse("NumberArea == " + this.Number));
-
-                foreach (var cargoElement in this.Cargoes)
-                {
-                    cargoElement.Delete_Cargo = this.Delete_Area;
-                }
-
-                // Или ничего не добавляем и пишем в лог. Второй вариант
-                /*
-                if (CargoFilter.Count != 0)
-                {
-                    Tracing.Tracer.LogText("Not Delete Cargo" + "BusinessObjects : Area");
-                    return;
-                }*/
-            }
-        }
-
-
-        // Удаление пикетов зависимых от площадки
-        private void DeletePicket()
-        {
-            if (this.Delete_Area != null)
-            {
-                var sqlDelete = "DELETE FROM Picket Where NumberArea = " + this.Number;
-
-                var resultDt = this.Session.ExecuteNonQuery(sqlDelete);
-
-                if (resultDt < 1)
-                    throw new UserFriendlyException(new Exception(" Error : " + sqlDelete));
-            }
-        }
-
+                  
 
         private XPCollection<AuditDataItemPersistent> auditTrail;
         public XPCollection<AuditDataItemPersistent> AuditTrail

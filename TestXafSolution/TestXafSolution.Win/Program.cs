@@ -22,8 +22,8 @@ namespace TestXafSolution.Win {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             EditModelPermission.AlwaysGranted = System.Diagnostics.Debugger.IsAttached;
-            
 
+            // Создания файла логирования с именем CustomLogFileWin
             Tracing.LogName = "CustomLogFileWin";
             Tracing.LocalUserAppDataPath = Application.LocalUserAppDataPath;
 			Tracing.Initialize();
@@ -33,8 +33,8 @@ namespace TestXafSolution.Win {
             // Refer to the https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112680.aspx help article for more details on how to provide a custom splash form.
             //winApplication.SplashScreen = new DevExpress.ExpressApp.Win.Utils.DXSplashScreen("YourSplashImage.png");
 
-            //Логирование
-            AuditTrailService.Instance.ObjectAuditingMode = ObjectAuditingMode.Lightweight;
+            //Логирование в самом расширенном режиме(Full)
+            AuditTrailService.Instance.ObjectAuditingMode = ObjectAuditingMode.Full;
             SecurityAdapterHelper.Enable();
 
             if(ConfigurationManager.ConnectionStrings["ConnectionString"] != null) {

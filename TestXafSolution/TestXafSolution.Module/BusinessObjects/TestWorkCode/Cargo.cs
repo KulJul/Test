@@ -27,6 +27,10 @@ namespace TestXafSolution.Module.BusinessObjects.TestWork
 
         protected override void OnSaving()
         {
+            // При создании/изменения груза без площадки выдаем ошибку
+            if (this.NumberArea == null)
+                throw new UserFriendlyException(new Exception(" Error : " + "Number Area is empty"));
+
             var AreaFilter = new XPCollection<Area>(this.Session, CriteriaOperator.Parse("Number == " + this.NumberArea.Number));
 
             // Нельзя добавлять груз на площадку без пикетов
@@ -35,9 +39,11 @@ namespace TestXafSolution.Module.BusinessObjects.TestWork
 
 
             // Добавление груза не должно быть раньше, чем создание площадки                               
-            if (this.Create_Cargo < AreaFilter[0].Create_Area)
+            if (this.Create_Cargo.CompareTo(AreaFilter[0].Create_Area) < 0)
                 throw new UserFriendlyException(new Exception(" Error : " + "Data create cargo < data create area"));
-                
+
+
+
             base.OnSaving();
         }
         
