@@ -7,12 +7,17 @@ using DevExpress.Persistent.Base;
 using DevExpress.ExpressApp.ConditionalAppearance;
 using DevExpress.Persistent.Validation;
 using DevExpress.ExpressApp.Model;
+using DevExpress.Persistent.BaseImpl;
+using DevExpress.ExpressApp;
+using DevExpress.ExpressApp.Security;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace TestXafSolution.Module.BusinessObjects.TestWork
 {
 
     [DefaultClassOptions, ImageName("Bo_Cargo")]
-    [Appearance("Delete", TargetItems = "*", Criteria = "Delete_Cargo > null", BackColor = "MistyRose")]
+    [Appearance("Delete", TargetItems = "*", Criteria = "Delete_Cargo > null && Delete_Cargo >= Create_Cargo && Create_Cargo > null", 
+                                                                                           BackColor = "MistyRose", Enabled = false)]
     [RuleCriteria("Delete_Cargo >= Create_Cargo")]
     public partial class Cargo
     {
@@ -28,7 +33,7 @@ namespace TestXafSolution.Module.BusinessObjects.TestWork
                 foreach (var areaElement in AreaFilter)
                 {
                     if (this.Create_Cargo < areaElement.Create_Area)
-                        throw new Exception(" Error : " + "Data create cargo > data create area");
+                        throw new Exception(" Error : " + "Data create cargo < data create area");
                 }
                 
                 base.OnSaving();
@@ -38,6 +43,23 @@ namespace TestXafSolution.Module.BusinessObjects.TestWork
                 Tracing.Tracer.LogText(ex.ToString() + " BusinessObjects : Area");
             }
         }
+        
+
+        private XPCollection<AuditDataItemPersistent> auditTrail;
+        public XPCollection<AuditDataItemPersistent> AuditTrail
+        {
+            get
+            {
+                if (auditTrail == null && SecuritySystem.CurrentUserId != null)
+                {
+                    auditTrail = AuditedObjectWeakReference.GetAuditTrail(Session, this);
+                }
+
+                return auditTrail;
+            }
+        }
+
+
     }
 
 }

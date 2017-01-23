@@ -66,14 +66,7 @@ namespace TestXafSolution.Module.DatabaseUpdate {
                 sampleUserIvanov.UserName = "Иванов";
                 sampleUserIvanov.SetPassword("Иванов");
             }
-
-            PermissionPolicyRole adminRoleIvanov = ObjectSpace.FindObject<PermissionPolicyRole>(new BinaryOperator("Name", "Administrators"));
-            if (adminRoleIvanov == null)
-            {
-                adminRoleIvanov = ObjectSpace.CreateObject<PermissionPolicyRole>();
-                adminRoleIvanov.Name = "RoleIvanov";
-            }
-            
+                        
             sampleUserIvanov.Roles.Add(defaultRole);
 
             ObjectSpace.CommitChanges();

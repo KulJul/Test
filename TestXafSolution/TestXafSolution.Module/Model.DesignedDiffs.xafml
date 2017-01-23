@@ -4,6 +4,7 @@
     <Actions>
       <Action Id="ClearFieldsAction" ImageName="Action_Clear" Shortcut="Control+C" />
       <Action Id="CreatePicketAction" ImageName="CreatePicketAction" PaintStyle="CaptionAndImage" Shortcut="Control+C+V" />
+      <Action Id="FindFieldDataAction" SelectionDependencyType="RequireSingleObject" />
       <Action Id="FullTextSearch" PaintStyle="Default" DefaultItemMode="LastExecutedItem" />
     </Actions>
   </ActionDesign>

@@ -64,14 +64,12 @@ namespace TestXafSolution.Module.Controllers
 
         private void FindFieldData_Activated(object sender, EventArgs e)
         {
-            if (View.GetType() == typeof(ListView))
-            {
-                if (View.ObjectTypeInfo.Type == typeof(Cargo) || View.ObjectTypeInfo.Type == typeof(Area) ||
-                    View.ObjectTypeInfo.Type == typeof(Picket) || View.ObjectTypeInfo.Type == typeof(Store))
-                {
-                    FindFieldDataAction.Enabled.SetItemValue("EditMode", true);
-                }
-            }
+            var enableFlag = (View.GetType() == typeof(ListView)) &&
+                             (View.ObjectTypeInfo.Type == typeof(Cargo) || View.ObjectTypeInfo.Type == typeof(Area) ||
+                              View.ObjectTypeInfo.Type == typeof(Picket) || View.ObjectTypeInfo.Type == typeof(Store));
+
+            this.Active.SetItemValue("EditMode", enableFlag);
+            //FindFieldDataAction.Enabled.SetItemValue("EditMode", enableFlag);
         }
     }
 }

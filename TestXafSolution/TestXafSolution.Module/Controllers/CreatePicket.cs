@@ -43,6 +43,7 @@ namespace TestXafSolution.Module.Controllers
             base.OnDeactivated();
         }
 
+        // Автоматическая генерация пикетов на основе площадок
         private void CreatePicketAction_Execute(object sender, SimpleActionExecuteEventArgs e)
         {
             try
@@ -106,16 +107,18 @@ namespace TestXafSolution.Module.Controllers
             return (nameElements.Length > 0) ? nameElements : "";
         }
 
+
+
         private void CreatePicket_Activated(object sender, EventArgs e)
         {
             try
             {
-				if (View.GetType() == typeof(DetailView) && View.ObjectTypeInfo.Type == typeof(Picket))
-				{
+                if (View.GetType() == typeof(DetailView) )
+                {
+                    CreatePicketAction.Active.SetItemValue("EditMode", false);
+                    var currentObjectKey = View.ObjectSpace.GetKeyValue(View.CurrentObject);
 
-					var currentObjectKey = View.ObjectSpace.GetKeyValue(View.CurrentObject);
-
-					CreatePicketAction.Active.SetItemValue("EditMode", Convert.ToInt32(currentObjectKey) != 0);
+					CreatePicketAction.Active.SetItemValue("EditMode", Convert.ToInt32(currentObjectKey) != 0 && View.ObjectTypeInfo.Type == typeof(Area));
 				}
 			}
             catch (Exception ex)
