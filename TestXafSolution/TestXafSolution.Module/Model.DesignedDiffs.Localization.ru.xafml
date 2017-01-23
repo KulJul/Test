@@ -15,11 +15,13 @@
     </Class>
     <Class Name="TestXafSolution.Module.BusinessObjects.TestWork.Area" Caption="Площадка">
       <OwnMembers>
+        <Member Name="Cargoes" Caption="Грузы" />
         <Member Name="Create_Area" Caption="Дата создания площадки" />
         <Member Name="Delete_Area" Caption="Дата разрушения площадки" />
         <Member Name="Name" Caption="Название" />
         <Member Name="Number" Caption="Номер" />
         <Member Name="Number_Store" Caption="Номер склада" />
+        <Member Name="Pickets" Caption="Пикеты" />
       </OwnMembers>
     </Class>
     <Class Name="TestXafSolution.Module.BusinessObjects.TestWork.Cargo" Caption="Груз" ObjectCaptionFormat="{0:Name} from {0:NumberArea}">
@@ -41,6 +43,7 @@
     </Class>
     <Class Name="TestXafSolution.Module.BusinessObjects.TestWork.Store" Caption="Склад">
       <OwnMembers>
+        <Member Name="Areas" Caption="Площадки" />
         <Member Name="Name" Caption="Название" />
         <Member Name="Number" Caption="Номер" />
       </OwnMembers>

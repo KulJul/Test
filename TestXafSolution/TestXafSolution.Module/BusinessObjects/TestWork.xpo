@@ -48,7 +48,7 @@
             <field Id="48917b77-4373-445b-9e65-5f9e72418507" name="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="20" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="cccac810-61b6-4547-8039-0835020f29b2">
-            <field Id="eb6b3786-13ab-43ea-adb3-74f5310783cf" name="Weight" columnType="Double" persistent="Weight" virtualColumnType="Double" delayedUpdateModifiedOnly="false" />
+            <field Id="eb6b3786-13ab-43ea-adb3-74f5310783cf" name="Weight" columnType="Double" persistent="Weight" virtualColumnType="Double" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.Persistent.Validation.RuleRange(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, 0, 10000)" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="78ef43ce-c1f1-4bd2-9853-2c4de7fd8d17">
             <field Id="0f686153-1152-4925-a1ec-e55757a0ef6d" name="NumberArea" columnType="Int32" persistent="NumberArea" virtualColumnType="Area" logicalType="Area" delayedUpdateModifiedOnly="false" />

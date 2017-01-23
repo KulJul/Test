@@ -118,12 +118,6 @@
     <Compile Include="Controllers\ClearFields.Designer.cs">
       <DependentUpon>ClearFields.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\CreatePicket.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controllers\CreatePicket.Designer.cs">
-      <DependentUpon>CreatePicket.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\FilterController.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -148,9 +142,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Controllers\ClearFields.resx">
       <DependentUpon>ClearFields.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controllers\CreatePicket.resx">
-      <DependentUpon>CreatePicket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controllers\FindFieldData.resx">
       <DependentUpon>FindFieldData.cs</DependentUpon>
@@ -196,6 +187,11 @@
     <EmbeddedResource Include="Images\CreatePicketAction.png" />
     <EmbeddedResource Include="Images\Picket.png" />
     <EmbeddedResource Include="Images\Store.jpg" />
+    <EmbeddedResource Include="Images\Area_32x32.png" />
+    <EmbeddedResource Include="Images\Cargo_32x32.png" />
+    <EmbeddedResource Include="Images\CreatePicketAction_32x32.png" />
+    <EmbeddedResource Include="Images\Picket_32x32.png" />
+    <EmbeddedResource Include="Images\Store_32x32.png" />
     <Content Include="Welcome.html" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

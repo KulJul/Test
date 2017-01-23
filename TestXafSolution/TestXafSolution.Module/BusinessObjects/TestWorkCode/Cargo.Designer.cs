@@ -32,6 +32,7 @@ namespace TestXafSolution.Module.BusinessObjects.TestWork
             set { SetPropertyValue<string>("Name", ref fName, value); }
         }
         double fWeight;
+        [DevExpress.Persistent.Validation.RuleRange("", DevExpress.Persistent.Validation.DefaultContexts.Save, 0, 10000)]
         public double Weight
         {
             get { return fWeight; }

@@ -8,6 +8,7 @@ using DevExpress.ExpressApp.ConditionalAppearance;
 using DevExpress.Persistent.Base;
 using System.Linq;
 using DevExpress.Persistent.BaseImpl;
+using DevExpress.ExpressApp;
 
 namespace TestXafSolution.Module.BusinessObjects.TestWork
 {
@@ -19,24 +20,36 @@ namespace TestXafSolution.Module.BusinessObjects.TestWork
     {
         public Area(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }
-		
-		protected override void OnSaving()
+
+        protected override void OnDeleting()
         {
-            try
-            {
-                CheckArea();
+            //Проверка существования груза на площадке
+            var CargoFilter = new XPCollection<Cargo>(this.Session, CriteriaOperator.Parse("NumberArea == " + this.Number));
 
-                CheckCargo();
+            if (CargoFilter.Count() != 0)
+                throw new UserFriendlyException(new Exception(" Error : " + "Cargoes is exist on Area"));
 
-                DeletePicket();
-                
-                base.OnSaving();
-            }
-            catch (Exception ex)
-            {
-                Tracing.Tracer.LogText(ex.ToString() + " BusinessObjects : Area");
-            }
+
+            base.OnDeleting();
         }
+
+
+        protected override void OnSaving()
+        {
+            // Проверка наличия пикетов на площадке
+            if (this.Pickets.Count() == 0)
+                throw new UserFriendlyException(new Exception(" Error : " + "Pickets is empty"));
+
+            //if (this.Pickets.Count() == 0 && this.)
+            //CheckArea();
+            /*
+            CheckCargo();
+
+            DeletePicket();*/
+
+            base.OnSaving();
+        }
+        
 
 
         // Проверка площадки на уникальность
@@ -66,11 +79,9 @@ namespace TestXafSolution.Module.BusinessObjects.TestWork
 
             if (intersect.Count() != 0)
                 throw new Exception(" Error : already exsist item in Area ");
-
         }
 
-
-        // Проверка товаров зависимых от площадки
+        //Разбиение названия площадки на пикеты 
         private void GetCollectionFormatArea(string Name, List<int> areasCollection)
         {
             var namesArea = Name.Split('-');
@@ -127,7 +138,7 @@ namespace TestXafSolution.Module.BusinessObjects.TestWork
                 var resultDt = this.Session.ExecuteNonQuery(sqlDelete);
 
                 if (resultDt < 1)
-                    throw new Exception(" Error : " + sqlDelete);
+                    throw new UserFriendlyException(new Exception(" Error : " + sqlDelete));
             }
         }
 

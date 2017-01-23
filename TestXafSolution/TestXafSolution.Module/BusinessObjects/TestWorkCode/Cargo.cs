@@ -12,6 +12,7 @@ using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Security;
 using static System.Net.Mime.MediaTypeNames;
 
+
 namespace TestXafSolution.Module.BusinessObjects.TestWork
 {
 
@@ -26,22 +27,18 @@ namespace TestXafSolution.Module.BusinessObjects.TestWork
 
         protected override void OnSaving()
         {
-            try
-            {
-                var AreaFilter = new XPCollection<Area>(this.Session, CriteriaOperator.Parse("Number == " + this.NumberArea.Number));
-                               
-                foreach (var areaElement in AreaFilter)
-                {
-                    if (this.Create_Cargo < areaElement.Create_Area)
-                        throw new Exception(" Error : " + "Data create cargo < data create area");
-                }
+            var AreaFilter = new XPCollection<Area>(this.Session, CriteriaOperator.Parse("Number == " + this.NumberArea.Number));
+
+            // Нельзя добавлять груз на площадку без пикетов
+            if (AreaFilter[0].Pickets.Count == 0)
+                throw new UserFriendlyException(new Exception(" Error : " + "Pickets is empty"));
+
+
+            // Добавление груза не должно быть раньше, чем создание площадки                               
+            if (this.Create_Cargo < AreaFilter[0].Create_Area)
+                throw new UserFriendlyException(new Exception(" Error : " + "Data create cargo < data create area"));
                 
-                base.OnSaving();
-            }
-            catch (Exception ex)
-            {
-                Tracing.Tracer.LogText(ex.ToString() + " BusinessObjects : Area");
-            }
+            base.OnSaving();
         }
         
 
