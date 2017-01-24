@@ -11,34 +11,41 @@ using DevExpress.Xpo;
 using DevExpress.Data.Filtering;
 using System.Collections.Generic;
 using System.ComponentModel;
-namespace TestXafSolution.Module.BusinessObjects.TestWork
+namespace TestXafSolution.Module.TestWork2
 {
 
-    public partial class Picket : XPLiteObject
+    public partial class Area : XPLiteObject
     {
         int fNumber;
-        [Key(true)]
-        [Browsable(false)]
+        [Key]
         public int Number
         {
             get { return fNumber; }
             set { SetPropertyValue<int>("Number", ref fNumber, value); }
         }
         string fName;
-        [Size(20)]
+        [Size(10)]
         public string Name
         {
             get { return fName; }
             set { SetPropertyValue<string>("Name", ref fName, value); }
         }
-        Area fNumberArea;
-        [Association(@"PicketReferencesArea")]
-        [Browsable(false)]
-        public Area NumberArea
+        DateTime fCreate_Area;
+        public DateTime Create_Area
         {
-            get { return fNumberArea; }
-            set { SetPropertyValue<Area>("NumberArea", ref fNumberArea, value); }
+            get { return fCreate_Area; }
+            set { SetPropertyValue<DateTime>("Create_Area", ref fCreate_Area, value); }
         }
+        DateTime fDelete_Area;
+        public DateTime Delete_Area
+        {
+            get { return fDelete_Area; }
+            set { SetPropertyValue<DateTime>("Delete_Area", ref fDelete_Area, value); }
+        }
+        [Association(@"CargoReferencesArea")]
+        public XPCollection<Cargo> Cargoes { get { return GetCollection<Cargo>("Cargoes"); } }
+        [Association(@"PicketReferencesArea")]
+        public XPCollection<Picket> Pickets { get { return GetCollection<Picket>("Pickets"); } }
     }
 
 }

@@ -11,7 +11,7 @@ using DevExpress.Xpo;
 using DevExpress.Data.Filtering;
 using System.Collections.Generic;
 using System.ComponentModel;
-namespace TestXafSolution.Module.BusinessObjects.TestWork
+namespace TestXafSolution2.Module.TestWork2
 {
 
     public partial class Picket : XPLiteObject
@@ -25,15 +25,23 @@ namespace TestXafSolution.Module.BusinessObjects.TestWork
             set { SetPropertyValue<int>("Number", ref fNumber, value); }
         }
         string fName;
-        [Size(20)]
+        [Size(10)]
+        [DevExpress.Persistent.Validation.RuleRequiredField, DevExpress.Persistent.Validation.RuleUniqueValue,
+ Indexed(Unique = true)]
         public string Name
         {
             get { return fName; }
             set { SetPropertyValue<string>("Name", ref fName, value); }
         }
+        Store fNumberStore;
+        [Association(@"PicketReferencesStore")]
+        public Store NumberStore
+        {
+            get { return fNumberStore; }
+            set { SetPropertyValue<Store>("NumberStore", ref fNumberStore, value); }
+        }
         Area fNumberArea;
         [Association(@"PicketReferencesArea")]
-        [Browsable(false)]
         public Area NumberArea
         {
             get { return fNumberArea; }

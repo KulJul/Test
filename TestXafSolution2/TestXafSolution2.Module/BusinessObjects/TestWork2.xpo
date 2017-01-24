@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="a8f90f9b-6506-4120-9be5-693e42889674" dbName="TestWork2" connectionInfo="77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxEZXZFeHByZXNzWHBvR2VuZXJhdG9yU2V0dGluZ3MgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeG1sbnM6eHNkPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgcHJvdmlkZXJLZXk9Ik1TU3FsU2VydmVyIj4NCiAgPHBhcmFtZXRlcj4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0ic2VydmVyIiB2YWx1ZT0iUFJPR0VSMTFcU1AxMEEiIC8+DQogICAgPENvbm5lY3Rpb25QYWdlU2V0dGluZ3NJdGVtIG5hbWU9ImRhdGFiYXNlIiB2YWx1ZT0iVGVzdFdvcmsyIiAvPg0KICAgIDxDb25uZWN0aW9uUGFnZVNldHRpbmdzSXRlbSBuYW1lPSJ1c2VJbnRlZ3JhdGVkU2VjdXJpdHkiIHZhbHVlPSJUcnVlIiAvPg0KICAgIDxDb25uZWN0aW9uUGFnZVNldHRpbmdzSXRlbSBuYW1lPSJ1c2VyaWQiIHZhbHVlPSIiIC8+DQogICAgPENvbm5lY3Rpb25QYWdlU2V0dGluZ3NJdGVtIG5hbWU9InBhc3N3b3JkIiB2YWx1ZT0iIiAvPg0KICAgIDxDb25uZWN0aW9uUGFnZVNldHRpbmdzSXRlbSBuYW1lPSJyZWFkIG9ubHkiIHZhbHVlPSIxIiAvPg0KICAgIDxDb25uZWN0aW9uUGFnZVNldHRpbmdzSXRlbSBuYW1lPSJnZW5lcmF0ZUNvbm5lY3Rpb25IZWxwZXIiIHZhbHVlPSJ0cnVlIiAvPg0KICA8L3BhcmFtZXRlcj4NCjwvRGV2RXhwcmVzc1hwb0dlbmVyYXRvclNldHRpbmdzPg==" namespace="TestXafSolution2.Module.TestWork2" connectionString="XpoProvider=MSSqlServer;data source=PROGER11\SP10A;integrated security=SSPI;initial catalog=TestWork2" dataBaseShemaInfo="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" generateConnectionHelper="true" generateStoredProcedures="false" fieldNameCase="Unchanged" generateDefaultConstructors="false" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
+  <classes>
+    <dataBaseObjectModelHasClasses Id="16798c6c-c22c-4775-935c-8f4a760782fe">
+      <xpObject Id="329090dd-9966-493e-ac8c-df7832cc2a12" name="Area" baseClass="XPLiteObject" userFileName="Area" designerFileName="Area.Designer" className="Area" virtualBaseClass="XPLiteObject" persistent="Area" virtualName="Area">
+        <fields>
+          <generalXpObjectHasFields Id="d751a631-7510-48c1-8493-1a6c38412de5">
+            <field Id="04c0ffc7-dde9-4fc9-b332-5979816bc179" name="Number" columnType="Int32" key="true" isIdentity="true" persistent="Number" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" customAttributes="Browsable(false)" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="e95ca959-9f6a-44f2-89e6-df11f4cb4346">
+            <field Id="4911e472-8836-476a-b997-8cb2deaa3f3c" name="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="10" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="c4a7f7f0-fe99-4916-8378-492ca9bedc9f">
+            <field Id="8b581e6b-a179-4cfd-bb5d-d4cc579c6eeb" name="Create_Area" columnType="DateTime" persistent="Create_Area" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.ExpressApp.Model.ModelDefault(&quot;DisplayFormat&quot;, &quot;{0: ddd, dd MMMM yyyy hh:mm:ss tt}&quot;), DevExpress.ExpressApp.Model.ModelDefault(&quot;EditMask&quot;, &quot;ddd, dd MMMM yyyy hh:mm:ss tt&quot;), DevExpress.ExpressApp.Model.ModelDefault(&quot;PropertyEditorType&quot;, &quot;WinSolution.Module.Win.MyDatePropertyEditor&quot;)" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="b323ea40-c192-4d06-bb8f-654f984058ef">
+            <field Id="2c461118-1b06-440b-9342-f1308bf803be" name="Delete_Area" columnType="DateTime" persistent="Delete_Area" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.ExpressApp.Model.ModelDefault(&quot;DisplayFormat&quot;, &quot;{0: ddd, dd MMMM yyyy hh:mm:ss tt}&quot;), DevExpress.ExpressApp.Model.ModelDefault(&quot;EditMask&quot;, &quot;ddd, dd MMMM yyyy hh:mm:ss tt&quot;), DevExpress.ExpressApp.Model.ModelDefault(&quot;PropertyEditorType&quot;, &quot;WinSolution.Module.Win.MyDatePropertyEditor&quot;)" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="8bb21d8e-87c5-4efb-88ff-5c8c5abf9fe8" sourceCollectionName="Cargoes" name="CargoReferencesArea" targetFieldName="Number_Area">
+            <xpObjectMoniker Id="783a23ef-0674-46d9-96d5-7493341693a9" />
+          </simpleAssociation>
+          <simpleAssociation Id="a460d14e-fe84-4b62-8ed1-a4b6d443f01a" sourceCollectionName="Pickets" name="PicketReferencesArea" targetFieldName="NumberArea">
+            <xpObjectMoniker Id="f09a6c92-8daa-4657-b33f-8c2a7482dd20" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="efce568e-8a88-461b-af63-a99a867e6ebf">
+            <collectionField Id="3a8dc68f-5f5a-4e9a-ab46-dc4aa1722e28" name="Cargoes" />
+          </xpObjectHasCollectionFields>
+          <xpObjectHasCollectionFields Id="6fa72f20-7a14-4826-9490-ceae025465a6">
+            <collectionField Id="c61edfee-961f-4626-8c5a-c6a1dfe1f11e" name="Pickets" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="53969879-f6a2-486e-948b-fdff2c4f4bbe">
+      <xpObject Id="783a23ef-0674-46d9-96d5-7493341693a9" name="Cargo" baseClass="XPLiteObject" userFileName="Cargo" designerFileName="Cargo.Designer" className="Cargo" virtualBaseClass="XPLiteObject" persistent="Cargo" virtualName="Cargo">
+        <fields>
+          <generalXpObjectHasFields Id="7186a32b-c177-4a69-be4d-f602f11cb4ce">
+            <field Id="b2f73472-9761-4089-af3e-e826e67b7317" name="Number" columnType="Int32" key="true" isIdentity="true" persistent="Number" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" customAttributes="Browsable(false)" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="cf18bf38-1554-4a65-86e7-6e14c71ff761">
+            <field Id="e142de47-d1cf-4c85-a38f-f4bae1a718db" name="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="10" customAttributes=" DevExpress.Persistent.Validation.RuleRequiredField, DevExpress.Persistent.Validation.RuleUniqueValue,&#xD;&#xA; Indexed(Unique = true)" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="cf5816d5-5e18-4502-b112-9a31260ecd0e">
+            <field Id="2a7a8199-dcfe-45a9-b794-00d85ce1ad30" name="Number_Area" columnType="Int32" persistent="Number_Area" virtualColumnType="Area" logicalType="Area" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="7364d884-94f5-49c1-b570-ac6b3ba14c51">
+            <field Id="5d671fad-1c92-4955-9b01-3097e3904e32" name="Weight" columnType="Int32" persistent="Weight" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.Persistent.Validation.RuleRange(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, 0, 10000)" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="a76a8193-9a2f-443d-9c1d-7caf88019645">
+            <field Id="5e1e5017-1733-4b44-b3f6-9d430b1b34b2" name="Create_Cargo" columnType="DateTime" persistent="Create_Cargo" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.ExpressApp.Model.ModelDefault(&quot;DisplayFormat&quot;, &quot;{0: ddd, dd MMMM yyyy hh:mm:ss tt}&quot;), DevExpress.ExpressApp.Model.ModelDefault(&quot;EditMask&quot;, &quot;ddd, dd MMMM yyyy hh:mm:ss tt&quot;), DevExpress.ExpressApp.Model.ModelDefault(&quot;PropertyEditorType&quot;, &quot;WinSolution.Module.Win.MyDatePropertyEditor&quot;)" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="10852b05-be45-474e-8831-a9cb662189ff">
+            <field Id="c9a6fadd-a72d-4030-8111-9cc392275105" name="Delete_Cargo" columnType="DateTime" persistent="Delete_Cargo" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.ExpressApp.Model.ModelDefault(&quot;DisplayFormat&quot;, &quot;{0: ddd, dd MMMM yyyy hh:mm:ss tt}&quot;), DevExpress.ExpressApp.Model.ModelDefault(&quot;EditMask&quot;, &quot;ddd, dd MMMM yyyy hh:mm:ss tt&quot;), DevExpress.ExpressApp.Model.ModelDefault(&quot;PropertyEditorType&quot;, &quot;WinSolution.Module.Win.MyDatePropertyEditor&quot;)" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="b9c1ef7d-8621-4759-aced-1423bdfefda6">
+      <xpObject Id="f09a6c92-8daa-4657-b33f-8c2a7482dd20" name="Picket" baseClass="XPLiteObject" userFileName="Picket" designerFileName="Picket.Designer" className="Picket" virtualBaseClass="XPLiteObject" persistent="Picket" virtualName="Picket">
+        <fields>
+          <generalXpObjectHasFields Id="a7f776cc-088c-4fe8-9331-5da84d2b363c">
+            <field Id="0cf1c493-0eed-43a0-a786-d48da0e0af8e" name="Number" columnType="Int32" key="true" isIdentity="true" persistent="Number" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" customAttributes="Browsable(false)" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="f131388c-576c-4846-9cad-0ba79277b7e9">
+            <field Id="5d4299cf-ad22-4074-b7ee-b53807cef97a" name="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="10" customAttributes=" DevExpress.Persistent.Validation.RuleRequiredField, DevExpress.Persistent.Validation.RuleUniqueValue,&#xD;&#xA; Indexed(Unique = true)" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="2f081a74-f77f-49f3-b842-decac5dfaef3">
+            <field Id="b5452251-24ca-4e44-ba16-04454ed05880" name="NumberStore" columnType="Int32" persistent="NumberStore" virtualColumnType="Store" logicalType="Store" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="d312facd-1d54-4bf0-bfdc-08ddb5af8990">
+            <field Id="2cf4c37a-ffab-43b1-973b-e3d83daa3c8b" name="NumberArea" columnType="Int32" persistent="NumberArea" virtualColumnType="Area" logicalType="Area" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="64e83c4d-68d0-4576-bdeb-18163bf581e9">
+      <xpObject Id="3faa3937-fc49-4bf2-80cb-a1a221726685" name="Store" baseClass="XPLiteObject" userFileName="Store" designerFileName="Store.Designer" className="Store" virtualBaseClass="XPLiteObject" persistent="Store" virtualName="Store">
+        <fields>
+          <generalXpObjectHasFields Id="4fcf2108-40e8-439c-ba5e-9f38c110934a">
+            <field Id="a3d2f2d9-b3c2-4aef-b075-900253b50c70" name="Number" columnType="Int32" key="true" isIdentity="true" persistent="Number" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" customAttributes="Browsable(false)" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="ae85f0c3-b91c-4576-852e-5ecfcaa0d8f2">
+            <field Id="6ae1a2f6-bb3f-424f-b44e-4ece96835892" name="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="10" customAttributes=" DevExpress.Persistent.Validation.RuleRequiredField, DevExpress.Persistent.Validation.RuleUniqueValue,&#xD;&#xA; Indexed(Unique = true)" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="a64fb72b-1b64-4521-be6a-105056a7948f" sourceCollectionName="Pickets" name="PicketReferencesStore" targetFieldName="NumberStore">
+            <xpObjectMoniker Id="f09a6c92-8daa-4657-b33f-8c2a7482dd20" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="3c8af188-25a5-4481-9ab7-cb3d743cfe68">
+            <collectionField Id="e27cb54c-19f6-4a1f-9371-81b0a46e5cf9" name="Pickets" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+  </classes>
+</dataBaseObjectModel>

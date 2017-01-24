@@ -8,8 +8,8 @@
     <ProjectGuid>{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestXafSolution.Module</RootNamespace>
-    <AssemblyName>TestXafSolution.Module</AssemblyName>
+    <RootNamespace>TestXafSolution2.Module</RootNamespace>
+    <AssemblyName>TestXafSolution2.Module</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -44,7 +44,6 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Dashboard.v16.2.Core, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.ExpressApp.AuditTrail.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.ExpressApp.ConditionalAppearance.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.ExpressApp.Security.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
@@ -56,7 +55,6 @@
     <Reference Include="DevExpress.ExpressApp.Validation.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Web.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.ExpressApp.Xpo.v16.2">
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
@@ -113,47 +111,6 @@
     <Compile Include="BusinessObjects\TestWork2Code\Store.Designer.cs">
       <DependentUpon>Store.cs</DependentUpon>
     </Compile>
-    <Compile Include="BusinessObjects\TestWorkCode\Area.cs" />
-    <Compile Include="BusinessObjects\TestWorkCode\Area.Designer.cs">
-      <DependentUpon>Area.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BusinessObjects\TestWorkCode\Cargo.cs" />
-    <Compile Include="BusinessObjects\TestWorkCode\Cargo.Designer.cs">
-      <DependentUpon>Cargo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BusinessObjects\TestWorkCode\ConnectionHelper.cs" />
-    <Compile Include="BusinessObjects\TestWorkCode\Picket.cs" />
-    <Compile Include="BusinessObjects\TestWorkCode\Picket.Designer.cs">
-      <DependentUpon>Picket.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BusinessObjects\TestWorkCode\Store.cs" />
-    <Compile Include="BusinessObjects\TestWorkCode\Store.Designer.cs">
-      <DependentUpon>Store.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\ClearFields.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controllers\ClearFields.Designer.cs">
-      <DependentUpon>ClearFields.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\Criteria Controller.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controllers\Criteria Controller.Designer.cs">
-      <DependentUpon>Criteria Controller.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\FilterController.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controllers\FilterController.Designer.cs">
-      <DependentUpon>FilterController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\FindFieldData.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controllers\FindFieldData.Designer.cs">
-      <DependentUpon>FindFieldData.cs</DependentUpon>
-    </Compile>
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="Module.cs">
       <SubType>Component</SubType>
@@ -164,12 +121,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Controllers\ClearFields.resx">
-      <DependentUpon>ClearFields.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controllers\FindFieldData.resx">
-      <DependentUpon>FindFieldData.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
     <EmbeddedResource Include="Module.resx">
       <SubType>Designer</SubType>
@@ -178,10 +129,6 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="BusinessObjects\TestWork.xpo" />
-    <None Include="BusinessObjects\TestWork.xpo.diagram">
-      <DependentUpon>TestWork.xpo</DependentUpon>
-    </None>
     <None Include="BusinessObjects\TestWork2.xpo" />
     <None Include="BusinessObjects\TestWork2.xpo.diagram">
       <DependentUpon>TestWork2.xpo</DependentUpon>
@@ -200,10 +147,6 @@
   <ItemGroup>
     <None Include="FunctionalTests\sample.ets" />
     <None Include="Images\ReadMe.txt" />
-    <EmbeddedResource Include="Model.DesignedDiffs.Localization.ru.xafml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -211,23 +154,13 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images\Area.png" />
-    <EmbeddedResource Include="Images\Cargo.png" />
-    <EmbeddedResource Include="Images\CreatePicketAction.png" />
-    <EmbeddedResource Include="Images\Picket.png" />
-    <EmbeddedResource Include="Images\Store.jpg" />
     <EmbeddedResource Include="Images\Area_32x32.png" />
+    <EmbeddedResource Include="Images\Cargo.png" />
     <EmbeddedResource Include="Images\Cargo_32x32.png" />
-    <EmbeddedResource Include="Images\CreatePicketAction_32x32.png" />
+    <EmbeddedResource Include="Images\Picket.png" />
     <EmbeddedResource Include="Images\Picket_32x32.png" />
+    <EmbeddedResource Include="Images\Store.jpg" />
     <EmbeddedResource Include="Images\Store_32x32.png" />
-    <None Include="UnusableNodes.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes_ru.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Welcome.html" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

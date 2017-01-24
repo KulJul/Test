@@ -18,12 +18,12 @@
         <elementListCompartment Id="6efb1b31-6fab-4889-92d9-169106ef908b" absoluteBounds="2.3150010000000005, 5.4441357421875, 1.4700000000000002, 0.2493896484375" name="Collections" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </xpObjectShape>
-    <xpObjectShape Id="5ed61b10-594b-4082-a97a-1f65e0765035" absoluteBounds="2.3000010000000004, 0.75, 1.5, 1.7750732421875002">
+    <xpObjectShape Id="5ed61b10-594b-4082-a97a-1f65e0765035" absoluteBounds="2.3000010000000004, 0.75, 1.5, 1.7550732421875002">
       <xpObjectMoniker Id="64272442-014f-4aa7-a0bf-15f22262d4fe" />
       <nestedChildShapes>
         <elementListCompartment Id="7562bde6-d53d-4617-b117-638ff55e95c7" absoluteBounds="2.3150010000000005, 1.0599999999999996, 1.4700000000000002, 0.8262939453125" name="Fields" titleTextColor="Black" itemTextColor="Black" />
         <elementListCompartment Id="823fb107-3143-4193-bab1-f871951a1721" absoluteBounds="2.3150010000000005, 1.8962939453125003, 1.4700000000000002, 0.2493896484375" name="Indexes" titleTextColor="Black" itemTextColor="Black" />
-        <elementListCompartment Id="15f41ba7-ad14-4bbc-84f8-ac65b1584e72" absoluteBounds="2.3150010000000005, 2.15568359375, 1.4700000000000002, 0.2693896484375" name="Collections" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="15f41ba7-ad14-4bbc-84f8-ac65b1584e72" absoluteBounds="2.3150010000000005, 2.15568359375, 1.4700000000000002, 0.2493896484375" name="Collections" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </xpObjectShape>
     <xpObjectShape Id="06c97665-3390-44e3-b879-effc58a5b1a1" absoluteBounds="6.8000000000000007, 3.75, 1.5, 1.7550732421875002">
@@ -60,7 +60,7 @@
         </associationConnectorReferencesSourceCollectionField>
       </sourceCollectionField>
     </simpleAssociationConnector>
-    <simpleAssociationConnector Id="2e8f52a5-b163-43ce-9418-4a31c5064586" edgePoints="[(5.3000005 : 3.36539713541667); (5.3000005 : 1.63753662109375); (3.800001 : 1.63753662109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <simpleAssociationConnector Id="2e8f52a5-b163-43ce-9418-4a31c5064586" edgePoints="[(5.3000005 : 3.36539713541667); (5.3000005 : 1.63753662109375); (3.800001 : 1.63753662109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <simpleAssociationMoniker Id="2f58d346-cea4-4632-ac96-f8217a0f50b5" />
       <relativeChildShapes />
       <nodes>

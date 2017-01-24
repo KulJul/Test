@@ -34,11 +34,7 @@ namespace TestXafSolution.Module.BusinessObjects.TestWork
         }
 
         protected override void OnSaving()
-        {
-            // При создании/изменения пикета без площадки выдаем ошибку
-            if (this.NumberArea == null)
-                throw new UserFriendlyException(new Exception(" Error : " + "Number Area is empty"));
-
+        {   
             // Проверка площадки на неразрывность
             CheckAreaUniq();
 

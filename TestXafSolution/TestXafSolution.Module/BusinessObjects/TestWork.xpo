@@ -72,7 +72,7 @@
             <field Id="21f19383-9a14-414a-a2f0-b4021126f35b" name="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="20" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="121b63b9-3cac-4b4b-bc88-db2711672af8">
-            <field Id="a99ba444-418b-48cf-b46b-33b9dab385fc" name="NumberArea" columnType="Int32" persistent="NumberArea" virtualColumnType="Area" logicalType="Area" delayedUpdateModifiedOnly="false" />
+            <field Id="a99ba444-418b-48cf-b46b-33b9dab385fc" name="NumberArea" columnType="Int32" persistent="NumberArea" virtualColumnType="Area" logicalType="Area" delayedUpdateModifiedOnly="false" customAttributes="Browsable(false)" />
           </generalXpObjectHasFields>
         </fields>
       </xpObject>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="TestXafSolution2">
+  <BOModel>
+    <Class Name="TestXafSolution2.Module.TestWork2.Area" ImageName="Area" />
+    <Class Name="TestXafSolution2.Module.TestWork2.Cargo" ImageName="Cargo" />
+    <Class Name="TestXafSolution2.Module.TestWork2.Picket" ImageName="Picket" />
+    <Class Name="TestXafSolution2.Module.TestWork2.Store" ImageName="Store" />
+  </BOModel>
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="16.2.3.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="Area_LookupListView" Criteria="[Delete_Area] Is Null" />
+    <ListView Id="Cargo_LookupListView" Criteria="[Delete_Cargo] Is Null" />
+    <ListView Id="Picket_LookupListView" Criteria="[NumberArea] Is Null" />
+  </Views>
+</Application>
