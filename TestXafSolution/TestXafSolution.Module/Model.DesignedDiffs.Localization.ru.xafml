@@ -3,7 +3,6 @@
   <ActionDesign>
     <Actions>
       <Action Id="ClearFieldsAction" ConfirmationMessage="Хотите обнулить поля?" ToolTip="Обнулить поля" ShortCaption="Обнулить поля" Caption="Обнулить поля" />
-      <Action Id="CreatePicketAction" ShortCaption="Генерация пикетов" ToolTip="Генерация пикетов" Caption="Генерация пикетов" ConfirmationMessage="Хотите создать пикеты?" />
       <Action Id="FindFieldDataAction" ShortCaption="Поиск по названию" ToolTip="Поиск по названию" Caption="Поиск по названию" />
     </Actions>
   </ActionDesign>

@@ -35,12 +35,36 @@ namespace TestXafSolution.Module.BusinessObjects.TestWork
 
         protected override void OnSaving()
         {
+            // Проверка площадки на уникальность
+            CheckAreaUniq();
+
             // Проверка наличия пикетов на площадке
             if (this.Pickets.Count() == 0)
-                throw new UserFriendlyException(new Exception(" Error : " + "Pickets is empty"));
+            {
+                // Формируем коллекцию введеных площадок
+                var areasCollectionInput = new List<int>();
+                GetCollectionFormatArea(this.Name, areasCollectionInput);
 
-            
+
+                var areasXPCollection = new XPCollection<Area>(Session);
+                var numberMax = areasXPCollection.Select(p => p.Number).Max() + 1;
+
+                foreach (var area in areasCollectionInput)
+                { 
+                    Picket pick = new Picket(this.Session);
+
+                    pick.Number = numberMax;
+                    pick.Name = area.ToString();
+                    pick.NumberArea = this;
+
+                    this.Pickets.Add(pick);
+                }
+
+            }
+
+
             // Если площадка удаляется, то происходит проверка на существование груза на площадке
+            // Если площадка удаляется, то происходит удаление пикетов. Тк храненить пустые ячейки не имеет смысла.
 
             var CargoFilter = new XPCollection<Cargo>(this.Session, CriteriaOperator.Parse("NumberArea == " + this.Number));
             var PicketFilter = new XPCollection<Picket>(this.Session, CriteriaOperator.Parse("NumberArea == " + this.Number));
@@ -49,10 +73,11 @@ namespace TestXafSolution.Module.BusinessObjects.TestWork
             {
                 if (CargoFilter.Count() != 0)
                     throw new UserFriendlyException(new Exception(" Error : " + "Cargoes is exist on Area"));
+
+                this.Session.Delete(PicketFilter);
+                this.Session.Save(PicketFilter);
             }
 
-            // Проверка площадки на уникальность
-            CheckAreaUniq();
             
 
 
@@ -69,18 +94,18 @@ namespace TestXafSolution.Module.BusinessObjects.TestWork
             var areasCollectionInput = new List<int>();
 
             GetCollectionFormatArea(this.Name, areasCollectionInput);
-            
 
 
             // Формируем коллекцию сохраненных площадок 
-
             var areasCollection = new List<int>();
+            var areasXPCollection = new XPCollection<Area>(Session);
 
-            var areasXPCollection = new XPCollection<Area>(Session, CriteriaOperator.Parse("Number != " + this.Number));
-            
-            foreach (var areaXPCollection in areasXPCollection)
-                GetCollectionFormatArea(areaXPCollection.Name, areasCollection);
-            
+            foreach (var areaXP in areasXPCollection)
+            {
+                if (areaXP.Delete_Area == DateTime.MinValue)
+                    GetCollectionFormatArea(areaXP.Name, areasCollection);
+            }
+                        
 
             var intersect = areasCollection.Intersect(areasCollectionInput);
 

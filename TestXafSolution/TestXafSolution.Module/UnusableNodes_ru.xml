@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <ActionDesign Id="ActionDesign">
+    <Actions Id="Actions">
+      <Action Id="CreatePicketAction" ShortCaption="Генерация пикетов" ToolTip="Генерация пикетов" Caption="Генерация пикетов" ConfirmationMessage="Хотите создать пикеты?" />
+    </Actions>
+  </ActionDesign>
+</Application>

@@ -193,6 +193,14 @@
     <EmbeddedResource Include="Images\CreatePicketAction_32x32.png" />
     <EmbeddedResource Include="Images\Picket_32x32.png" />
     <EmbeddedResource Include="Images\Store_32x32.png" />
+    <None Include="UnusableNodes.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes_ru.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Welcome.html" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -39,8 +39,8 @@ namespace TestXafSolution.Module.BusinessObjects.TestWork
             if (this.NumberArea == null)
                 throw new UserFriendlyException(new Exception(" Error : " + "Number Area is empty"));
 
-            // Проверка площадки на не разрывность
-            CheckAreaUniq()
+            // Проверка площадки на неразрывность
+            CheckAreaUniq();
 
             base.OnSaving();
         }
@@ -49,38 +49,36 @@ namespace TestXafSolution.Module.BusinessObjects.TestWork
         // Проверка площадки на уникальность
         private void CheckAreaUniq()
         {
-            // Формируем коллекцию введеных площадок
+            // Формируем коллекцию введеных пикетов
+            
+            var picketXPCollection = new XPCollection<Picket>(Session, CriteriaOperator.Parse("NumberArea == " + this.Number));
+            var picketCollection= picketXPCollection.Select(pick => pick.Name).ToList();
 
-            var areasCollectionInput = new List<int>();
-
-            GetCollectionFormatArea(Session., areasCollectionInput);
-
-
-
+            
             // Формируем коллекцию сохраненных площадок 
 
-            var areasCollection = new List<int>();
+            var picketsCollectionInput = new List<string>();
+            
+            GetCollectionFormatArea(this.Name, picketsCollectionInput);
 
-            var areasXPCollection = new XPCollection<Area>(Session);
-
-            foreach (var areaXPCollection in areasXPCollection)
-                GetCollectionFormatArea(areaXPCollection.Name, areasCollection);
-
-
-            var intersect = areasCollection.Intersect(areasCollectionInput);
-
-            if (intersect.Count() != 0)
-                throw new UserFriendlyException(new Exception(" Error : already exsist item in Area "));
+            if (picketCollection.Count() != 0)
+            {
+                foreach (var picket in picketsCollectionInput)
+                {
+                    if (!picketCollection.Contains(picket))
+                        throw new UserFriendlyException(new Exception(" Error : not uniq  "));
+                }
+            }
         }
 
         //Разбиение названия площадки на пикеты 
-        private void GetCollectionFormatArea(string Name, List<int> areasCollection)
+        private void GetCollectionFormatArea(string Name, List<string> areasCollection)
         {
             var namesArea = Name.Split('-');
 
             if (namesArea.Length == 1)
             {
-                areasCollection.Add(Convert.ToInt32(namesArea[0]));
+                areasCollection.Add(namesArea[0]);
             }
             else if (namesArea.Length > 1 && namesArea.Length < 4)
             {
@@ -91,7 +89,7 @@ namespace TestXafSolution.Module.BusinessObjects.TestWork
                     throw new UserFriendlyException(new Exception(" Error : Name Area Second Value < Name Area First Value "));
 
                 for (var countPicket = Convert.ToInt32(firstInputArea); countPicket <= Convert.ToInt32(secondInputArea); countPicket++)
-                    areasCollection.Add(countPicket);
+                    areasCollection.Add(countPicket.ToString());
             }
         }
 

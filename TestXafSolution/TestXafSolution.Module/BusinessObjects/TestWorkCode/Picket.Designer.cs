@@ -36,18 +36,7 @@ namespace TestXafSolution.Module.BusinessObjects.TestWork
         public Area NumberArea
         {
             get { return fNumberArea; }
-            set {
-                    SetPropertyValue<Area>("NumberArea", ref fNumberArea, value);
-                /*
-                    if (!IsLoading)
-                    {
-                        Position = null;
-                        if (NumberArea.Name.Equals(this.Name))
-                        {
-                            Manager = null;
-                        }
-                    }*/
-              }
+            set { SetPropertyValue<Area>("NumberArea", ref fNumberArea, value); }
         }
     }
 

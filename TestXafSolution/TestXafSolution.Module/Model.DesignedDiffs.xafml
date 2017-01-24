@@ -3,7 +3,6 @@
   <ActionDesign>
     <Actions>
       <Action Id="ClearFieldsAction" ImageName="Action_Clear" Shortcut="Control+C" />
-      <Action Id="CreatePicketAction" ImageName="CreatePicketAction" PaintStyle="CaptionAndImage" Shortcut="Control+C+V" />
       <Action Id="FindFieldDataAction" SelectionDependencyType="RequireSingleObject" />
       <Action Id="FullTextSearch" PaintStyle="Default" DefaultItemMode="LastExecutedItem" />
     </Actions>
@@ -21,7 +20,11 @@
         <Member Name="Delete_Cargo" DisplayFormat="{0: ddd, dd MMMM yyyy hh:mm:ss tt}" />
       </OwnMembers>
     </Class>
-    <Class Name="TestXafSolution.Module.BusinessObjects.TestWork.Picket" ImageName="Picket" />
+    <Class Name="TestXafSolution.Module.BusinessObjects.TestWork.Picket" ImageName="Picket">
+      <OwnMembers>
+        <Member Name="Name" DataSourceCriteriaProperty="" />
+      </OwnMembers>
+    </Class>
     <Class Name="TestXafSolution.Module.BusinessObjects.TestWork.Store" ImageName="Store" />
   </BOModel>
   <Options>
@@ -30,4 +33,8 @@
   <SchemaModules>
     <SchemaModule Name="SystemModule" Version="16.2.3.0" IsNewNode="True" />
   </SchemaModules>
+  <Views>
+    <ListView Id="Area_LookupListView" Criteria="[Delete_Area] Is Null" />
+    <ListView Id="Picket_LookupListView" Criteria="Not Contains([Name], 'Area.Name')" />
+  </Views>
 </Application>
