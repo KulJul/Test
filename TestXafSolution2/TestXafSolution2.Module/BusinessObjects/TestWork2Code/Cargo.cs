@@ -24,16 +24,18 @@ namespace TestXafSolution2.Module.TestWork2
 
         protected override void OnSaving()
         {
-            // При создании/изменения груза без площадки выдаем ошибку                               
-            if (this.Number_Area == null)
-                throw new UserFriendlyException(new Exception(" Error : " + "Number Area is empty"));
+            if (!this.IsDeleted)
+            {
+                // При создании/изменения груза без площадки выдаем ошибку                               
+                if (this.Number_Area == null)
+                    throw new UserFriendlyException(new Exception(" Error : " + "Number Area is empty"));
 
-            var AreaFilter = new XPCollection<Area>(this.Session, CriteriaOperator.Parse("Number == " + this.Number_Area.Number));
+                var AreaFilter = new XPCollection<Area>(this.Session, CriteriaOperator.Parse("Number == " + this.Number_Area.Number));
 
-            // Добавление груза не должно быть раньше, чем создание площадки                               
-            if (this.Create_Cargo.CompareTo(AreaFilter[0].Create_Area) < 0)
-                throw new UserFriendlyException(new Exception(" Error : " + "Data create cargo < data create area"));
-
+                // Добавление груза не должно быть раньше, чем создание площадки                               
+                if (this.Create_Cargo.CompareTo(AreaFilter[0].Create_Area) < 0)
+                    throw new UserFriendlyException(new Exception(" Error : " + "Data create cargo < data create area"));
+            }
 
             base.OnSaving();
         }

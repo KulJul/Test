@@ -21,12 +21,23 @@ namespace TestXafSolution2.Module.TestWork2
 
         protected override void OnSaving()
         {
-            // Проверки существования склада
-            if (this.NumberStore == null)
-                throw new UserFriendlyException(new Exception(" Error : " + "Store is empty "));
+            if(!this.IsDeleted)
+            {
+                // Проверки существования склада
+                if (this.NumberStore == null)
+                    throw new UserFriendlyException(new Exception(" Error : " + "Store is empty "));
 
-            // Проверка площадки на не пересекаемость
-            CheckAreaIntersect();
+
+                // Делаем проверку на вход. данные, либо 1 элемент, либо интервал
+                int number = 0;
+                if (!int.TryParse(this.Name, out number))
+                    throw new UserFriendlyException(new Exception(" Error : " + "Name not number"));
+
+
+                // Проверка площадки на не пересекаемость
+                CheckAreaIntersect();
+            }
+
 
             base.OnSaving();
         }
@@ -38,7 +49,7 @@ namespace TestXafSolution2.Module.TestWork2
                 //Проверка операции удаления пикетов с площадок
                 var AreaFilter = new XPCollection<Area>(this.Session, CriteriaOperator.Parse("Number == " + this.NumberArea.Number));
 
-                if (AreaFilter[0].Pickets.Count < 2 || AreaFilter[0].Cargoes == null || AreaFilter[0].Cargoes.Count == 0)
+                if (AreaFilter[0].Pickets.Count < 2 || AreaFilter[0].Cargoes != null || AreaFilter[0].Cargoes.Count != 0)
                     throw new UserFriendlyException(new Exception(" Error : " + "Not Delete"));
             }
 
@@ -54,7 +65,7 @@ namespace TestXafSolution2.Module.TestWork2
                 return;
 
             // Формируем коллекцию введеных площадок
-            var areasCollectionInput = new List<int>();
+            var areasCollectionInput = new List<double>();
             int number = 0;
 
             if (!int.TryParse(this.Name, out number))
@@ -64,8 +75,7 @@ namespace TestXafSolution2.Module.TestWork2
 
 
             // Формируем коллекцию сохраненных площадок 
-
-            var areasCollection = new List<int>();
+            var areasCollection = new List<double>();
             if (this.fNumberArea.Delete_Area != DateTime.MinValue)
                 throw new UserFriendlyException(new Exception(" Error : " + "Area deleted"));
 
@@ -80,31 +90,31 @@ namespace TestXafSolution2.Module.TestWork2
 
 
         //Разбиение названия площадки на пикеты 
-        private void GetCollectionFormatArea(string Name, List<int> areasCollection)
+        private void GetCollectionFormatArea(string Name, List<double> areasCollection)
         {
             var namesArea = Name.Split('-');
-            int number = 0;
-            int numberNext = 1;
+            double number = 0;
+            double numberNext = 1;
             
             // Проверка на число
-            if (!int.TryParse(namesArea[0], out number))
+            if (!double.TryParse(namesArea[0], out number))
                 throw new UserFriendlyException(new Exception(" Error : " + "Name not number"));
 
 
 
             if (namesArea.Length == 1)
             {
-                areasCollection.Add(Convert.ToInt32(number));
+                areasCollection.Add(Convert.ToDouble(number));
             }
             else if (namesArea.Length > 1 && namesArea.Length < 4)
             {
-                if (!int.TryParse(namesArea[1], out numberNext))
+                if (!double.TryParse(namesArea[1], out numberNext))
                     throw new UserFriendlyException(new Exception(" Error : " + "Name not number"));
 
-                if (Convert.ToInt32(numberNext) < Convert.ToInt32(number))
+                if (numberNext < number)
                     throw new UserFriendlyException(new Exception(" Error : Name Area Second Value < Name Area First Value "));
 
-                for (var countPicket = Convert.ToInt32(number); countPicket <= Convert.ToInt32(numberNext); countPicket++)
+                for (var countPicket = number; countPicket <= numberNext; countPicket++)
                     areasCollection.Add(countPicket);
             }
         }

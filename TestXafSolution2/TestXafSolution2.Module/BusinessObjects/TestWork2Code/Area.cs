@@ -32,35 +32,43 @@ namespace TestXafSolution2.Module.TestWork2
             if (CargoFilter.Count != 0)
                 throw new UserFriendlyException(new Exception(" Error : " + "Cargoes is exist on Area"));
 
+
+            var PicketFilter = new XPCollection<Picket>(this.Session, CriteriaOperator.Parse("NumberArea == " + this.Number));
+            foreach (var pic in PicketFilter)
+                pic.NumberArea = null;
+
+
             base.OnDeleting();
         }
 
         protected override void OnSaving()
         {
-            // Проверка площадки на уникальность
-            CheckAreaUniq();
 
-            // Проверка наличия пикетов на площадке
-            if (this.Pickets.Count == 0)
-                throw new UserFriendlyException(new Exception(" Error : " + "Areas have not picket"));
-
-
-            // Если площадка удаляется, то происходит проверка на существование груза на площадке
-            // Если площадка удаляется, то происходит  проверка на существование пикетов на площадке
-            
-            if (this.Delete_Area.CompareTo(default(DateTime)) != 0)
+            if (!this.IsDeleted)
             {
-                var CargoFilter = new XPCollection<Cargo>(this.Session, CriteriaOperator.Parse("Number_Area == " + this.Number));
-                var PicketFilter = new XPCollection<Picket>(this.Session, CriteriaOperator.Parse("NumberArea == " + this.Number));
+                // Проверка площадки на уникальность
+                CheckAreaUniq();
 
-                if (CargoFilter.Count != 0)
-                    throw new UserFriendlyException(new Exception(" Error : " + "Cargoes is exist on Area"));
+                // Проверка наличия пикетов на площадке
+                if (this.Pickets.Count == 0)
+                    throw new UserFriendlyException(new Exception(" Error : " + "Areas have not picket"));
 
-                if (PicketFilter.Count != 0)
-                    throw new UserFriendlyException(new Exception(" Error : " + "Pickets is exist on Area"));
+
+                // Если площадка удаляется, то происходит проверка на существование груза на площадке
+                // Если площадка удаляется, то происходит  проверка на существование пикетов на площадке
+
+                if (this.Delete_Area.CompareTo(default(DateTime)) != 0)
+                {
+                    var CargoFilter = new XPCollection<Cargo>(this.Session, CriteriaOperator.Parse("Number_Area == " + this.Number));
+                    var PicketFilter = new XPCollection<Picket>(this.Session, CriteriaOperator.Parse("NumberArea == " + this.Number));
+
+                    if (CargoFilter.Count != 0)
+                        throw new UserFriendlyException(new Exception(" Error : " + "Cargoes is exist on Area"));
+
+                    if (PicketFilter.Count != 0)
+                        throw new UserFriendlyException(new Exception(" Error : " + "Pickets is exist on Area"));
+                }
             }
-
-
 
             base.OnSaving();
         }
@@ -71,13 +79,13 @@ namespace TestXafSolution2.Module.TestWork2
         {
             // Формируем коллекцию введеных площадок
 
-            var areasCollectionInput = new List<int>();
+            var areasCollectionInput = new List<double>();
 
             GetCollectionFormatArea(this.Name, areasCollectionInput);
 
 
             // Формируем коллекцию сохраненных площадок 
-            var areasCollection = new List<int>();
+            var areasCollection = new List<double>();
             var areasXPCollection = new XPCollection<Area>(this.Session, CriteriaOperator.Parse("Number != " + this.Number));
 
             foreach (var areaXP in areasXPCollection)
@@ -96,23 +104,30 @@ namespace TestXafSolution2.Module.TestWork2
 
 
         //Разбиение названия площадки на пикеты 
-        private void GetCollectionFormatArea(string Name, List<int> areasCollection)
+        private void GetCollectionFormatArea(string Name, List<double> areasCollection)
         {
             var namesArea = Name.Split('-');
 
+            double number = 0;
+            double numberNext = 0;
+
+            if (!double.TryParse(namesArea[0], out number))
+                throw new UserFriendlyException(new Exception(" Error : value is not number"));
+
+
             if (namesArea.Length == 1)
             {
-                areasCollection.Add(Convert.ToInt32(namesArea[0]));
+                areasCollection.Add(number);
             }
             else if (namesArea.Length > 1 && namesArea.Length < 4)
             {
-                var firstInputArea = Convert.ToInt32(namesArea[0]);
-                var secondInputArea = Convert.ToInt32(namesArea[1]);
-
-                if (Convert.ToInt32(secondInputArea) < Convert.ToInt32(firstInputArea))
+                if (!double.TryParse(namesArea[1], out numberNext))
+                    throw new UserFriendlyException(new Exception(" Error : value is not number"));
+                
+                if (numberNext < number)
                     throw new UserFriendlyException(new Exception(" Error : Name Area Second Value < Name Area First Value "));
 
-                for (var countPicket = Convert.ToInt32(firstInputArea); countPicket <= Convert.ToInt32(secondInputArea); countPicket++)
+                for (var countPicket = number; countPicket <= numberNext; countPicket++)
                     areasCollection.Add(countPicket);
             }
         }
