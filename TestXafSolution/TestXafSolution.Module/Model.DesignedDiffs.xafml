@@ -35,6 +35,6 @@
   </SchemaModules>
   <Views>
     <ListView Id="Area_LookupListView" Criteria="[Delete_Area] Is Null" />
-    <ListView Id="Picket_LookupListView" Criteria="Not Contains([Name], 'Area.Name')" />
+    <ListView Id="Picket_LookupListView" Criteria="Contains([Name], 'Area_DetailView.Item.Name')" />
   </Views>
 </Application>

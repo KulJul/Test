@@ -50,6 +50,9 @@ namespace TestXafSolution2.Module.TestWork2
         // Проверка площадки на не пересекаемость
         private void CheckAreaIntersect()
         {
+            if (this.fNumberArea == null)
+                return;
+
             // Формируем коллекцию введеных площадок
             var areasCollectionInput = new List<int>();
             int number = 0;
