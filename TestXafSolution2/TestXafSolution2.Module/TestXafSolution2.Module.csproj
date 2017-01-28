@@ -55,6 +55,7 @@
     <Reference Include="DevExpress.ExpressApp.Validation.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.ExpressApp.Web.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.ExpressApp.Xpo.v16.2">
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
@@ -81,6 +82,7 @@
       <Name>System</Name>
       <Private>False</Private>
     </Reference>
+    <Reference Include="System.Activities" />
     <Reference Include="System.Data">
       <Name>System.Data</Name>
       <Private>False</Private>
@@ -181,14 +183,14 @@
     <None Include="FunctionalTests\config.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\Area.png" />
     <EmbeddedResource Include="Images\Area_32x32.png" />
-    <EmbeddedResource Include="Images\Cargo.png" />
     <EmbeddedResource Include="Images\Cargo_32x32.png" />
-    <EmbeddedResource Include="Images\Picket.png" />
     <EmbeddedResource Include="Images\Picket_32x32.png" />
-    <EmbeddedResource Include="Images\Store.jpg" />
     <EmbeddedResource Include="Images\Store_32x32.png" />
+    <EmbeddedResource Include="Images\Area.png" />
+    <EmbeddedResource Include="Images\Cargo.png" />
+    <EmbeddedResource Include="Images\Picket.png" />
+    <EmbeddedResource Include="Images\Store.png" />
     <Content Include="Welcome.html" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

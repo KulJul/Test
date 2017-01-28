@@ -24,7 +24,7 @@ namespace TestXafSolution2.Module.TestWork2
             var PicketFilter = new XPCollection<Picket>(this.Session, CriteriaOperator.Parse("NumberStore == " + this.Number));
 
             if (PicketFilter.Count != 0)
-                throw new UserFriendlyException(new Exception(" Error : " + "Picket is exist in Store"));
+                throw new UserFriendlyException(new Exception(" Error : " + "Нельзя удалить, так как на складе находятся пикеты"));
 
             base.OnDeleting();
         }

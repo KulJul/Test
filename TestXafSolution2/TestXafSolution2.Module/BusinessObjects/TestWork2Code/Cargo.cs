@@ -18,7 +18,7 @@ namespace TestXafSolution2.Module.TestWork2
     [RuleCriteria("Delete_Cargo >= Create_Cargo")]
     public partial class Cargo
     {
-        public Cargo(Session session) : base(session) { }
+        public Cargo(Session session) : base(session) { this.Create_Cargo = DateTime.Now; }
         public override void AfterConstruction() { base.AfterConstruction(); }
 
 
@@ -28,13 +28,7 @@ namespace TestXafSolution2.Module.TestWork2
             {
                 // При создании/изменения груза без площадки выдаем ошибку                               
                 if (this.Number_Area == null)
-                    throw new UserFriendlyException(new Exception(" Error : " + "Number Area is empty"));
-
-                var AreaFilter = new XPCollection<Area>(this.Session, CriteriaOperator.Parse("Number == " + this.Number_Area.Number));
-
-                // Добавление груза не должно быть раньше, чем создание площадки                               
-                if (this.Create_Cargo.CompareTo(AreaFilter[0].Create_Area) < 0)
-                    throw new UserFriendlyException(new Exception(" Error : " + "Data create cargo < data create area"));
+                     throw new UserFriendlyException(new Exception(" Error : " + "Груз не должен существовать без площадки"));                
             }
 
             base.OnSaving();

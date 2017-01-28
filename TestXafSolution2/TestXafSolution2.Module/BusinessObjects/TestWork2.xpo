@@ -48,7 +48,7 @@
             <field Id="2a7a8199-dcfe-45a9-b794-00d85ce1ad30" name="Number_Area" columnType="Int32" persistent="Number_Area" virtualColumnType="Area" logicalType="Area" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="7364d884-94f5-49c1-b570-ac6b3ba14c51">
-            <field Id="5d671fad-1c92-4955-9b01-3097e3904e32" name="Weight" columnType="Int32" persistent="Weight" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.Persistent.Validation.RuleRange(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, 0, 10000)" />
+            <field Id="5d671fad-1c92-4955-9b01-3097e3904e32" name="Weight" columnType="Int32" persistent="Weight" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.Persistent.Validation.RuleRange(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, 1, 10000)" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="a76a8193-9a2f-443d-9c1d-7caf88019645">
             <field Id="5e1e5017-1733-4b44-b3f6-9d430b1b34b2" name="Create_Cargo" columnType="DateTime" persistent="Create_Cargo" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.ExpressApp.Model.ModelDefault(&quot;DisplayFormat&quot;, &quot;{0: ddd, dd MMMM yyyy hh:mm:ss tt}&quot;), DevExpress.ExpressApp.Model.ModelDefault(&quot;EditMask&quot;, &quot;ddd, dd MMMM yyyy hh:mm:ss tt&quot;), DevExpress.ExpressApp.Model.ModelDefault(&quot;PropertyEditorType&quot;, &quot;WinSolution.Module.Win.MyDatePropertyEditor&quot;)" />

@@ -9,6 +9,8 @@ using DevExpress.Persistent.Validation;
 using DevExpress.ExpressApp;
 using System.Linq;
 using DevExpress.Persistent.BaseImpl;
+using DevExpress.ExpressApp.Actions;
+using TestXafSolution2.Module.TestWork2;
 
 namespace TestXafSolution2.Module.TestWork2
 {
@@ -19,7 +21,7 @@ namespace TestXafSolution2.Module.TestWork2
     [RuleCriteria("Delete_Area >= Create_Area")]
     public partial class Area
     {
-        public Area(Session session) : base(session) { }
+        public Area(Session session) : base(session) { this.Create_Area = DateTime.Now; }
         public override void AfterConstruction() { base.AfterConstruction(); }
 
 
@@ -30,9 +32,9 @@ namespace TestXafSolution2.Module.TestWork2
             var CargoFilter = new XPCollection<Cargo>(this.Session, CriteriaOperator.Parse("Number_Area == " + this.Number));
 
             if (CargoFilter.Count != 0)
-                throw new UserFriendlyException(new Exception(" Error : " + "Cargoes is exist on Area"));
+                throw new UserFriendlyException(new Exception(" Error : " + "На площадке лежит груз"));
 
-
+            // Обнуления связи с пикетами при удалении площадки
             var PicketFilter = new XPCollection<Picket>(this.Session, CriteriaOperator.Parse("NumberArea == " + this.Number));
             foreach (var pic in PicketFilter)
                 pic.NumberArea = null;
@@ -46,13 +48,23 @@ namespace TestXafSolution2.Module.TestWork2
 
             if (!this.IsDeleted)
             {
-                // Проверка площадки на уникальность
-                CheckAreaUniq();
-
                 // Проверка наличия пикетов на площадке
                 if (this.Pickets.Count == 0)
-                    throw new UserFriendlyException(new Exception(" Error : " + "Areas have not picket"));
+                    throw new UserFriendlyException(new Exception(" Error : " + "На площадке долже быть минимум 1 пикет"));
 
+                // нельзя разорвать диапазон. проверка
+                if (this.Pickets != null)
+                {
+                    var picCollection = this.Pickets.Select(pic => Convert.ToInt32(pic.Name)).ToList();
+
+                    var query = picCollection.OrderBy(name => name).ToList();
+
+                    for (var p = 0; p < query.Count - 1; p++)
+                    {
+                        if (query[p + 1] - query[p] != 1)
+                            throw new UserFriendlyException(new Exception(" Error : " + "пикеты должны быть не разрывными"));
+                    }
+                }
 
                 // Если площадка удаляется, то происходит проверка на существование груза на площадке
                 // Если площадка удаляется, то происходит  проверка на существование пикетов на площадке
@@ -63,75 +75,17 @@ namespace TestXafSolution2.Module.TestWork2
                     var PicketFilter = new XPCollection<Picket>(this.Session, CriteriaOperator.Parse("NumberArea == " + this.Number));
 
                     if (CargoFilter.Count != 0)
-                        throw new UserFriendlyException(new Exception(" Error : " + "Cargoes is exist on Area"));
+                        throw new UserFriendlyException(new Exception(" Error : " + "Груз лежит на площадке"));
 
-                    if (PicketFilter.Count != 0)
-                        throw new UserFriendlyException(new Exception(" Error : " + "Pickets is exist on Area"));
+                   foreach (var pic in PicketFilter)
+                       pic.NumberArea = null;
                 }
             }
 
             base.OnSaving();
         }
 
-
-        // Проверка площадки на уникальность
-        private void CheckAreaUniq()
-        {
-            // Формируем коллекцию введеных площадок
-
-            var areasCollectionInput = new List<double>();
-
-            GetCollectionFormatArea(this.Name, areasCollectionInput);
-
-
-            // Формируем коллекцию сохраненных площадок 
-            var areasCollection = new List<double>();
-            var areasXPCollection = new XPCollection<Area>(this.Session, CriteriaOperator.Parse("Number != " + this.Number));
-
-            foreach (var areaXP in areasXPCollection)
-            {
-                if (areaXP.Delete_Area == DateTime.MinValue)
-                    GetCollectionFormatArea(areaXP.Name, areasCollection);
-            }
-
-
-            var intersect = areasCollection.Intersect(areasCollectionInput);
-
-            if (intersect.Count() != 0)
-                throw new UserFriendlyException(new Exception(" Error : already exsist item in Area "));
-        }
-
-
-
-        //Разбиение названия площадки на пикеты 
-        private void GetCollectionFormatArea(string Name, List<double> areasCollection)
-        {
-            var namesArea = Name.Split('-');
-
-            double number = 0;
-            double numberNext = 0;
-
-            if (!double.TryParse(namesArea[0], out number))
-                throw new UserFriendlyException(new Exception(" Error : value is not number"));
-
-
-            if (namesArea.Length == 1)
-            {
-                areasCollection.Add(number);
-            }
-            else if (namesArea.Length > 1 && namesArea.Length < 4)
-            {
-                if (!double.TryParse(namesArea[1], out numberNext))
-                    throw new UserFriendlyException(new Exception(" Error : value is not number"));
-                
-                if (numberNext < number)
-                    throw new UserFriendlyException(new Exception(" Error : Name Area Second Value < Name Area First Value "));
-
-                for (var countPicket = number; countPicket <= numberNext; countPicket++)
-                    areasCollection.Add(countPicket);
-            }
-        }
-
+        
 
 
         private XPCollection<AuditDataItemPersistent> auditTrail;

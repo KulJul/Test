@@ -41,7 +41,7 @@ namespace TestXafSolution2.Module.TestWork2
             set { SetPropertyValue<Area>("Number_Area", ref fNumber_Area, value); }
         }
         int fWeight;
-        [DevExpress.Persistent.Validation.RuleRange("", DevExpress.Persistent.Validation.DefaultContexts.Save, 0, 10000)]
+        [DevExpress.Persistent.Validation.RuleRange("", DevExpress.Persistent.Validation.DefaultContexts.Save, 1, 10000)]
         public int Weight
         {
             get { return fWeight; }

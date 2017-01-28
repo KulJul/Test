@@ -1,0 +1,73 @@
+27.01.17 06:35:45.905	================================================================================
+27.01.17 06:35:45.908	Trace Log for ac220671-1-131299617145661208 is started
+27.01.17 06:35:45.908	================================================================================
+27.01.17 06:35:45.910	System Environment
+	OS Version: Microsoft Windows NT 6.3.9600.0
+	.Net Framework Versions: v2.0.50727, v4.0.30319
+
+	CLR Version: 4.0.30319.42000
+	eXpressApp Version: 16.2.3.0
+Application config
+	Modules=
+	ErrorReportEmail=
+	ErrorReportEmailServer=
+	TraceLogLocation=ApplicationFolder
+	SimpleErrorReportPage=
+	RichErrorReportPage=Error.aspx
+	EnableDiagnosticActions=False
+	Languages=ru
+27.01.17 06:35:45.920	The ValueManagerType is initialized by the default value: SimpleValueManager.
+27.01.17 06:35:46.078	Stack trace:
+   at DevExpress.Persistent.Base.ValueManager.CreateValueManager[ValueType](String key)
+   at DevExpress.Persistent.Base.ValueManager.GetValueManager[ValueType](String key)
+   at DevExpress.ExpressApp.Web.WebApplicationStyleManager.get_IsNewStyle()
+   at DevExpress.ExpressApp.Web.Controls.ASPxProgressControl..ctor()
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at Microsoft.VisualStudio.Web.HTML.Implementation.Schemas.Generation.ElementType..ctor(Type t, SchemaItem si)
+   at Microsoft.VisualStudio.Web.HTML.Implementation.Schemas.Generation.SchemaGenerator.GetElementType(Type type)
+   at Microsoft.VisualStudio.Web.HTML.Implementation.Schemas.Generation.SchemaInfo.Populate(VsTargetFrameworkTypeFilter targetFrameworkTypeFilter)
+   at Microsoft.VisualStudio.Web.HTML.Implementation.Schemas.Generation.SchemaGenerator.GenerateSchemaFile(SchemaData schemaData, SchemaInfoData[] SIDArray, String schemaPath)
+   at Microsoft.VisualStudio.Web.HTML.Implementation.Schemas.Generation.CBMOutOfProcSchemaGeneratorCreateSchema.GenerateSchema(List`1 schemaInfoDatas, SchemaData schemaData, String schemaPath, VsTargetFrameworkTypeFilter targetFrameworkTypeFilter)
+   at Microsoft.VisualStudio.Web.HTML.Implementation.Schemas.Generation.CBMOutOfProcSchemaGeneratorCreateSchema.Execute(ClientBuildManager cbm, IServiceProvider sp, List`1 registerDirectiveInfos, List`1 assembliesListsGenerateFrom, String schemaPath)
+
+27.01.17 06:48:44.731	================================================================================
+27.01.17 06:48:44.731	Trace Log for ac220671-4-131299623595094375 is started
+27.01.17 06:48:44.732	================================================================================
+27.01.17 06:48:44.733	System Environment
+	OS Version: Microsoft Windows NT 6.3.9600.0
+	.Net Framework Versions: v2.0.50727, v4.0.30319
+
+	CLR Version: 4.0.30319.42000
+	eXpressApp Version: 16.2.3.0
+Application config
+	Modules=
+	ErrorReportEmail=
+	ErrorReportEmailServer=
+	TraceLogLocation=ApplicationFolder
+	SimpleErrorReportPage=
+	RichErrorReportPage=Error.aspx
+	EnableDiagnosticActions=False
+	Languages=ru
+27.01.17 06:48:44.733	The ValueManagerType is initialized by the default value: SimpleValueManager.
+27.01.17 06:48:44.790	Stack trace:
+   at DevExpress.Persistent.Base.ValueManager.CreateValueManager[ValueType](String key)
+   at DevExpress.Persistent.Base.ValueManager.GetValueManager[ValueType](String key)
+   at DevExpress.ExpressApp.Utils.CaptionHelper.GetLocalizedText(String groupPath, String itemName, String defaultText)
+   at DevExpress.ExpressApp.Utils.CaptionHelper.GetLocalizedText(String groupPath, String itemName)
+   at DevExpress.ExpressApp.Web.Templates.Controls.ErrorInfoControl..ctor()
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at Microsoft.VisualStudio.Web.HTML.Implementation.Schemas.Generation.ElementType..ctor(Type t, SchemaItem si)
+   at Microsoft.VisualStudio.Web.HTML.Implementation.Schemas.Generation.SchemaGenerator.GetElementType(Type type)
+   at Microsoft.VisualStudio.Web.HTML.Implementation.Schemas.Generation.SchemaInfo.Populate(VsTargetFrameworkTypeFilter targetFrameworkTypeFilter)
+   at Microsoft.VisualStudio.Web.HTML.Implementation.Schemas.Generation.SchemaGenerator.GenerateSchemaFile(SchemaData schemaData, SchemaInfoData[] SIDArray, String schemaPath)
+   at Microsoft.VisualStudio.Web.HTML.Implementation.Schemas.Generation.CBMOutOfProcSchemaGeneratorCreateSchema.GenerateSchema(List`1 schemaInfoDatas, SchemaData schemaData, String schemaPath, VsTargetFrameworkTypeFilter targetFrameworkTypeFilter)
+   at Microsoft.VisualStudio.Web.HTML.Implementation.Schemas.Generation.CBMOutOfProcSchemaGeneratorCreateSchema.Execute(ClientBuildManager cbm, IServiceProvider sp, List`1 registerDirectiveInfos, List`1 assembliesListsGenerateFrom, String schemaPath)
+

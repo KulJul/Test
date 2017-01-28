@@ -25,14 +25,16 @@ namespace TestXafSolution2.Module.TestWork2
             {
                 // Проверки существования склада
                 if (this.NumberStore == null)
-                    throw new UserFriendlyException(new Exception(" Error : " + "Store is empty "));
+                    throw new UserFriendlyException(new Exception(" Error : " + "Нет склада"));
 
 
-                // Делаем проверку на вход. данные, либо 1 элемент, либо интервал
+                // Делаем проверку на вход. данные, либо 1 элемент
                 int number = 0;
                 if (!int.TryParse(this.Name, out number))
-                    throw new UserFriendlyException(new Exception(" Error : " + "Name not number"));
+                    throw new UserFriendlyException(new Exception(" Error : Не верный формат пикета." + 
+                                                                  " Он должен быть числом и соответствовать номеру склада + порядковому номеру пикета"));
 
+                
 
                 // Проверка площадки на не пересекаемость
                 CheckAreaIntersect();
@@ -49,8 +51,14 @@ namespace TestXafSolution2.Module.TestWork2
                 //Проверка операции удаления пикетов с площадок
                 var AreaFilter = new XPCollection<Area>(this.Session, CriteriaOperator.Parse("Number == " + this.NumberArea.Number));
 
-                if (AreaFilter[0].Pickets.Count < 2 || AreaFilter[0].Cargoes != null || AreaFilter[0].Cargoes.Count != 0)
-                    throw new UserFriendlyException(new Exception(" Error : " + "Not Delete"));
+                
+                if (AreaFilter.Count != 0 && AreaFilter[0].Cargoes.Count != 0)
+                    throw new UserFriendlyException(new Exception(" Error : " + "На площадке есть груз, уменьшение кол-ва пикетов невозможно"));
+
+
+                if (AreaFilter[0].Pickets.Count < 2)
+                    throw new UserFriendlyException(new Exception(" Error : " + "На площадке должен быть хотя бы 1 пикет, уменьшение кол-ва пикетов невозможно"));
+                
             }
 
             base.OnDeleting();
@@ -66,25 +74,20 @@ namespace TestXafSolution2.Module.TestWork2
 
             // Формируем коллекцию введеных площадок
             var areasCollectionInput = new List<double>();
-            int number = 0;
-
-            if (!int.TryParse(this.Name, out number))
-                throw new UserFriendlyException(new Exception(" Error : " + "Name not number"));
+            int number = Convert.ToInt32(this.Name);
 
             areasCollectionInput.Add(number);
 
 
             // Формируем коллекцию сохраненных площадок 
             var areasCollection = new List<double>();
-            if (this.fNumberArea.Delete_Area != DateTime.MinValue)
-                throw new UserFriendlyException(new Exception(" Error : " + "Area deleted"));
 
             GetCollectionFormatArea(this.fNumberArea.Name, areasCollection);
 
             var intersect = areasCollectionInput.Intersect(areasCollection);
 
             if (intersect.Count() == 0)
-                throw new UserFriendlyException(new Exception(" Error : Not intersect"));
+                throw new UserFriendlyException(new Exception(" Error : Значения пикета и площадки не пересекаются"));
         }
 
 
@@ -98,7 +101,8 @@ namespace TestXafSolution2.Module.TestWork2
             
             // Проверка на число
             if (!double.TryParse(namesArea[0], out number))
-                throw new UserFriendlyException(new Exception(" Error : " + "Name not number"));
+                throw new UserFriendlyException(new Exception(" Error : " + "Площадка имеет не верный формат." + 
+                                                              " Должный формат : X или X-X1, где X и X1 - это номер пикета"));
 
 
 
@@ -109,10 +113,11 @@ namespace TestXafSolution2.Module.TestWork2
             else if (namesArea.Length > 1 && namesArea.Length < 4)
             {
                 if (!double.TryParse(namesArea[1], out numberNext))
-                    throw new UserFriendlyException(new Exception(" Error : " + "Name not number"));
+                    throw new UserFriendlyException(new Exception(" Error : " + "Площадка имеет не верный формат." +
+                                                                  " Должный формат : X или X-X1, где X и X1 - это номер пикета"));
 
                 if (numberNext < number)
-                    throw new UserFriendlyException(new Exception(" Error : Name Area Second Value < Name Area First Value "));
+                    throw new UserFriendlyException(new Exception(" Error : Неправильный диапазон площадок "));
 
                 for (var countPicket = number; countPicket <= numberNext; countPicket++)
                     areasCollection.Add(countPicket);

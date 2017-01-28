@@ -114,6 +114,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\UnLinikWebController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\UnLinikWebController.Designer.cs">
+      <DependentUpon>UnLinikWebController.cs</DependentUpon>
+    </Compile>
     <Compile Include="WebModule.cs">
       <SubType>Component</SubType>
     </Compile>

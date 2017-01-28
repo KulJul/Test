@@ -34,7 +34,7 @@
         <elementListCompartment Id="1de3aea8-d297-4250-9dd4-d705a3ceba3f" absoluteBounds="3.9150005000000014, 1.9633821614583331, 1.4700000000000002, 0.44169108072916674" name="Collections" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </xpObjectShape>
-    <simpleAssociationConnector Id="fa355b4c-f3c7-4858-83e8-7876e1804bc4" edgePoints="[(6.75 : 4.3124995); (8.375 : 4.3124995); (8.375 : 5.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <simpleAssociationConnector Id="fa355b4c-f3c7-4858-83e8-7876e1804bc4" edgePoints="[(6.75 : 4.3124995); (8.375 : 4.3124995); (8.375 : 5.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <simpleAssociationMoniker Id="8bb21d8e-87c5-4efb-88ff-5c8c5abf9fe8" />
       <relativeChildShapes />
       <nodes>
@@ -47,7 +47,7 @@
         </associationConnectorReferencesSourceCollectionField>
       </sourceCollectionField>
     </simpleAssociationConnector>
-    <simpleAssociationConnector Id="9c0ee9ce-93da-4dc7-9463-df87d57f3a23" edgePoints="[(5.25 : 3.92561197916667); (3.1500005 : 3.92561197916667)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <simpleAssociationConnector Id="9c0ee9ce-93da-4dc7-9463-df87d57f3a23" edgePoints="[(5.25 : 3.92561197916667); (3.1500005 : 3.92561197916667)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <simpleAssociationMoniker Id="a460d14e-fe84-4b62-8ed1-a4b6d443f01a" />
       <relativeChildShapes />
       <nodes>
