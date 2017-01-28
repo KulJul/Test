@@ -8,7 +8,7 @@
             <field Id="04c0ffc7-dde9-4fc9-b332-5979816bc179" name="Number" columnType="Int32" key="true" isIdentity="true" persistent="Number" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" customAttributes="Browsable(false)" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="e95ca959-9f6a-44f2-89e6-df11f4cb4346">
-            <field Id="4911e472-8836-476a-b997-8cb2deaa3f3c" name="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="10" />
+            <field Id="4911e472-8836-476a-b997-8cb2deaa3f3c" name="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="10" customAttributes=" DevExpress.Persistent.Validation.RuleRequiredField, DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save,&#xD;&#xA;   CriteriaEvaluationBehavior = DevExpress.Persistent.Validation.CriteriaEvaluationBehavior.BeforeTransaction)" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="c4a7f7f0-fe99-4916-8378-492ca9bedc9f">
             <field Id="8b581e6b-a179-4cfd-bb5d-d4cc579c6eeb" name="Create_Area" columnType="DateTime" persistent="Create_Area" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.ExpressApp.Model.ModelDefault(&quot;DisplayFormat&quot;, &quot;{0: ddd, dd MMMM yyyy hh:mm:ss tt}&quot;), DevExpress.ExpressApp.Model.ModelDefault(&quot;EditMask&quot;, &quot;ddd, dd MMMM yyyy hh:mm:ss tt&quot;), DevExpress.ExpressApp.Model.ModelDefault(&quot;PropertyEditorType&quot;, &quot;WinSolution.Module.Win.MyDatePropertyEditor&quot;)" />
@@ -42,7 +42,7 @@
             <field Id="b2f73472-9761-4089-af3e-e826e67b7317" name="Number" columnType="Int32" key="true" isIdentity="true" persistent="Number" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" customAttributes="Browsable(false)" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="cf18bf38-1554-4a65-86e7-6e14c71ff761">
-            <field Id="e142de47-d1cf-4c85-a38f-f4bae1a718db" name="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="10" customAttributes=" DevExpress.Persistent.Validation.RuleRequiredField, DevExpress.Persistent.Validation.RuleUniqueValue,&#xD;&#xA; Indexed(Unique = true)" />
+            <field Id="e142de47-d1cf-4c85-a38f-f4bae1a718db" name="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="10" customAttributes=" DevExpress.Persistent.Validation.RuleRequiredField, DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save,&#xD;&#xA;   CriteriaEvaluationBehavior = DevExpress.Persistent.Validation.CriteriaEvaluationBehavior.BeforeTransaction)" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="cf5816d5-5e18-4502-b112-9a31260ecd0e">
             <field Id="2a7a8199-dcfe-45a9-b794-00d85ce1ad30" name="Number_Area" columnType="Int32" persistent="Number_Area" virtualColumnType="Area" logicalType="Area" delayedUpdateModifiedOnly="false" />
@@ -66,7 +66,7 @@
             <field Id="0cf1c493-0eed-43a0-a786-d48da0e0af8e" name="Number" columnType="Int32" key="true" isIdentity="true" persistent="Number" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" customAttributes="Browsable(false)" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="f131388c-576c-4846-9cad-0ba79277b7e9">
-            <field Id="5d4299cf-ad22-4074-b7ee-b53807cef97a" name="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="10" customAttributes=" DevExpress.Persistent.Validation.RuleRequiredField, DevExpress.Persistent.Validation.RuleUniqueValue,&#xD;&#xA; Indexed(Unique = true)" />
+            <field Id="5d4299cf-ad22-4074-b7ee-b53807cef97a" name="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="10" customAttributes=" DevExpress.Persistent.Validation.RuleRequiredField, DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save,&#xD;&#xA;   CriteriaEvaluationBehavior = DevExpress.Persistent.Validation.CriteriaEvaluationBehavior.BeforeTransaction)" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="2f081a74-f77f-49f3-b842-decac5dfaef3">
             <field Id="b5452251-24ca-4e44-ba16-04454ed05880" name="NumberStore" columnType="Int32" persistent="NumberStore" virtualColumnType="Store" logicalType="Store" delayedUpdateModifiedOnly="false" />
@@ -84,7 +84,7 @@
             <field Id="a3d2f2d9-b3c2-4aef-b075-900253b50c70" name="Number" columnType="Int32" key="true" isIdentity="true" persistent="Number" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" customAttributes="Browsable(false)" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="ae85f0c3-b91c-4576-852e-5ecfcaa0d8f2">
-            <field Id="6ae1a2f6-bb3f-424f-b44e-4ece96835892" name="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="10" customAttributes=" DevExpress.Persistent.Validation.RuleRequiredField, DevExpress.Persistent.Validation.RuleUniqueValue,&#xD;&#xA; Indexed(Unique = true)" />
+            <field Id="6ae1a2f6-bb3f-424f-b44e-4ece96835892" name="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="10" customAttributes=" DevExpress.Persistent.Validation.RuleRequiredField, DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save,&#xD;&#xA;   CriteriaEvaluationBehavior = DevExpress.Persistent.Validation.CriteriaEvaluationBehavior.BeforeTransaction)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>

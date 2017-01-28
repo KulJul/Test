@@ -26,6 +26,8 @@ namespace TestXafSolution2.Module.TestWork2
         }
         string fName;
         [Size(10)]
+        [DevExpress.Persistent.Validation.RuleRequiredField, DevExpress.Persistent.Validation.RuleUniqueValue("", DevExpress.Persistent.Validation.DefaultContexts.Save,
+   CriteriaEvaluationBehavior = DevExpress.Persistent.Validation.CriteriaEvaluationBehavior.BeforeTransaction)]
         public string Name
         {
             get { return fName; }

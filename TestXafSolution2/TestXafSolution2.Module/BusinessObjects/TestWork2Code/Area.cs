@@ -50,7 +50,7 @@ namespace TestXafSolution2.Module.TestWork2
             {
                 // Проверка наличия пикетов на площадке
                 if (this.Pickets.Count == 0)
-                    throw new UserFriendlyException(new Exception(" Error : " + "На площадке долже быть минимум 1 пикет"));
+                    throw new UserFriendlyException(new Exception(" Error : " + "На площадке должен быть минимум 1 пикет"));
 
                 // нельзя разорвать диапазон. проверка
                 if (this.Pickets != null)

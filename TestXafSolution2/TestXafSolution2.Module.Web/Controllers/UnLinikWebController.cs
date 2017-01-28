@@ -29,13 +29,13 @@ namespace TestXafSolution2.Module.Web.Controllers
 
         protected override void Unlink(SimpleActionExecuteEventArgs args)
         {
+            // Нельзя отсоединить пикет, если на площадке есть груз
             if (View.GetType() == typeof(ListView) && !View.IsRoot && View.ObjectTypeInfo.Type.Name == "Picket")
             {
                 foreach (object item in args.SelectedObjects)
                 {
                     Picket picket = item as Picket;
-                    Area area = item as Area;
-                    if (picket.NumberArea == null || picket.NumberArea.Cargoes == null)
+                    if (picket.NumberArea == null || picket.NumberArea.Cargoes.Count == 0)
                         base.Unlink(args);
                     else
                         throw new UserFriendlyException(new Exception(" Error : " + "Нельзя отсоединить пикет, так как на нем есть груз"));

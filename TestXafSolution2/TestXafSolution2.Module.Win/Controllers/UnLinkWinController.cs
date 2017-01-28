@@ -30,10 +30,11 @@ namespace TestXafSolution2.Module.Win.Controllers
         {
             if (View.GetType() == typeof(ListView) && !View.IsRoot && View.ObjectTypeInfo.Type.Name == "Picket")
             {
+
+                // Нельзя отсоединить пикет, если на площадке есть груз
                 foreach (object item in args.SelectedObjects)
                 {
                     var picket = item as Picket;
-                    var area = item as Area;
                     if (picket.NumberArea == null || picket.NumberArea.Cargoes.Count == 0)
                         base.Unlink(args);
                     else
