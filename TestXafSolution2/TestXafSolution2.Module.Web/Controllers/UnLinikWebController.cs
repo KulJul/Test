@@ -35,7 +35,7 @@ namespace TestXafSolution2.Module.Web.Controllers
                 foreach (object item in args.SelectedObjects)
                 {
                     Picket picket = item as Picket;
-                    if (picket.NumberArea == null || picket.NumberArea.Cargoes.Count == 0)
+                    if (picket.NumberArea == null || picket.NumberArea.Cargoes.Count == 0 || picket.NumberArea.Cargoes.All(p => p.Delete_Cargo != DateTime.MinValue))
                         base.Unlink(args);
                     else
                         throw new UserFriendlyException(new Exception(" Error : " + "Нельзя отсоединить пикет, так как на нем есть груз"));

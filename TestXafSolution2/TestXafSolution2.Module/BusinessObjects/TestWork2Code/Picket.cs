@@ -52,7 +52,7 @@ namespace TestXafSolution2.Module.TestWork2
                 var AreaFilter = new XPCollection<Area>(this.Session, CriteriaOperator.Parse("Number == " + this.NumberArea.Number));
 
                 
-                if (AreaFilter.Count != 0 && AreaFilter[0].Cargoes.Count != 0)
+                if (AreaFilter.Count != 0 && AreaFilter[0].Cargoes.Count != 0 && AreaFilter[0].Cargoes.Any(p => p.Delete_Cargo == DateTime.MinValue))
                     throw new UserFriendlyException(new Exception(" Error : " + "На площадке есть груз, уменьшение кол-ва пикетов невозможно"));
 
 

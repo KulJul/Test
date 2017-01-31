@@ -28,11 +28,11 @@ namespace TestXafSolution2.Module.TestWork2
 
         protected override void OnDeleting()
         {
-            //Проверка существования груза на площадке
+            //Проверка существования груза на площадке. Отправленный груз тоже проверяется
             var CargoFilter = new XPCollection<Cargo>(this.Session, CriteriaOperator.Parse("Number_Area == " + this.Number));
 
             if (CargoFilter.Count != 0)
-                throw new UserFriendlyException(new Exception(" Error : " + "На площадке лежит груз"));
+                throw new UserFriendlyException(new Exception(" Error : " + "На площадке лежит груз / история по отправленному грузу"));
 
             // Обнуления связи с пикетами при удалении площадки
             var PicketFilter = new XPCollection<Picket>(this.Session, CriteriaOperator.Parse("NumberArea == " + this.Number));
@@ -48,6 +48,27 @@ namespace TestXafSolution2.Module.TestWork2
 
             if (!this.IsDeleted)
             {
+                // Если площадка удаляется, то происходит проверка на существование груза на площадке
+                // Если площадка удаляется, то происходит  проверка на существование пикетов на площадке
+
+                if (this.Delete_Area.CompareTo(default(DateTime)) != 0)
+                {
+                    var CargoFilter = new XPCollection<Cargo>(this.Session, CriteriaOperator.Parse("Number_Area == " + this.Number));
+                    var PicketFilter = new XPCollection<Picket>(this.Session, CriteriaOperator.Parse("NumberArea == " + this.Number));
+
+                    if (CargoFilter.Count != 0 && CargoFilter.Any(p => p.Delete_Cargo == DateTime.MinValue))
+                        throw new UserFriendlyException(new Exception(" Error : " + "Груз лежит на площадке"));
+
+
+                    if (CargoFilter.Count != 0 && CargoFilter.Any(p => p.Delete_Cargo > this.Delete_Area))
+                        throw new UserFriendlyException(new Exception(" Error : " + "Груз отправляется позже, чем будет закрыта площадка"));
+                    
+                    foreach (var pic in PicketFilter)
+                        pic.NumberArea = null;
+
+                    return;
+                }
+
                 // Проверка наличия пикетов на площадке
                 if (this.Pickets.Count == 0)
                     throw new UserFriendlyException(new Exception(" Error : " + "На площадке должен быть минимум 1 пикет"));
@@ -66,20 +87,7 @@ namespace TestXafSolution2.Module.TestWork2
                     }
                 }
 
-                // Если площадка удаляется, то происходит проверка на существование груза на площадке
-                // Если площадка удаляется, то происходит  проверка на существование пикетов на площадке
 
-                if (this.Delete_Area.CompareTo(default(DateTime)) != 0)
-                {
-                    var CargoFilter = new XPCollection<Cargo>(this.Session, CriteriaOperator.Parse("Number_Area == " + this.Number));
-                    var PicketFilter = new XPCollection<Picket>(this.Session, CriteriaOperator.Parse("NumberArea == " + this.Number));
-
-                    if (CargoFilter.Count != 0)
-                        throw new UserFriendlyException(new Exception(" Error : " + "Груз лежит на площадке"));
-
-                   foreach (var pic in PicketFilter)
-                       pic.NumberArea = null;
-                }
             }
 
             base.OnSaving();
