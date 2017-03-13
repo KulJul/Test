@@ -1,0 +1,7 @@
+﻿  Temp.cpp
+  hashing.cpp
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\mml\compressed_tuple\compressed_tuple.hpp(314): warning C4003: не хватает фактических параметров для макроопределения "BOOST_PP_EXPR_IIF_0"
+  simple_multimethod.cpp
+  Создание кода...
+Temp.obj : error LNK2001: неразрешенный внешний символ ""public: static class std::unordered_map<unsigned __int64,void (__thiscall MyClass::*)(class MyClass &),struct std::hash<unsigned __int64>,struct std::equal_to<unsigned __int64>,class std::allocator<struct std::pair<unsigned __int64 const ,void (__thiscall MyClass::*)(class MyClass &)> > > MyMap<class MyClass>::collisionCases" (?collisionCases@?$MyMap@VMyClass@@@@2V?$unordered_map@_KP8MyClass@@AEXAAV1@@ZU?$hash@_K@std@@U?$equal_to@_K@3@V?$allocator@U?$pair@$$CB_KP8MyClass@@AEXAAV1@@Z@std@@@3@@std@@A)"
+D:\диплом\код чужой\testVsherba\Debug\testVsherba.exe : fatal error LNK1120: неразрешенных внешних элементов: 1
